@@ -1,0 +1,152 @@
+<?php
+
+class Products {
+    private $productID;         // int 
+    private $model;             // String
+    private $image;             // String : path of image
+    private $price;             // double
+    private $weigh;             // double 
+    private $color;             // String
+    private $numberOfProducts;  // int 
+    private $supplier;          // String 
+    
+    function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier) {
+        setProductID($productID);
+        setModel($model);
+        setImage($image);
+        setPrice($price);
+        setWeigh($weigh);
+        setColor($color);
+        setNumberOfProducts($numberOfProducts);
+        setSupplier($supplier);
+    }
+    
+    /**
+     * @return mixed
+     */
+    public function getProductID()
+    {
+        return $this->productID;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getModel()
+    {
+        return $this->model;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWeigh()
+    {
+        return $this->weigh;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNumberOfProducts()
+    {
+        return $this->numberOfProducts;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSupplier()
+    {
+        return $this->supplier;
+    }
+
+    /**
+     * @param mixed $productID
+     */
+    public function setProductID($productID)
+    {
+        $this->productID = $productID;
+    }
+
+    /**
+     * @param mixed $model
+     */
+    public function setModel($model)
+    {
+        $this->model = $model;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @param mixed $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @param mixed $weigh
+     */
+    public function setWeigh($weigh)
+    {
+        $this->weigh = $weigh;
+    }
+
+    /**
+     * @param mixed $color
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+    }
+
+    /**
+     * @param mixed $numberOfProducts
+     */
+    public function setNumberOfProducts($numberOfProducts)
+    {
+        $this->numberOfProducts = $numberOfProducts;
+    }
+
+    /**
+     * @param mixed $supplier
+     */
+    public function setSupplier($supplier)
+    {
+        $this->supplier = $supplier;
+    }
+
+}
