@@ -13,12 +13,14 @@ class ComputerMouseProducts extends Products{
      * @see Products::__construct()
      */
     public function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, 
-        $supplier, $standardConnection, $connectionProtocal, $isLed, $size) {
-        parent::__construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier);
-        setStandardConnection($standardConnection);
-        setConnectionProtocal($connectionProtocal);
-        setIsLed($isLed);
-        setSize($size);
+        $supplier, $standardConnection, $connectionProtocal, $isLed, $size, $description) {
+        parent::__construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier, $description);
+        self::setStandardConnection($standardConnection);
+        self::setConnectionProtocon($connectionProtocal);
+        self::setIsLed($isLed);
+        self::setSize($size);
+        
+        $this->type = Type::MOUSE;
     }
     
     /**

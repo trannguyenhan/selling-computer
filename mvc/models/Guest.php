@@ -5,9 +5,9 @@ class Guest {
     private $name;
     
     public function __construct($username, $password, $name) {
-        setUsername($username);
-        setPassword($password);
-        setName($name);
+        self::setUsername($username);
+        self::setPassword($password);
+        self::setName($name);
     }
     
     /**

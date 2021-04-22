@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Type.php';
+
 class Products {
     private $productID;         // int 
     private $model;             // String
@@ -9,16 +11,20 @@ class Products {
     private $color;             // String
     private $numberOfProducts;  // int 
     private $supplier;          // String 
+    private $description;       // String
     
-    public function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier) {
-        setProductID($productID);
-        setModel($model);
-        setImage($image);
-        setPrice($price);
-        setWeigh($weigh);
-        setColor($color);
-        setNumberOfProducts($numberOfProducts);
-        setSupplier($supplier);
+    public int $type = Type::NONE;      
+    
+    public function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier, $description) {
+        self::setProductID($productID);
+        self::setModel($model);
+        self::setImage($image);
+        self::setPrice($price);
+        self::setWeigh($weigh);
+        self::setColor($color);
+        self::setNumberOfProducts($numberOfProducts);
+        self::setSupplier($supplier);
+        self::setDescription($description);
     }
     
     /**
@@ -147,6 +153,22 @@ class Products {
     public function setSupplier($supplier)
     {
         $this->supplier = $supplier;
+    }
+    
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+    
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
 
 }

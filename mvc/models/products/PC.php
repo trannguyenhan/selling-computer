@@ -10,10 +10,12 @@ class PC extends ComputerProducts {
      * @see ComputerProducts::__construct()
      */
     public function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier, 
-        $cpu, $ram, $storage, $screen, $card, $mainConnection, $os, $case) {
+        $cpu, $ram, $storage, $screen, $card, $mainConnection, $os, $case, $description) {
         parent::__construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, 
-            $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os);
-        setCase($case);
+            $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os, $description);
+        self::setCase($case);
+        
+        $this->type = Type::PC;
     }
     
     /**

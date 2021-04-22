@@ -6,10 +6,12 @@ class Laptop extends ComputerProducts{
     private $battery;       // int
     
     public function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts,
-        $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os, $battery) {
+        $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os, $battery, $description) {
         parent::__construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, 
-            $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os);
-        setBattery($battery);
+            $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os, $description);
+        self::setBattery($battery);
+        
+        $this->type = Type::LAPTOP;
     }
     
     /**

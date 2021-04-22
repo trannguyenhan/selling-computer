@@ -2,7 +2,7 @@
 
 class Cart {
     private $username;      // String
-    private $listProducts;  // List<Products> 
+    private $listProducts;  // array
     private $date;          // date
     
     public function __construct($username, $listProducts) {

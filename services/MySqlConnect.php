@@ -23,21 +23,30 @@ class MySqlConnect implements ISqlConnect {
     }
 
     // use with statement select 
-    public function run(){
+    public function executeQuery(){
         $result = mysqli_query($this->db, $this->query);
+        
+        if(!$result){
+            echo "FAIL when execute!";
+            exit();
+        }
         
         return $result;
     }
     
     
     // use with statement insert, delete, update,..
-    public function update(){
-        mysqli_query($this->db, $this->query);
+    public function updateQuery(){
+        $result = mysqli_query($this->db, $this->query);
+        
+        if(!$result){
+            echo "FAIL when update!";
+            exit();
+        }
         
         // no return result
     }
 
 }
-
 
 

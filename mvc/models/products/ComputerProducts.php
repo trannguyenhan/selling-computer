@@ -12,15 +12,15 @@ class ComputerProducts extends Products{
     private $os;                // String   
 
     public function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, 
-        $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os) {
-        parent::__construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier);
-        setCpu($cpu);
-        setRam($ram);
-        setStorage($storage);
-        setScreen($screen);
-        setCard($card);
-        setMainConnection($mainConnection);
-        setOs($os);
+        $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os, $description) {
+        parent::__construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier, $description);
+        self::setCpu($cpu);
+        self::setRam($ram);
+        self::setStorage($storage);
+        self::setScreen($screen);
+        self::setCard($card);
+        self::setMainConnection($mainConnection);
+        self::setOs($os);
     }
     
     /**
