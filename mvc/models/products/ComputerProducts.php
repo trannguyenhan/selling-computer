@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Products.php';
+
 class ComputerProducts extends Products{
     private $cpu;               // String
     private $ram;               // String
@@ -9,7 +11,7 @@ class ComputerProducts extends Products{
     private $mainConnection;    // String
     private $os;                // String   
 
-    function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, 
+    public function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, 
         $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os) {
         parent::__construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier);
         setCpu($cpu);
@@ -132,5 +134,4 @@ class ComputerProducts extends Products{
     {
         $this->os = $os;
     }
-    
 }

@@ -10,7 +10,7 @@ class Products {
     private $numberOfProducts;  // int 
     private $supplier;          // String 
     
-    function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier) {
+    public function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier) {
         setProductID($productID);
         setModel($model);
         setImage($image);

@@ -1,9 +1,11 @@
 <?php
 
+require_once 'ComputerProducts.php';
+
 class Laptop extends ComputerProducts{
     private $battery;       // int
     
-    function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts,
+    public function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts,
         $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os, $battery) {
         parent::__construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, 
             $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os);
