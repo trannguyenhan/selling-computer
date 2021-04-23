@@ -1,7 +1,7 @@
 <?php
 
-require_once '../../mvc/models/products/ComputerProducts.php';
-require_once 'ProductsServices.php';
+require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'ComputerProducts.php';
+require_once ROOT . DS . 'services' . DS . 'products' . DS . 'ProductsServices.php';
 
 class ComputerProductsServices extends ProductsServices {
     /**

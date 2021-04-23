@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Type.php';
+require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Type.php';
 
 class Products {
     private $productID;         // int 

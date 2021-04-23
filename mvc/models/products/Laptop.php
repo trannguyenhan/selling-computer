@@ -1,6 +1,6 @@
 <?php
 
-require_once 'ComputerProducts.php';
+require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'ComputerProducts.php';
 
 class Laptop extends ComputerProducts{
     private $battery;       // int

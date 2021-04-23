@@ -1,4 +1,5 @@
 <?php
+
 class Evaluate {
     private $username;      // String
     private $productID;     // int
@@ -6,13 +7,12 @@ class Evaluate {
     private $comment;       // String
     private $date;          // date
     
-    public function __construct($username, $productID, $star, $comment) {
-        setUsername($username);
-        setProductID($productID);
-        setStar($star);
-        setComment($comment);
-        
-        setDate(date("Y-m-d"));
+    public function __construct($username, $productID, $star, $comment, $date) {
+        self::setUsername($username);
+        self::setProductID($productID);
+        self::setStar($star);
+        self::setComment($comment);
+        self::setDate($date);
     }
     
     /**

@@ -1,13 +1,14 @@
 <?php
 
-require_once "ISqlConnect.php";
+require_once ROOT . DS . 'config' . DS . 'Db-Config.php';
+require_once ROOT . DS . 'services' . DS . 'ISqlConnect.php';
 
 class MySqlConnect implements ISqlConnect {
     private $db;
     private $query;
     
-    public function __construct($host, $username, $password, $dbname, $port){
-        $this->db = mysqli_connect($host, $username, $password, $dbname, $port);
+    public function __construct(){
+        $this->db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
         
         if($this->db){
             echo "connect successfully <br />";

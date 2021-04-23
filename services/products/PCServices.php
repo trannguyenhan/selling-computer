@@ -1,7 +1,7 @@
 <?php
 
-require_once 'ComputerProductsServices.php';
-require_once '../../mvc/models/products/PC.php';
+require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'PC.php';
+require_once ROOT . DS . 'services' . DS . 'products' . DS . 'ComputerProductsServices.php';
 
 class PCServices extends  ComputerProductsServices {
     /**
@@ -123,8 +123,4 @@ class PCServices extends  ComputerProductsServices {
         
     }
 }
-
-$pc = new PC(234, "MA123", "stc/1.jpg", 123.5, 1.5, "Red", 10, "Google", "Core-i3", "DDRAM3", 256, "FullHD1920x1920", "NDIVIA", "no", "Win7", "No-case", "No-description");
-$services = new PCServices("localhost", "root", "mysql1234", "selling_computer", "3306");
-$services->getAll();
 

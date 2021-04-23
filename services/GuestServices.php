@@ -1,7 +1,9 @@
 <?php
 
-require_once 'MySqlConnect.php';
-require_once '../mvc/models/Guest.php';
+require_once ROOT . DS . 'services' . DS . 'MySqlConnect.php';
+require_once ROOT . DS . 'services' . DS . 'TypeProductsServices.php';
+require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'Guest.php';
+require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . "Type.php";
 
 class GuestServices extends MySqlConnect {
     /**
@@ -98,13 +100,12 @@ class GuestServices extends MySqlConnect {
             $username = $row["user_name"];
             $password = $row["your_password"];
             $name = $row["your_name"];
-        } else {
-            return null;
-        }
+            
+            $guest = new Guest($username, $password, $name);
+            return $guest;
+        } 
         
-        $guest = new Guest($username, $password, $name);
-        
-        return $guest;
+        return null;
     }
     
     /**
@@ -140,18 +141,54 @@ class GuestServices extends MySqlConnect {
         
         $row = mysqli_fetch_array($result);
         $cart_id = $row["cart_id"];
-        $query = "delete from cart_products
-                  where cart_id = " . $cart_id;
-        parent::addQuerry($query);
-        parent::updateQuery();
+        
+        return $cart_id;
     }
     
     /**
      * Method get all products of guest
      * @param String $username
+     * @return array
      */
     public function getListCartProducts($username){
+        $listCartProducts = array();
         
+        $cart_id = self::getCartID($username);
+        $query = "select * from cart_products
+                    where cart_id =" . $cart_id;
+        
+        parent::addQuerry($query);
+        $result = parent::executeQuery();
+        
+        while($row = mysqli_fetch_array($result)){
+            $product_id = $row["product_id"];
+            
+            if(TypeProductsServices::checkType($product_id) == Type::LAPTOP){
+                $service = new LaptopServices();
+                $laptop = $service->get($product_id);
+                array_push($listCartProducts, $laptop);
+            } else if (TypeProductsServices::checkType($product_id) == Type::PC){
+                $service = new PCServices();
+                $pc = $service->get($product_id);
+                array_push($listCartProducts, $pc);
+            } else if(TypeProductsServices::checkType($product_id) == Type::MOUSE){
+                $service = new ComputerMouseProductsServices();
+                $mouse = $service->get($product_id);
+                array_push($listCartProducts, $mouse);
+            } else {
+                echo "hello";
+                array_push($listCartProducts, null);
+            }
+            
+        }
+        
+        return $listCartProducts;
     }
 }
+
+echo (TypeProductsServices::checkType(123)) . "<br />";
+$service = new GuestServices();
+print_r($service->getListCartProducts("huy0628")[0]);
+
+
 

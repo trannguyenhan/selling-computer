@@ -1,7 +1,7 @@
 <?php
 
-require_once 'ProductsServices.php';
-require_once '../../mvc/models/products/ComputerMouseProducts.php';
+require_once ROOT . DS . 'services' . DS . 'products' . DS . 'ProductsServices.php';
+require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'ComputerMouseProducts.php';
 
 class ComputerMouseProductsServices extends ProductsServices {
     /**
@@ -68,9 +68,9 @@ class ComputerMouseProductsServices extends ProductsServices {
      */
     public function get($product_id){
         $query = "select * from
-                    products p inner join computer_products cp on p.product_id = cp.product_id
-                    inner join pc pc on p.product_id = pc.product_id
+                    products p inner join computer_mouse_products cmp on p.product_id = cmp.product_id 
                     where p.product_id=" . $product_id;
+        
         parent::addQuerry($query);
         $result = parent::executeQuery();
         

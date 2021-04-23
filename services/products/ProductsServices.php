@@ -1,7 +1,7 @@
 <?php
 
-require_once '../MySqlConnect.php';
-require_once '../../mvc/models/products/Products.php';
+require_once ROOT . DS . 'services' . DS . 'MySqlConnect.php';
+require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Products.php';
 
 class ProductsServices extends  MySqlConnect {
     /**

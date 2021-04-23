@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Products.php';
+require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Products.php';
 
 class ComputerMouseProducts extends Products{
     private $standardConnection;        // boolean

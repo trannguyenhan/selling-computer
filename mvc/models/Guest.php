@@ -1,4 +1,5 @@
 <?php
+
 class Guest {
     private $username;
     private $password;
