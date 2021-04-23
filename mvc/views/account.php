@@ -7,6 +7,8 @@
 	<title>Document</title>
 </head>
 <body>
+	
+	
 	<div class="container">
 		<form id = "form1">
 			<h3>CREATE ACCOUNT</h3>

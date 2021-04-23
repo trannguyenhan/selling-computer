@@ -26,7 +26,7 @@ body {
 }
 /*layout*/
 header {
-  background: radial-gradient(white, pink);
+  background: radial-gradient(white, green);
 }
 .container {
   max-width:  1200px;
