@@ -28,7 +28,7 @@
 				</ul>
 			</div>
 			<div class="footer-col-3">
-				<img src="logo/logo.png" width="125px">
+				<img src="https://i0.wp.com/s1.uphinh.org/2021/04/25/Untitled-Design-3.png" width="125px">
 				<p>Chúng tôi cam kết mang tới sự an tâm cho công việc của bạn</p>
 			</div>
 			<div class="footer-col-4">
@@ -49,11 +49,11 @@
 			<div class="footer-col-5">
 				<h3>Our Apps</h3>
 				<p>Download our iOS app</p>
-				<img src="logo/app-store.png" class="first_img"> <img
-					src="logo/app-store2.png" class="second-img">
+				<img src="images/logo/app-store.png" class="first_img"> <img
+					src="images/logo/app-store2.png" class="second-img">
 				<p>Download our Android app</p>
-				<img src="logo/play-store.png" class="first_img"> <img
-					src="logo/play-store2.png" class="second-img">
+				<img src="images/logo/play-store.png" class="first_img"> <img
+					src="images/logo/play-store2.png" class="second-img">
 			</div>
 		</div>
 	</div>

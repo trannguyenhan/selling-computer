@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="about.css">
-	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>Document</title>
-</head>
-<body>
-	<div class="header"></div>
+
 	<div class="container">
 		<div class="title">
 			<h1>Why Choose Us ?</h1>
@@ -34,17 +23,3 @@
 			</div>
 		</div>
 	</div>
-	<div class="link">
-		<div class="back">
-			<i class="fa fa-arrow-left"></i>
-		<a href="main_page.php">Back</a>
-		</div>
-		<div class="next">
-			<a href="account.php">Next</a>
-		<i class="fa fa-arrow-right"></i>
-		</div>
-	</div>
-	</div>
-	<div class="footer"></div>
-</body>
-</html>

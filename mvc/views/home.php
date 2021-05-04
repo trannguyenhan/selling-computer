@@ -1,22 +1,18 @@
 <?php
-    define('DS', DIRECTORY_SEPARATOR);
-    define('ROOT', $_SERVER['DOCUMENT_ROOT'] . DS . 'php' . DS . 'selling-computer');
     require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="main_page_css.php">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>Project I</title>
-</head>
-<body>
-	<!-- insert header to website -->
-	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'header.php' ?>
-	
+	<div class="home">
+		<div class="row">
+			<div class="col-2">
+				<h1>Tìm kiếm những mẫu máy tính mới nhất của chúng tôi!</h1><br>
+				<q>Khai thông sức mạnh, dẫn đâu xu hướng</q><br>
+				<a href="" class = "btn">Khám phá ngay&#8594;</a>
+			</div>
+			<div class="col-2">
+				<img src="https://i0.wp.com/s1.uphinh.org/2021/04/25/zapmaster_serviceability_01_tcm2649_2908010_tcm2649_2908098_tcm2649-2908010.png">
+			</div>
+		</div>
+	</div>
 	<div class="collection">
 		<h1 class = "title">Ưu đãi lớn khi mua hàng tại MTHH</h1>
 		<img src="https://lumen.thinkpro.vn//backend/uploads/baiviet/2021/4/9/microsoft365_thumb.jpg">
@@ -76,7 +72,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-2">
-					<img src="">
+					<!-- <img src=""> -->
 				</div>
 				<div class="col-2">
 					<h1></h1>
@@ -86,7 +82,7 @@
 		</div>
 	</div>
 	<div class="advertising">
-		<img src="background/discount.jpg">
+		<img src="images/background/discount.jpg">
 	</div>
 	<div class="brands">
 		<div class="small-container">
@@ -117,7 +113,5 @@
 		</div>
 	</div>
 	
-	<!-- insert footer page -->
-	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php' ?>
 </body>
 </html>
