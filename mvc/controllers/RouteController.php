@@ -11,6 +11,13 @@ class RouteController {
     }
     
     function parsingURL() {
+        if(strcmp($this->_url, "/") == 0){ // call home page if path is '/'
+            require_once ROOT . DS . 'mvc' . DS . 'controllers' . DS . 'HomeController.php';
+            $this->_dispath = new HomeController();
+            // require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'home.php';
+            return;
+        }
+
         $urlArray = explode("/", $this->_url);
         $controller = $urlArray[0]; array_shift($urlArray);
         

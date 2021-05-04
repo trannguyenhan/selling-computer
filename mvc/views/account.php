@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="account.css">
-	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/home.css" >
+	<title>Home | MTHH</title>
 </head>
 <body>
-	
-	
+	<!-- includes nav bar -->
+	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
+		
 	<div class="container">
 		<form id = "form1">
 			<h3>CREATE ACCOUNT</h3>
@@ -56,12 +56,10 @@
 		var Form1 = document.getElementById('form1');
 		var Form2 = document.getElementById('form2');
 		var Form3 = document.getElementById('form3');
-
 		var Next1 = document.getElementById('next1');
 		var Next2 = document.getElementById('next2');
 		var Back1 = document.getElementById('back1');
 		var Back2 = document.getElementById('back2');
-
 		var Progress = document.getElementById('progress');
 		Next1.onclick= function () {
 			Form1.style.left = "-450px";
@@ -84,5 +82,3 @@
 			Progress.style.width = "240px";
 		}
 	</script>
-</body>
-</html>

@@ -1,6 +1,17 @@
 <?php
     require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php';
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/home.css" >
+	<title>Home | MTHH</title>
+</head>
+<body>
+	<!-- includes nav bar -->
+	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
+
 	<div class="home">
 		<div class="row">
 			<div class="col-2">
@@ -112,6 +123,3 @@
 			</div>
 		</div>
 	</div>
-	
-</body>
-</html>

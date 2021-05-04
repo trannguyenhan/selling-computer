@@ -1,8 +1,5 @@
-<?php
-?>
-
 <footer>
-	<div class="container">
+	<div class="footer_container" style="footer_container.css">
 		<div class="row">
 			<div class="footer-col-1">
 				<h3>About Us</h3>
@@ -63,3 +60,5 @@
 	</div>
 	</div>
 </footer>
+</body>
+</html>

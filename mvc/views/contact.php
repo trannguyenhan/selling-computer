@@ -1,14 +1,17 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="contact_css.php">
-	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/contact.css" >
+	<title>Contact | MTHH</title>
 </head>
 <body>
-	<div class="container">
+	<!-- includes nav bar -->
+	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
+
+	<div class="contact_container">
 		<div class="row">
 			<div class="col-2" id = 'text'>
 				<h1>Contact Us</h1>
@@ -32,5 +35,3 @@
 			</div>
 		</div>
 	</div>
-</body>
-</html>
