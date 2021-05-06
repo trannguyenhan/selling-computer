@@ -4,14 +4,20 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/about.css" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="public/css/about.css" type="text/css">
+	<link rel="stylesheet" href="public/css/footer_container.css" type="text/css">
+	<link rel="stylesheet" href="public/css/nav_bar.css" type="text/css">
 	<title>About | MTHH</title>
+
 </head>
 <body>
 	<!-- includes nav bar -->
-	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
+ <?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?> 
 
-<div class="about_container">
+<div class="about_container" style="font-family: 'Pacifico', cursive;">
 	<div class="title">
 		<h1>Why Choose Us ?</h1>
 		<q>Every day we work hard to make life of our clients better and happier</q>
@@ -35,3 +41,4 @@
 		</div>
 	</div>
 </div>
+<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>

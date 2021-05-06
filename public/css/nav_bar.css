@@ -1,0 +1,41 @@
+* {
+  padding:0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+.nav_bar {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: #0a95c7;
+  height: 80px;
+}
+.nav_bar nav {
+  flex:1;
+  text-align: right;
+}
+.nav_bar nav li{
+  display: inline-block;
+  margin-right: 20px;
+}
+.nav_bar nav li a{
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+  transition: all 0.5s;
+  border: 1px solid transparent;
+  padding: 7px 10px;
+  border-radius: 3px;
+}
+.nav_bar nav li a:hover {
+  color: red;  border: 3px solid white;
+}
+.nav_bar nav li span {
+  color: red;
+}
+.cart-logo a:hover {
+  transition: all 0.5s;
+  transform: rotate3d(solid);
+}

@@ -1,5 +1,5 @@
 <footer>
-	<div class="footer_container" style="footer_container.css">
+	<div class="footer_container">
 		<div class="row">
 			<div class="footer-col-1">
 				<h3>About Us</h3>

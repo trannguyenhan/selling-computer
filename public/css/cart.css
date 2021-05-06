@@ -1,0 +1,76 @@
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+.cart .small-container {
+	max-width: 1080px;
+	margin: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+	/*border: 1px solid black;*/
+}
+.cart .cart-page {
+	margin: 80px auto;
+}
+.cart table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.cart .cart-info {
+	display: flex;
+	flex-wrap: wrap;
+}
+.cart .btn {
+  background: orange;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 10px; 
+  text-decoration: none;
+  width : 150px;
+}
+.cart th {
+	text-align: left;
+	padding: 5px;
+	color: white;
+	background-color: #ff523b;
+	font-weight: normal;
+}
+.cart td {
+	padding: 10px 50px;
+}
+.cart td input {
+	width :40px;
+	height: 30px;
+	padding: 5px;
+}
+.cart td a {
+	color: #ff523b;
+	font-size: 12px;
+}
+.cart td img {
+	width: 80px;
+	height: 80px;
+	margin-right: 10px;
+}
+.cart .total-price {
+	display: flex;
+	justify-content: flex-end;
+}
+.cart .total-price table {
+	border-top: 3px solid #ff523b;
+	width: 100%;
+	max-width: 400px;
+}
+.cart td:last-child {
+	text-align: right;
+}
+.cart th:last-child {
+	text-align: right;
+}
+del {
+	text-decoration: line-through;
+}

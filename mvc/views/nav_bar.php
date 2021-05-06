@@ -1,4 +1,4 @@
-<div class="nav_bar" style="css/nav_bar.css">
+<div class="nav_bar">
 	<div class="logo">
 		<img src="https://i0.wp.com/s1.uphinh.org/2021/04/25/Untitled-Design-3.png" width="125px">
 	</div>
@@ -11,5 +11,7 @@
 			<li><a href="account">Tài khoản</a></li>
 		</ul>
 	</nav>
-	<a href="cart.php"><img src="images/logo/cart.png" width="30px"></a>
+	<div class="cart-logo">
+		<a href="cart"><img src="images/logo/cart.png" width="30px"></a>
+	</div>
 </div>

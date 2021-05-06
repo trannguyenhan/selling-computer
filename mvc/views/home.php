@@ -5,7 +5,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/home.css" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="public/css/home.css" type="text/css">
+	<link rel="stylesheet" href="public/css/footer_container.css" type="text/css">
+	<link rel="stylesheet" href="public/css/nav_bar.css">
 	<title>Home | MTHH</title>
 </head>
 <body>
@@ -32,15 +36,15 @@
 		<div class="small-container">
 			<h1 class = "title">Danh mục sản phẩm</h1>
 			<div class="row">
-				<div class="col-9">
+				<div class="col-3">
 					<a href="all_products_page.php"><img src="https://hanoicomputercdn.com/media/product/47380_laptop_dell_latitude_3400_l3400i5ssd_i5_8265u_8gb_ddr4_256gb_ssd_14_0_hd_dos_1.jpg"></a>
 					<h3>Laptop</h3>
 				</div>
-				<div class="col-9">
+				<div class="col-3">
 					<a href="all_products_page.php"><img src="https://sc01.alicdn.com/kf/HTB1o3hKIKSSBuNjy0Flq6zBpVXaj/224199322/HTB1o3hKIKSSBuNjy0Flq6zBpVXaj.jpg_.webp"></a>
 					<h3>PC</h3>
 				</div>
-				<div class="col-9">
+				<div class="col-3">
 					<a href="all_products_page.php"><img src="https://gpcantho.com/wp-content/uploads/2020/01/i98E59_simg_de2fe0_500x500_maxb.jpg"></a>
 					<h3>Phụ kiện</h3>
 				</div>
@@ -98,28 +102,29 @@
 	<div class="brands">
 		<div class="small-container">
 			<div class="row">
-				<div class="col-x">
+				<div class="col-7">
 					<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg">
 				</div>
-				<div class="col-x">
+				<div class="col-7">
 					<img src="https://www.lg.com/lg5-common-gp/images/common/share/share-default.jpg" alt="">
 
 				</div>
-				<div class="col-x">
+				<div class="col-7">
 					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="">
 				</div>
-				<div class="col-x">
+				<div class="col-7">
 					<img src="https://hitechsys.com/wp-content/uploads/avita-logo.png" alt="">
 				</div>
-				<div class="col-x">
+				<div class="col-7">
 					<img src="https://i.pinimg.com/originals/ba/b7/8b/bab78b1ab6202c17519384fb90b06412.png" alt="">
 				</div>
-				<div class="col-x">
+				<div class="col-7">
 					<img src="https://www.fpt.com.vn/Content/home/images/icon/ic-logo.png" alt="">
 				</div>
-				<div class="col-x">
+				<div class="col-7">
 					<img src="https://yt3.ggpht.com/ytc/AAUvwngqV6FGOKwpL5mBQThsaBhqkSnkhejYBUEYhddiTw=s900-c-k-c0x00ffffff-no-rj" alt="">
 				</div>
 			</div>
 		</div>
 	</div>
+	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>

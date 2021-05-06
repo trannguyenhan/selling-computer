@@ -55,7 +55,7 @@ CREATE TABLE `cart` (
   PRIMARY KEY (`cart_id`),
   KEY `user_name` (`user_name`),
   CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_name`) REFERENCES `guest` (`user_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
