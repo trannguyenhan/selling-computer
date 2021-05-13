@@ -2,7 +2,6 @@
   padding:0;
   margin: 0;
   text-decoration: none;
-  list-style: none;
 }
 .nav_bar {
   display: flex;
@@ -10,32 +9,127 @@
   padding: 20px;
   background: #0a95c7;
   height: 80px;
+/*   flex-wrap: nowrap; */
 }
 .nav_bar nav {
   flex:1;
   text-align: right;
 }
-.nav_bar nav li{
+.nav_bar nav ul{
   display: inline-block;
-  margin-right: 20px;
+  list-style-type: none;
 }
-.nav_bar nav li a{
+.nav_bar nav ul li{
+  display: inline-block;
+  margin-right: 15px;
+}
+.nav_bar nav ul li a{
   text-decoration: none;
   color: white;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 16px;
   transition: all 0.5s;
   border: 1px solid transparent;
-  padding: 7px 10px;
+  padding: 5px 2px;
   border-radius: 3px;
 }
-.nav_bar nav li a:hover {
+.nav_bar nav ul li a:hover {
   color: red;  border: 3px solid white;
 }
-.nav_bar nav li span {
+.nav_bar nav ul li span {
   color: red;
 }
 .cart-logo a:hover {
   transition: all 0.5s;
   transform: rotate3d(solid);
 }
+.menu {
+  margin-left: 20px;
+  display: none;
+}
+@media only screen and (min-width: 960px) {
+/* styles for browsers larger than 960px; */
+  
+}
+@media only screen and (min-width: 1440px) {
+/* styles for browsers larger than 1440px; */
+}
+@media only screen and (min-width: 2000px) {
+/* for sumo sized (mac) screens */
+}
+@media only screen and (max-device-width: 480px) {
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+ .nav_bar nav ul {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    overflow: hidden;
+  }
+  .nav_bar nav ul li {
+    display: block;
+    margin-right: 50px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+  }
+  .nav_bar nav ul li a{
+    font-size: 35px;
+  }
+  .menu {
+    display: block;
+    cursor: pointer;
+  }
+  .cart-logo img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+  .menu img{
+    width: 70px;
+    height: 70px;
+  }
+  .nav_bar {
+    height: 120px;
+  }
+}
+@media only screen and (device-width: 768px) {
+/* default iPad screens */
+
+}
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+/* For portrait layouts only */
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+/* For landscape layouts only */
+}
+
+/* @media only screen and (min-width: 500px) {
+  .nav_bar nav ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    overflow: hidden;
+  }
+  .nav_bar nav ul li {
+    display: block;
+    margin-right: 50px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+  }
+  .nav_bar nav ul li a{
+    font-size: 25px;
+  }
+  .menu {
+    display: block;
+    cursor: pointer;
+  }
+  .nav_bar {
+    height: 100px;
+    
+  }
+}
+ */

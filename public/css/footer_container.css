@@ -1,75 +1,146 @@
 footer {
-  margin-top: 70px;
-  text-decoration: none;
-  font-size: 14px;
-  line-height: 1.5;
-  background: #1f1f1f;
-  color: #8a8a8a;
-  text-align: center;
-  padding: 10px 10px;
+margin-top: 70px;
+text-decoration: none;
+font-size: 14px;
+line-height: 1.5;
+background: #1f1f1f;
+color: #8a8a8a;
+text-align: center;
+/*   padding: 10px 10px; */
+border: 1px solid white;
 }
 .footer-col-1 {
-  width: 20%;
+width: 20%;
+margin-top: 20px;
+/*   border: 1px solid white; */
 }
 .footer-col-2 {
-  width: 15%;
+width: 15%;
+/*   border: 1px solid white; */
+margin-top: 10px;
 }
 .footer-col-3 {
-  width: 25%;
+width: 25%;
 }
 .footer-col-4 {
-  width: 15%;
-  text-align: left;
-  padding-left: 50px;
+width: 15%;
+text-align: left;
+padding-left: 50px;
+margin-top: 5px;
 }
 .footer-col-5 {
-  width: 25%;
-  position: relative;
-  display: inline-block;
+width: 25%;
+margin-top: 40px;
+/*   position: relative; */
+/*   display: inline-block; */
+/*   border: 1px solid white; */
 }
 footer h3 {
-  color: white;
-  margin-bottom: 20px;
-  margin-top: 10px;
+color: white;
+margin-bottom: 20px;
+margin-top: 10px;
 }
 .footer-col-5 img {
-  width: 125px;
-  cursor: pointer;
-  border-radius: 5px;
+width: 125px;
+cursor: pointer;
+border-radius: 5px;
+/*   top: 0px; */
 }
-.first_img {
-      position:absolute;
-      transition: 0.5s all;
+/* .first_img {
+position:absolute;
+transition: 0.5s all;
 }
 .second_img {
-      position:absolute;
-      z-index: 0;
-}
-.first-img:hover {
-     opacity: 0;
+position:absolute;
+z-index: 0;
+} */
+.footer-col-5 img :hover {
+opacity: 0;
 }
 footer p {
-  margin: 5px;
+margin: 5px;
 }
 hr {
-  border: none;
-  background: #b5b5b5;
-  height: 1px;
-  margin: 20px 0;
+border: none;
+background: #b5b5b5;
+height: 1px;
+margin: 20px 0;
 }
 .footer-col-3 img {
-  margin: 60px auto 0;
+margin: 60px auto 0;
 }
 footer a{
-  text-decoration: none;
-  color: #8a8a8a;
+text-decoration: none;
+color: #8a8a8a;
 }
 footer ul li {
-  transition: 0.5s transform;
+transition: 0.5s transform;
 }
 footer ul li:hover {
-  transform: translateX(10px);
+transform: translateX(10px);
 }
 footer a:hover {
-  color: white;
+color: white;
+}
+@media only screen and (min-width: 960px) {
+/* styles for browsers larger than 960px; */
+  
+}
+@media only screen and (min-width: 1440px) {
+/* styles for browsers larger than 1440px; */
+}
+@media only screen and (min-width: 2000px) {
+/* for sumo sized (mac) screens */
+}
+@media only screen and (max-device-width: 480px) {
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+  .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4, .footer-col-5 {
+flex-basis: 100%;
+text-align: center;
+margin: 30px auto;
+}
+.footer-col-4 ul li a{
+margin-right: px;
+}
+.footer-col-4 ul li i {
+margin-right: 20px;
+}
+.footer-col-5 img {
+width: 200px;
+}
+}
+@media only screen and (device-width: 768px) {
+/* default iPad screens */
+  .footer-col-1 {
+flex-basis: 50%;
+text-align: center;
+margin-top: 50px;
+}
+.footer-col-2 {
+  flex-basis: 50%;
+  margin-top: 40px;
+}
+.footer-col-3 {
+  flex-basis: 100%;
+}
+.footer-col-4 {
+  flex-basis: 50%;
+  margin-bottom: 30px;
+}
+.footer-col-4 ul li i {
+margin-right: 20px;
+}
+.footer-col-5 {
+  margin-top: 50px;
+}
+.footer-col-5 img {
+width: 200px;
+}
+}
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+/* For portrait layouts only */
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+/* For landscape layouts only */
 }

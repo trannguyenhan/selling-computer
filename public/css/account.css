@@ -42,10 +42,10 @@ h3 {
 	color: #777;
 }
 .container form {
-	width: 280px;
+	width: 78%;
 	position: absolute;
-	top: 100px;
-	left: 40px;
+	top: 25%;
+	left: 12%;
 	transition: 0.5s;
 }
 form input {
@@ -66,7 +66,7 @@ form input {
 	text-align: center;
 }
 form button {
-	width: 110px;
+	width: 40%;
 	height: 35px;
 	margin: 0 10px;
 	background: linear-gradient(to right, #ff105f, #ffad06);
@@ -83,7 +83,7 @@ form button {
 	left: 450px;
 }
 .step-row {
-	width: 360px;
+	width: 100%;
 	height: 40px;
 	margin: 0 auto;
 	display: flex;
@@ -114,4 +114,32 @@ form button {
 	right: -20px;
 	top: 0;
 	border-left: 20px solid #ffad06;
+}
+@media only screen and (min-width: 960px) {
+/* styles for browsers larger than 960px; */
+  
+}
+@media only screen and (min-width: 1440px) {
+/* styles for browsers larger than 1440px; */
+}
+@media only screen and (min-width: 2000px) {
+/* for sumo sized (mac) screens */
+}
+@media only screen and (max-device-width: 480px) {
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+	.container {
+		width: 300px;
+	  height: 380px;
+	}
+}
+@media only screen and (device-width: 768px) {
+/* default iPad screens */
+
+}
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+/* For portrait layouts only */
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+/* For landscape layouts only */
 }

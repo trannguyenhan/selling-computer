@@ -97,7 +97,7 @@ body {
 	cursor: pointer;
 	position: absolute;
 	bottom: 10px;
-	left: 150px;
+	left: 10%;
 }
 .contact_container button:hover {
 	background: linear-gradient(to right, #fff,#33F771);
@@ -117,4 +117,88 @@ body {
 }
 .contact_container a:hover {
 	color: blue;
+}
+@media only screen and (min-width: 960px) {
+/* styles for browsers larger than 960px; */
+  
+}
+@media only screen and (min-width: 1440px) {
+/* styles for browsers larger than 1440px; */
+}
+@media only screen and (min-width: 2000px) {
+/* for sumo sized (mac) screens */
+	
+}
+@media only screen and (max-device-width: 480px) {
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+	body {
+		background-size: cover;
+	}
+  .contact_container {
+		width: 95%;
+		height: 100%;
+		margin-top: 10px;
+		padding: 50px 0;
+	}
+	.contact_container .col-2 {
+		width: 90%;
+	}
+	.contact_container button {
+		left: 35%;
+	}
+
+}
+@media only screen and (device-width: 768px) {
+/* default iPad screens */
+	body {
+		background-size: cover;
+	}
+  .contact_container {
+		width: 95%;
+		height: 100%;
+		margin-top: 10px;
+		padding: 50px 0;
+	}
+	.contact_container .col-2 {
+		width: 90%;
+	}
+	.contact_container button {
+		left: 43%;
+	}
+	.contact_container .rectangle {
+		width: 97%;
+		margin-left: 20px;
+	}
+}
+@media only screen and (device-width: 834px) {
+/* default iPad screens */
+	body {
+		background-size: cover;
+	}
+  .contact_container {
+		width: 95%;
+		height: 100%;
+		margin-top: 10px;
+		padding: 50px 0;
+	}
+	.contact_container .col-2 {
+		width: 90%;
+		padding-left: 40px;
+	}
+	.contact_container button {
+		left: 43%;
+	}
+	.contact_container .rectangle {
+		width: 95%;
+	}
+	.contact_container .col-2 {
+		text-align: left;
+	}
+}
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+/* For portrait layouts only */
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+/* For landscape layouts only */
 }
