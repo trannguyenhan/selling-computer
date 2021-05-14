@@ -1,13 +1,14 @@
+<?php
+		global $path_project;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/about.css" type="text/css">
-	<link rel="stylesheet" href="css/footer_container.css" type="text/css">
-	<link rel="stylesheet" href="css/nav_bar.css" type="text/css">
+	<link rel="stylesheet" href=<?php echo "/" . $path_project . "/" . "public/css/about.css"?> type="text/css">
+	<link rel="stylesheet" href=<?php echo "/" . $path_project . "/" . "public/css/footer_container.css" ?> type="text/css">
+	<link rel="stylesheet" href=<?php echo "/" . $path_project . "/" . "public/css/nav_bar.css" ?> type="text/css">
 	<title>Product Detail | MTHH</title>
 </head>
 <body>

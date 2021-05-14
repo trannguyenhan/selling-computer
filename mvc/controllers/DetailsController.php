@@ -1,15 +1,15 @@
 <?php
 require_once ROOT . DS . 'mvc' . DS . 'controllers' . DS . 'Controller.php';
 
-class ProductController implements Controller {
+class DetailsController implements Controller {
 		private $id; 					// int
 
-		public function __construct($id){
-				$this->id = $id;
-		}
+		// public function __construct($id){
+		// 		$this->id = $id;
+		// }
 
 		public function __render(){
-        self::view($this->id);
+        self::view(10002);
     }
 
     public function view($product_id) {
@@ -36,6 +36,6 @@ class ProductController implements Controller {
         }
 
 				$product = $service->get($product_id);
-				include ROOT . DS . 'mvc' . DS . 'views' . DS . 'product.php';
+				include ROOT . DS . 'mvc' . DS . 'views' . DS . 'details.php';
     }
 }

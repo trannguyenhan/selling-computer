@@ -1,9 +1,11 @@
 <?php
 
+$path_project = 'selling-computer';
+
 define('DS', DIRECTORY_SEPARATOR);
-define('ROOT', $_SERVER['DOCUMENT_ROOT'] . DS . 'selling-computer');
+define('ROOT', $_SERVER['DOCUMENT_ROOT'] . DS . $path_project);
+
 require_once ROOT . DS . 'mvc' . DS . 'controllers' . DS . 'RouteController.php';
-// chua hieu doan nay
 $url = isset($_GET["url"]) ? $_GET["url"] : "/";
 
 $route = new RouteController($url);

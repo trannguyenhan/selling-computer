@@ -22,7 +22,7 @@ class RouteController {
         $controller = $urlArray[0]; array_shift($urlArray);
         $id = -1;
 
-        if(strcmp($controller, "product") == 0){
+        if(strcmp($controller, "details") == 0){
             $id = intval($urlArray[0]); array_shift($urlArray);
         }
 
@@ -33,7 +33,7 @@ class RouteController {
         if($id == -1){
             $this->_dispath = new $controller();
         } else {
-            $this->_dispath = new $controller($id);
+            $this->_dispath = new $controller();
         }
 
     }

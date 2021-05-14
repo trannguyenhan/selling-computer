@@ -1,3 +1,6 @@
+<?php
+		global $path_project;
+?>
 <footer>
 	<div class="footer_container">
 		<div class="row">
@@ -8,8 +11,8 @@
 				</p>
 				<a href="mailto:buiviethoang12062000@gmail.com">contact@mthh.com</a>
 				<p>
-				
-				
+
+
 				<address>1 Dai Co Viet, Hai Ba Trung, Ha Noi</address>
 				</p>
 				<a href="">Specific In4</a>
@@ -46,11 +49,11 @@
 			<div class="footer-col-5">
 				<h3>Our Apps</h3>
 				<p>Download our iOS app</p>
-				<img src="images/logo/app-store.png" class="first_img"> <img
-					src="images/logo/app-store2.png" class="second-img">
+				<img src=<?php echo "/" . $path_project . "/" . "images/logo/app-store.png" ?> class="first_img"> <img
+					src=<?php echo "/" . $path_project . "/" . "images/logo/app-store2.png" ?> class="second-img">
 				<p>Download our Android app</p>
-				<img src="images/logo/play-store.png" class="first_img"> <img
-					src="images/logo/play-store2.png" class="second-img">
+				<img src=<?php echo "/" . $path_project . "/" . "images/logo/play-store.png" ?> class="first_img"> <img
+					src=<?php echo "/" . $path_project . "/" . "images/logo/play-store2.png" ?> class="second-img">
 			</div>
 		</div>
 	</div>

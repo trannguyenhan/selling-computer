@@ -1,5 +1,5 @@
 <?php
-
+		global $path_project;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,9 +7,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="public/css/nav_bar.css">
-	<link rel="stylesheet" href="public/css/footer_container.css">
-	<link rel="stylesheet" type="text/css" href="public/css/contact.css" >
+	<link rel="stylesheet" href=<?php echo "/" . $path_project . "/" . "public/css/nav_bar.css" ?>>
+	<link rel="stylesheet" href=<?php echo "/" . $path_project . "/" . "public/css/footer_container.css" ?>>
+	<link rel="stylesheet" type="text/css" href=<?php echo "/" . $path_project . "/" . "public/css/contact.css" ?>>
 	<title>Contact | MTHH</title>
 </head>
 <body>

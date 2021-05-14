@@ -1,5 +1,6 @@
 <?php
     require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php';
+    global $path_project;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,9 +8,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="public/css/home.css" type="text/css">
-	<link rel="stylesheet" href="public/css/footer_container.css" type="text/css">
-	<link rel="stylesheet" href="public/css/nav_bar.css">
+	<link rel="stylesheet" href=<?php echo "/" . $path_project . "/" . "public/css/home.css"?> type="text/css">
+	<link rel="stylesheet" href=<?php echo "/" . $path_project . "/" . "public/css/footer_container.css"?> type="text/css">
+	<link rel="stylesheet" href=<?php echo "/" . $path_project . "/" . "public/css/nav_bar.css"?>>
 	<title>Home | MTHH</title>
 </head>
 <body>
@@ -77,7 +78,7 @@
 			        $cnt++;
 			?>
 				<div class="col-3">
-					<a href="<?php echo "product/" . $laptop->getProductID() . "/" . $path ?>"><img src=<?php echo "\"" . $laptop->getImage() . "\"" ?> ></a>
+					<a href="<?php echo "details/" . $laptop->getProductID() . "/" . $path ?>"><img src=<?php echo "\"" . $laptop->getImage() . "\"" ?> ></a>
 					<h3></h3>
 					<div class="rating">
 						<i class="fa fa-star"></i>
@@ -109,7 +110,7 @@
 		</div>
 	</div>
 	<div class="advertising">
-		<img src="images/background/discount.jpg">
+		<img src=<?php echo "/" . $path_project . "/" . "images/background/discount.jpg"?>>
 	</div>
 	<div class="brands">
 		<div class="small-container">
