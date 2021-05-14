@@ -1,6 +1,4 @@
-<?php
-		global $path_project;
-?>
+<?php ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href=<?php echo "/" . $path_project . "/" . "public/css/about.css" ?> type="text/css">
-	<link rel="stylesheet" href=<?php echo "/" . $path_project . "/" . "public/css/footer_container.css" ?> type="text/css">
-	<link rel="stylesheet" href=<?php echo "/" . $path_project . "/" . "public/css/nav_bar.css" ?> type="text/css">
+	<link rel="stylesheet" href="public/css/about.css" type="text/css">
+	<link rel="stylesheet" href="public/css/footer_container.css" type="text/css">
+	<link rel="stylesheet" href="public/css/nav_bar.css" type="text/css">
 	<title>About | MTHH</title>
 
 </head>
@@ -33,12 +31,12 @@
 			<h4>Chúng tôi quan tâm tới từng chi tiết</h4>
 			<p>Những chi tiết dù là nhỏ nhất chún tôi cũng luôn luôn không bỏ qua để mang lại cho bạn trải nghiệm tốt hơn mỗi ngày. </p>
 			<br><br>
-			<img src=<?php echo "/" . $path_project . "/" . "images/about/about1.jpg" ?>>
+			<img src="images/about/about1.jpg">
 		</div>
 		<div class="col-2">
-			<img src=<?php echo "/" . $path_project . "/" . "images/about/about2.jpg" ?>>
+			<img src="images/about/about2.jpg">
 			<br>
-			<img src=<?php echo "/" . $path_project . "/" . "images/about/about3.jpg" ?> id = 'small'>
+			<img src="images/about/about3.jpg" id = 'small'>
 		</div>
 	</div>
 </div>
