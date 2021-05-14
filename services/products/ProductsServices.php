@@ -8,7 +8,7 @@ class ProductsServices extends  MySqlConnect {
      * The method support insert data to database
      * @param Products $product
      */
-    public function insert($product) { 
+    public function insert($product) {
         // add to products table
         $query = "insert into products(product_id, model, image, price, weigh, color, number_of_product, supplier, p_description)
                     value (" .
@@ -22,11 +22,11 @@ class ProductsServices extends  MySqlConnect {
                     "'" . $product->getSupplier() . "' ," .
                     "'" . $product->getDescription() . "'"
                         . ")";
-        
+
         parent::addQuerry($query);
         parent::updateQuery();
     }
-    
+
     /**
      * The method support delete row in database
      * @param int $product_id
@@ -37,44 +37,44 @@ class ProductsServices extends  MySqlConnect {
                   where product_id = " . $product_id;
         parent::addQuerry($query);
         parent::updateQuery();
-        
+
         // next, delete row with product_id in evalute table
         $query = "delete from evaluate
                   where product_id = " . $product_id;
         parent::addQuerry($query);
         parent::updateQuery();
-        
+
         // next, delete row with product_id in computer_mouse_products table
         $query = "delete from computer_mouse_products
                   where product_id = " . $product_id;
         parent::addQuerry($query);
         parent::updateQuery();
-        
+
         // next, delete row with product_id in laptop table
         $query = "delete from laptop
                   where product_id = " . $product_id;
         parent::addQuerry($query);
         parent::updateQuery();
-        
+
         // next, delete row with product_id in cart_products table
         $query = "delete from cart_products
                   where product_id = " . $product_id;
         parent::addQuerry($query);
         parent::updateQuery();
-        
+
         // next, delete row with product_id in computer_products table
         $query = "delete from computer_products
                   where product_id = " . $product_id;
         parent::addQuerry($query);
         parent::updateQuery();
-        
+
         // next, delete row with product_id in products table
         $query = "delete from products
                   where product_id = " . $product_id;
         parent::addQuerry($query);
         parent::updateQuery();
     }
-    
+
     /**
      * The method update data to database
      * @param Products $product
@@ -99,3 +99,7 @@ class ProductsServices extends  MySqlConnect {
 
 }
 
+// $products = new ProductsServices().getAll();
+// for($products as $product){
+//   echo $products;
+// }

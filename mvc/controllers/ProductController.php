@@ -1,9 +1,15 @@
 <?php
-require ROOT . DS . 'mvc' . DS . 'controllers' . DS . 'Controller.php';
+require_once ROOT . DS . 'mvc' . DS . 'controllers' . DS . 'Controller.php';
 
 class ProductController implements Controller {
-	public function __render(){
-        require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'product.php';
+		private $id; 					// int
+
+		public function __construct($id){
+				$this->id = $id;
+		}
+
+		public function __render(){
+        self::view($this->id);
     }
 
     public function view($product_id) {
@@ -15,27 +21,21 @@ class ProductController implements Controller {
         require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Laptop.php';
         require_once ROOT . DS . 'mvc' . DS . 'models'.  DS . 'products' . DS . 'PC.php';
         require_once ROOT . DS . 'mvc' . DS . 'models'.  DS . 'products' . DS . 'ComputerMouseProducts.php';
-        
+
         $check = TypeProductsServices::checkType($product_id);
-        
+				$service = new PCServices();
+
         if($check == Type::PC) {
-            $product = new PC();
             $service = new PCServices();
-            $product = $service->get($product_id);
-            require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'product.php';
         }
-        elseif($check == Type::Laptop) {
-            $product = new Laptop();
+        elseif($check == Type::LAPTOP) {
             $service = new LaptopServices();
-            $product = $service->get($product_id);
-            require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'product.php';
         }
         else {
-            $product = new ComputerMouseProducts();
             $service = new ComputerMouseProductsServices();
-            $product = $service->get($product_id);
-            require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'product.php';
         }
-        
+
+				$product = $service->get($product_id);
+				include ROOT . DS . 'mvc' . DS . 'views' . DS . 'product.php';
     }
 }

@@ -1,6 +1,6 @@
 <div class="nav_bar">
 	<div class="logo">
-		<img src="https://i0.wp.com/s1.uphinh.org/2021/04/25/Untitled-Design-3.png" width="125px">
+		<a href="home"><img src="https://i0.wp.com/s1.uphinh.org/2021/04/25/Untitled-Design-3.png" width="125px"></a>
 	</div>
 	<nav>
 		<ul>

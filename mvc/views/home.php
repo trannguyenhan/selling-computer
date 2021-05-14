@@ -15,23 +15,33 @@
 <body>
 	<!-- includes nav bar -->
 	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
+  <div class="slideshow-container">
+  	<div class="slides" id="home">
+  		<div class="row">
+  			<div class="col-2">
+  				<h1>Tìm kiếm những mẫu máy tính mới nhất của chúng tôi!</h1><br>
+  				<q>Khai thông sức mạnh, dẫn đâu xu hướng</q><br>
+  				<a href="products" class = "btn">Khám phá ngay&#8594;</a>
+  			</div>
+  			<div class="col-2">
+  				<img src="https://i0.wp.com/s1.uphinh.org/2021/04/25/zapmaster_serviceability_01_tcm2649_2908010_tcm2649_2908098_tcm2649-2908010.png">
+  			</div>
+  		</div>
+  	</div>
+  	<div class="slides" id="collection">
+  		<!-- <h1 class = "title">Ưu đãi lớn khi mua hàng tại MTHH</h1> -->
+  		<img src="https://lumen.thinkpro.vn//backend/uploads/baiviet/2021/4/9/microsoft365_thumb.jpg">
+  	</div>
+    <br />
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <!-- <span class="dot"></span> -->
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
 
-	<div class="home">
-		<div class="row">
-			<div class="col-2">
-				<h1>Tìm kiếm những mẫu máy tính mới nhất của chúng tôi!</h1><br>
-				<q>Khai thông sức mạnh, dẫn đâu xu hướng</q><br>
-				<a href="" class = "btn">Khám phá ngay&#8594;</a>
-			</div>
-			<div class="col-2">
-				<img src="https://i0.wp.com/s1.uphinh.org/2021/04/25/zapmaster_serviceability_01_tcm2649_2908010_tcm2649_2908098_tcm2649-2908010.png">
-			</div>
-		</div>
-	</div>
-	<div class="collection">
-		<h1 class = "title">Ưu đãi lớn khi mua hàng tại MTHH</h1>
-		<img src="https://lumen.thinkpro.vn//backend/uploads/baiviet/2021/4/9/microsoft365_thumb.jpg">
-	</div>
 	<div class="categories">
 		<div class="small-container">
 			<h1 class = "title">Danh mục sản phẩm</h1>
@@ -55,17 +65,19 @@
 		<div class="small-container">
 			<h1 class = "title">Sản phẩm mới nhất</h1>
 			<div class="row">
-			
+
 			<!-- insert new products -->
 			<?php $service = new LaptopServices();
 			      $listLaptop = $service->getAll();
-			      
+
 			      $cnt = 0;
 			      foreach ($listLaptop as $laptop){
-			         $cnt++;
+              $path = $laptop->getModel();
+              $path = str_replace(' ', '-', $path);
+			        $cnt++;
 			?>
 				<div class="col-3">
-					<img src=<?php echo "\"" . $laptop->getImage() . "\"" ?> >
+					<a href="<?php echo "product/" . $laptop->getProductID() . "/" . $path ?>"><img src=<?php echo "\"" . $laptop->getImage() . "\"" ?> ></a>
 					<h3></h3>
 					<div class="rating">
 						<i class="fa fa-star"></i>
@@ -75,7 +87,7 @@
 					</div>
 					<p><?php echo $laptop->getPrice() . " VNĐ" ?></p>
 				</div>
-			<?php 
+			<?php
 			         if($cnt > 2) break;
 			      }
 			?>
@@ -127,4 +139,52 @@
 			</div>
 		</div>
 	</div>
-	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>
+  <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      // function showSlides(){
+      //   let slides = document.getElementsByClassName("slides");
+      //   let dots = document.getElementsByClassName("dot");
+      //   for (i = 0; i < slides.length; i++) {
+      //     slides[i].style.display = "none";
+      //   }
+      //   // slide1.style.display = "none";
+      //   // slide2.style.display = "none";
+      //   slideIndex++;
+      //
+      //   if (slideIndex > slides.length) {slideIndex = 1}
+      //
+      //   for (i = 0; i < dots.length; i++) {
+      //     dots[i].className = dots[i].className.replace(" active", "");
+      //   }
+      //   slides[slideIndex-1].style.display = "block";
+      //   dots[slideIndex-1].className += " active";
+      //   setTimeout(showSlides, 5000); // Change image every 2 seconds
+      // }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+      }
+  </script>
+  <?php //require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>

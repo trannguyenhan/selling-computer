@@ -1,3 +1,8 @@
+body {
+  width : 80%;
+  margin: auto;
+}
+
 footer {
 margin-top: 70px;
 text-decoration: none;
@@ -84,7 +89,7 @@ color: white;
 }
 @media only screen and (min-width: 960px) {
 /* styles for browsers larger than 960px; */
-  
+
 }
 @media only screen and (min-width: 1440px) {
 /* styles for browsers larger than 1440px; */

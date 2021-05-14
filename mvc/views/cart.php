@@ -21,63 +21,39 @@
 				<th>Quantity</th>
 				<th>Subtotal</th>
 			</tr>
+			<?php
+				require_once ROOT . DS . 'services' . DS . 'GuestServices.php';
+				$service = new GuestServices();
+				$listProducts = $service->getListCartProducts("huy0628");
+
+				foreach ($listProducts as $product){
+			?>
 			<tr>
 				<td>
 					<div class="cart-info">
-						<img src="">
+						<img src="<?php echo $product->getImage() ?>">
 						<div>
-							<p>Hoodie</p>
+							<p><?php echo $product->getModel() ?></p>
 
-							<small>Price: 500000đ</small>
+							<small>Price: <?php echo $product->getPrice() ?> VNĐ</small>
 							<br>
 							<a href="cart">Remove</a>
 						</div>
 
 					</div>
 				</td>
-				<td><input type="number" name="" value="300"></td>
-				<td><del>700000đ</del>500000đ</td>
+				<td><input type="number" name="" value="1"></td>
+				<td><del><?php echo $product->getPrice() ?></del><?php echo $product->getPrice() * 0.98 ?></td>
 			</tr>
-			<tr>
-				<td>
-					<div class="cart-info">
-						<img src="">
-						<div>
-							<p>Hoodie</p>
-
-							<small>Price: 500000đ</small>
-							<br>
-							<a href="cart">Remove</a>
-						</div>
-
-					</div>
-				</td>
-				<td><input type="number" name="" value="300"></td>
-				<td><del>700000đ</del>500000đ</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="cart-info">
-						<img src="">
-						<div>
-							<p>Hoodie</p>
-
-							<small>Price: 500000đ</small>
-							<br>
-							<a href="cart">Remove</a>
-						</div>
-
-					</div>
-				</td>
-				<td><input type="number" name="" value="300"></td>
-				<td><del>700000đ</del>500000đ</td>
-			</tr>
+			<?php
+				}
+			?>
 		</table>
 		<div class="total-price">
 			<table>
 				<tr>
 					<td>Subtotal</td>
-					<td>500000đ</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>Tax</td>
@@ -92,4 +68,4 @@
 		<a href="#" class = 'btn'>Confirm order</a>
 	</div>
 	</div>
-<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>
+<?php //require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>

@@ -1,5 +1,5 @@
-<?php 
-	
+<?php
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@
 <body>
 	<!-- includes nav bar -->
 	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
-		
+
 	<div class="container">
 		<form id = "form1">
 			<h3>CREATE ACCOUNT</h3>
@@ -89,4 +89,4 @@
 			Progress.style.width = "240px";
 		}
 	</script>
-	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>
+	<?php //require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>

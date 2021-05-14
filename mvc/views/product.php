@@ -1,23 +1,13 @@
-<?php
-	require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Type.php';
-    require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php';
-    require_once ROOT . DS . 'services' . DS . 'products' . DS . 'PCServices.php';
-    require_once ROOT . DS . 'services' . DS . 'products' . DS . 'ComputerMouseProductsServices.php';
-	require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Laptop.php';
-	require_once ROOT . DS . 'mvc' . DS . 'models'.  DS . 'products' . DS . 'PC.php';
-	require_once ROOT . DS . 'mvc' . DS . 'models'.  DS . 'products' . DS . 'ComputerMouseProducts.php';
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" href="public/css/about.css" type="text/css">
-	<link rel="stylesheet" href="public/css/footer_container.css" type="text/css">
-	<link rel="stylesheet" href="public/css/nav_bar.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/about.css" type="text/css">
+	<link rel="stylesheet" href="css/footer_container.css" type="text/css">
+	<link rel="stylesheet" href="css/nav_bar.css" type="text/css">
 	<title>Product Detail | MTHH</title>
 </head>
 <body>
@@ -26,38 +16,46 @@
 <div>Thông tin sản phẩm</div>
 <?php
 	require_once ROOT . DS . 'services' . DS . 'TypeProductsServices.php';
-	
-	print "	<div>Hình ảnh: $product->getImage()</div>
-			<div>Giá bán: $product->getPrice()</div>
-			<div>Cân nặng: $product->getWeigh()</div>
-			<div>Màu sắc: $product->getColor()</div>
-			<div>Thương hiệu: $product->getSupplier()</div>
-			<div>Mô tả sản phẩm: $product->getDescription()</div>";
+?>
+	<div>Hình ảnh: <?php echo $product->getImage() ?></div>
+	<div>Giá bán: <?php echo $product->getPrice() ?></div>
+	<div>Cân nặng: <?php echo $product->getWeigh() ?></div>
+	<div>Màu sắc: <?php echo $product->getColor() ?></div>
+	<div>Thương hiệu: <?php echo $product->getSupplier() ?></div>
+	<div>Mô tả sản phẩm: <?php echo $product->getDescription() ?></div>
 
+	<?php
 	$check = TypeProductsServices::checkType($product->getProductID());
 
-	if($check == Type::PC || $check == Type::Laptop) {
-		print "	<div>CPU: $product->getCPU()</div>
-				<div>RAM: $product->getRAM()</div>
-				<div>Bộ nhớ: $product->getRAM()</div>
-				<div>Màn hình: $product->getScreen()</div>
-				<div>Card đồ họa: $product->getCard()</div>
-				<div>Kết nối chính: $product->getMainConnection()</div>
-				<div>Hệ điều hành: $product->getOS()</div>";
-		
+	if($check == Type::PC || $check == Type::LAPTOP) {
+	?>
+			<div>CPU: <?php echo $product->getCPU() ?></div>
+			<div>RAM: <?php echo $product->getRAM() ?></div>
+			<div>Bộ nhớ: <?php echo $product->getRAM() ?></div>
+			<div>Màn hình: <?php echo $product->getScreen() ?></div>
+			<div>Card đồ họa: <?php echo $product->getCard() ?></div>
+			<div>Kết nối chính: <?php echo $product->getMainConnection() ?></div>
+			<div>Hệ điều hành: <?php echo $product->getOS() ?></div>
+		<?php
 		if($check == Type::PC) {
-			print "<div>Case: $product->getCase()>/div>";
+		?>
+			<div>Case: <?php echo $product->getCase()?></div>
+		<?php
 		}
 		else {
-			print "<div>Pin: $product->getBattery()</div>";
+		?>
+			<div>Pin: <?php echo $product->getBattery()?></div>
+		<?php
 		}
 	}
 	else {
-		print "	<div>Kết nối tiêu chuẩn: $product->getStandardConnection()</div>
-				<div>Giao thức kết nối: $product->getConnectionProtocon()</div>
-				<div>Có led: $product->getIsLed()</div>
-				<div>Kích cỡ: $product->getSize()</div>";
+	?>
+			<div>Kết nối tiêu chuẩn: <?php echo $product->getStandardConnection() ?></div>
+			<div>Giao thức kết nối: <?php echo $product->getConnectionProtocon() ?></div>
+			<div>Có led: <?php echo $product->getIsLed() ?></div>
+			<div>Kích cỡ: <?php echo $product->getSize() ?></div>
+	<?php
 	}
-	
+
 ?>
-<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>
+<?php //require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>

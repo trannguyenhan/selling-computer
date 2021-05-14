@@ -12,4 +12,4 @@ $route->show();
 /**
  * Footer includes infomation about group, contact and other
  */
-// include ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php';
+include ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php';

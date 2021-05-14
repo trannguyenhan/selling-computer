@@ -1,5 +1,5 @@
 <?php
-	
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,4 +40,4 @@
 			</div>
 		</div>
 	</div>
-	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>
+	<?php //require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>

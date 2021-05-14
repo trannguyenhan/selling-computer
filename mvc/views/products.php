@@ -20,15 +20,14 @@
 	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
 <div class="all-product">
 	<div class="title" >
-		<h2>Related Items</h2>
+		<h2>Máy tính xách tay</h2>
 	</div>
 		<div class="row">
 			<?php $service = new LaptopServices();
 			      $listLaptop = $service->getAll();
-			      
 			      $cnt = 0;
 			      foreach ($listLaptop as $laptop){
-			         $cnt++;
+			        $cnt++;
 			?>
 				<div class="col-4">
 					<div class="product-grid">
@@ -44,56 +43,56 @@
 							</ul>
 						</div>
 						<div class="product-content">
-							 
+
 							<p><?php echo $laptop->getPrice() . " VNĐ"; ?><sup color='red';>đ</sup></p>
 						</div>
 					</div>
 				</div>
 				<?php } ?>
+		</div>
+		<div class="related-items">
+			<div class="title">
+				<h2>Máy tính để bàn</h2>
 			</div>
-			<div class="related-items">
-				<div class="title">
-					<h2>Related Items</h2>
-				</div>
-				<div class="row">
-			<?php $service = new LaptopServices();
-			      $listLaptop = $service->getAll();
-			      
-			      $cnt = 0;
-			      foreach ($listLaptop as $laptop){
-			         $cnt++;
-			?>
-				<div class="col-4">
-					<div class="product-grid">
-						<div class="product-image">
-							<img src=<?php echo "\"" . $laptop->getImage() . "\"" ?> >
-							<span class="product-trend-label">TRENDING</span>
-							<span class="product-discount-label">50%</span>
-							<ul class="social">
-								<li><a href="<?php;?>" data-toggle="tooltip" data-placement="top" title="Add to cart"><i class = "fa fa-shopping-cart" onclick="cart_change()"></i></a></li>
-								<li><a href="#" data-toggle="tooltip" data-placement="top" title="Wish List"><i class = "fa fa-heart"></i></a></li>
-								<li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class = "fa fa-random"></i></a></li>
-								<li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class = "fa fa-search"></i></a></li>
-							</ul>
-						</div>
-						<div class="product-content">
-							
-							<p><?php echo $laptop->getPrice() . " VNĐ"; ?><sup color='red';>đ</sup></p>
-						</div>
+			<div class="row">
+		<?php $service = new PCServices();
+		      $listPC = $service->getAll();
+
+		      $cnt = 0;
+		      foreach ($listPC as $pc){
+		        $cnt++;
+		?>
+			<div class="col-4">
+				<div class="product-grid">
+					<div class="product-image">
+						<img src=<?php echo "\"" . $pc->getImage() . "\"" ?> >
+						<span class="product-trend-label">TRENDING</span>
+						<span class="product-discount-label">50%</span>
+						<ul class="social">
+							<li><a href="<?php;?>" data-toggle="tooltip" data-placement="top" title="Add to cart"><i class = "fa fa-shopping-cart" onclick="cart_change()"></i></a></li>
+							<li><a href="#" data-toggle="tooltip" data-placement="top" title="Wish List"><i class = "fa fa-heart"></i></a></li>
+							<li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class = "fa fa-random"></i></a></li>
+							<li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class = "fa fa-search"></i></a></li>
+						</ul>
+					</div>
+					<div class="product-content">
+
+						<p><?php echo $pc->getPrice() . " VNĐ"; ?><sup color='red';>đ</sup></p>
 					</div>
 				</div>
-				<?php } ?>
 			</div>
-				</div>
-				<div class="next-pages">
-					<ul>
-						<li><a href="">1</a></li>
-						<li><a href="">2</a></li>
-						<li><a href="">3</a></li>
-						<li><a href="">4</a></li>
-						<a href=""><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-					</ul>
-				</div>
+			<?php } ?>
+		</div>
 			</div>
+			<div class="next-pages">
+				<ul>
+					<li><a href="">1</a></li>
+					<li><a href="">2</a></li>
+					<li><a href="">3</a></li>
+					<li><a href="">4</a></li>
+					<a href=""><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+				</ul>
+			</div>
+		</div>
 
 <?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
