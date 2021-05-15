@@ -4,12 +4,12 @@ require_once ROOT . DS . 'mvc' . DS . 'controllers' . DS . 'Controller.php';
 class DetailsController implements Controller {
 		private $id; 					// int
 
-		// public function __construct($id){
-		// 		$this->id = $id;
-		// }
+		public function __construct($id){
+				$this->id = $id;
+		}
 
 		public function __render(){
-        self::view(10002);
+        self::view($this->id);
     }
 
     public function view($product_id) {

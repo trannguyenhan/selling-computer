@@ -33,7 +33,7 @@ class RouteController {
         if($id == -1){
             $this->_dispath = new $controller();
         } else {
-            $this->_dispath = new $controller();
+            $this->_dispath = new $controller($id);
         }
 
     }

@@ -7,54 +7,59 @@
 	<link rel="stylesheet" href="../../public/css/about.css" type="text/css">
 	<link rel="stylesheet" href="../../public/css/footer_container.css" type="text/css">
 	<link rel="stylesheet" href="../../public/css/nav_bar.css" type="text/css">
+	<link rel="stylesheet" href="../../public/css/details.css" type="text/css">
 	<title>Product Detail | MTHH</title>
 </head>
 <body>
 <!-- includes nav bar -->
 <?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
-<div>Thông tin sản phẩm</div>
+<div class='title'><b>THÔNG TIN SẢN PHẨM</b></div>
 <?php
 	require_once ROOT . DS . 'services' . DS . 'TypeProductsServices.php';
 ?>
-	<div>Hình ảnh: <?php echo $product->getImage() ?></div>
-	<div>Giá bán: <?php echo $product->getPrice() ?></div>
-	<div>Cân nặng: <?php echo $product->getWeigh() ?></div>
-	<div>Màu sắc: <?php echo $product->getColor() ?></div>
-	<div>Thương hiệu: <?php echo $product->getSupplier() ?></div>
-	<div>Mô tả sản phẩm: <?php echo $product->getDescription() ?></div>
+	<div class='info'>
+		<img src=<?php echo $product->getImage() ?> ></img>
+		<div class='desc'>
+			<div class='name'><b><?php echo $product->getModel() ?></b></div>
+			<div><b>Giá bán</b>: <?php echo $product->getPrice() ?> đồng</div>
+			<div><b>Cân nặng</b>: <?php echo $product->getWeigh() ?> kg</div>
+			<div><b>Màu sắc</b>: <?php echo $product->getColor() ?></div>
+			<div><b>Thương hiệu</b>: <?php echo $product->getSupplier() ?></div>
+			<div><b>Mô tả sản phẩm</b>: <?php echo $product->getDescription() ?></div>
+	
+			<?php
+			$check = TypeProductsServices::checkType($product->getProductID());
 
-	<?php
-	$check = TypeProductsServices::checkType($product->getProductID());
-
-	if($check == Type::PC || $check == Type::LAPTOP) {
-	?>
-			<div>CPU: <?php echo $product->getCPU() ?></div>
-			<div>RAM: <?php echo $product->getRAM() ?></div>
-			<div>Bộ nhớ: <?php echo $product->getRAM() ?></div>
-			<div>Màn hình: <?php echo $product->getScreen() ?></div>
-			<div>Card đồ họa: <?php echo $product->getCard() ?></div>
-			<div>Kết nối chính: <?php echo $product->getMainConnection() ?></div>
-			<div>Hệ điều hành: <?php echo $product->getOS() ?></div>
-		<?php
-		if($check == Type::PC) {
+			if($check == Type::PC || $check == Type::LAPTOP) {
+			?>
+				<div><b>Vi xử lý</b>: <?php echo $product->getCPU() ?></div>
+				<div><b>Bộ nhớ RAM</b>: <?php echo $product->getRAM() ?></div>
+				<div><b>Bộ nhớ</b>: <?php echo $product->getStorage() ?> GB</div>
+				<div><b>Màn hình</b>: <?php echo $product->getScreen() ?></div>
+				<div><b>Card đồ họa</b>: <?php echo $product->getCard() ?></div>
+				<div><b>Kết nối chính</b>: <?php echo $product->getMainConnection() ?></div>
+				<div><b>Hệ điều hành</b>: <?php echo $product->getOS() ?></div>
+				<?php
+				if($check == Type::PC) {
+				?>
+					<div><b>Case</b>: <?php echo $product->getCase()?></div>
+				<?php
+				}
+				else {
+				?>
+					<div><b>Pin</b>: <?php echo $product->getBattery()?> Wh</div>
+				<?php
+				}
+			}
+			else {
+			?>
+				<div><b>Kết nối tiêu chuẩn</b>: <?php echo $product->getStandardConnection() ?></div>
+				<div><b>Giao thức kết nối</>: <?php echo $product->getConnectionProtocon() ?></div>
+				<div><b>Có led</b>: <?php echo $product->getIsLed() ?></div>
+				<div><b>Kích cỡ</b>: <?php echo $product->getSize() ?></div>
+			<?php
+			}
 		?>
-			<div>Case: <?php echo $product->getCase()?></div>
-		<?php
-		}
-		else {
-		?>
-			<div>Pin: <?php echo $product->getBattery()?></div>
-		<?php
-		}
-	}
-	else {
-	?>
-			<div>Kết nối tiêu chuẩn: <?php echo $product->getStandardConnection() ?></div>
-			<div>Giao thức kết nối: <?php echo $product->getConnectionProtocon() ?></div>
-			<div>Có led: <?php echo $product->getIsLed() ?></div>
-			<div>Kích cỡ: <?php echo $product->getSize() ?></div>
-	<?php
-	}
-
-?>
+		</div>
+	</div>
 <?php //require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'footer.php'; ?>

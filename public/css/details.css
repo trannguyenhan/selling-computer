@@ -1,0 +1,38 @@
+.title {
+    width: 100%;
+    height: 70px;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.info {
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+
+.info img {
+    height: 400px;
+    width: 60%;
+}
+
+.desc {
+    padding-left: 30px;
+    padding-top: 10px;
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.name {
+    width: 100%;
+    height: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+
+.desc div {
+    padding-top: 5px;
+}
