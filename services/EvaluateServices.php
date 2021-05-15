@@ -1,5 +1,7 @@
 <?php
-
+$path_project = 'selling-computer';
+define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', $_SERVER['DOCUMENT_ROOT'] . DS . $path_project);
 require_once ROOT . DS . 'services' . DS . 'MySqlConnect.php';
 require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'Evaluate.php';
 
@@ -21,31 +23,31 @@ class EvaluateServices extends MySqlConnect {
         parent::addQuerry($query);
         parent::updateQuery();
     }
-    
+
     /**
      * Return product have product_id = $product_id
      * @param int $product_id
-     * @return Evaluate
+     * @return array
      */
-    public function get($product_id){
+    public function getAll($product_id){
+        $listEvaluate = array();
         $query = "select * from evaluate
                     where product_id='" . $product_id . "'";
         parent::addQuerry($query);
         $result = parent::executeQuery();
-        
-        if($row = mysqli_fetch_array($result)){
+
+        while($row = mysqli_fetch_array($result)){
             $username = $row["user_name"];
             $productID = $row["product_id"];
             $star = $row["star"];
             $comment = $row["your_comment"];
             $date = $row["date_comment"];
-            
+
             $evaluate = new Evaluate($username, $productID, $star, $comment, $date);
-            return $evaluate;
+            array_push($listEvaluate, $evaluate);
         }
-        
-        return null;
+
+        return $listEvaluate;
     }
 
 }
-
