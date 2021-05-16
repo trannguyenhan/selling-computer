@@ -1,4 +1,11 @@
-<?php ?>
+<?php
+ob_start();
+session_start();
+
+if(!isset($_SESSION['username']) || $_SESSION['username'] == ''){
+		header("Location: login");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +30,7 @@
 			<?php
 				require_once ROOT . DS . 'services' . DS . 'GuestServices.php';
 				$service = new GuestServices();
-				$listProducts = $service->getListCartProducts("huy0628");
+				$listProducts = $service->getListCartProducts($_SESSION['username']);
 
 				foreach ($listProducts as $product){
 			?>

@@ -11,7 +11,7 @@
 			<li><a href=<?php echo "/" . $path_project . "/" . "about" ?>>Về chúng tôi</a></li>
 			<li><a href=<?php echo "/" . $path_project . "/" . "products" ?>>Sản phẩm</a></li>
 			<li><a href=<?php echo "/" . $path_project . "/" . "contact" ?>>Liên hệ</a></li>
-			<li><a href=<?php echo "/" . $path_project . "/" . "account" ?>>Tài khoản</a></li>
+			<li><a href=<?php echo "/" . $path_project . "/" . "login" ?>>Tài khoản</a></li>
 		</ul>
 	</nav>
 	<div class="cart-logo">

@@ -11,7 +11,8 @@ class RouteController {
     }
 
     function parsingURL() {
-        if(strcmp($this->_url, "/") == 0){ // call home page if path is '/'
+        // call home page if path is '/'
+        if(strcmp($this->_url, "/") == 0){
             require_once ROOT . DS . 'mvc' . DS . 'controllers' . DS . 'HomeController.php';
             $this->_dispath = new HomeController();
             // require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'home.php';
