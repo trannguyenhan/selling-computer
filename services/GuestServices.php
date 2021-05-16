@@ -195,12 +195,30 @@ class GuestServices extends MySqlConnect {
     public function insertProduct($username, $product, $quantity){
         $cart_id = self::getCartID($username);
         $product_id = $product->getProductID();
-        $querry = "insert into cart_products(cart_id, product_id, quantity)
+        $query = "insert into cart_products(cart_id, product_id, quantity)
                     value($cart_id, $product_id, $quantity)
                   ";
-        echo $querry;
-        parent::addQuerry($querry);
+
+        parent::addQuerry($query);
         parent::updateQuery();
+    }
+
+    /**
+    * Check account is exists
+    * @param String $username
+    * @param String $password
+    * @return bool
+    */
+    public function checkAccount($username, $password){
+        $query = "select * from guest where user_name = '$username' and your_password = '$password'";
+        parent::addQuerry($query);
+
+        $result = parent::executeQuery();
+        if(mysqli_fetch_array($result)){
+            return True;
+        } else {
+            return False;
+        }
     }
 }
 
