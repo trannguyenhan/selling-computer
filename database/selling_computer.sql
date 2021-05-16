@@ -1,312 +1,398 @@
--- MySQL dump 10.13  Distrib 8.0.23, for Linux (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.1.0
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: selling_computer
--- ------------------------------------------------------
--- Server version	8.0.23-0ubuntu0.20.10.1
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th5 16, 2021 lúc 03:22 PM
+-- Phiên bản máy phục vụ: 10.4.18-MariaDB
+-- Phiên bản PHP: 8.0.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `bill`
+-- Cơ sở dữ liệu: `selling_computer`
 --
 
-DROP TABLE IF EXISTS `bill`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `bill`
+--
+
 CREATE TABLE `bill` (
-  `bill_id` int NOT NULL AUTO_INCREMENT,
-  `cart_id` int NOT NULL,
+  `bill_id` int(11) NOT NULL,
+  `cart_id` int(11) NOT NULL,
   `date_bill` datetime DEFAULT NULL,
-  `total_money` int DEFAULT NULL,
-  PRIMARY KEY (`bill_id`),
-  KEY `cart_id` (`cart_id`),
-  CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `total_money` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `bill`
+-- Cấu trúc bảng cho bảng `cart`
 --
 
-LOCK TABLES `bill` WRITE;
-/*!40000 ALTER TABLE `bill` DISABLE KEYS */;
-/*!40000 ALTER TABLE `bill` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `cart`
---
-
-DROP TABLE IF EXISTS `cart`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cart` (
-  `cart_id` int NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(50) NOT NULL,
-  PRIMARY KEY (`cart_id`),
-  KEY `user_name` (`user_name`),
-  CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_name`) REFERENCES `guest` (`user_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `cart_id` int(11) NOT NULL,
+  `user_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `cart`
+-- Cấu trúc bảng cho bảng `cart_products`
 --
 
-LOCK TABLES `cart` WRITE;
-/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `cart_products`
---
-
-DROP TABLE IF EXISTS `cart_products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cart_products` (
-  `cart_id` int NOT NULL,
-  `product_id` int NOT NULL,
-  `quantity` int DEFAULT NULL,
-  PRIMARY KEY (`cart_id`,`product_id`),
-  KEY `product_id` (`product_id`),
-  CONSTRAINT `cart_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
-  CONSTRAINT `cart_products_ibfk_2` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `cart_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `cart_products`
+-- Cấu trúc bảng cho bảng `computer_mouse_products`
 --
 
-LOCK TABLES `cart_products` WRITE;
-/*!40000 ALTER TABLE `cart_products` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cart_products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `computer_mouse_products`
---
-
-DROP TABLE IF EXISTS `computer_mouse_products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `computer_mouse_products` (
-  `computer_mouse_product_id` int NOT NULL AUTO_INCREMENT,
-  `product_id` int NOT NULL,
+  `computer_mouse_product_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `standard_connection` tinyint(1) DEFAULT NULL,
   `connection_protocol` varchar(50) DEFAULT NULL,
   `is_led` tinyint(1) DEFAULT NULL,
-  `size` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`computer_mouse_product_id`),
-  KEY `product_id` (`product_id`),
-  CONSTRAINT `computer_mouse_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `size` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `computer_mouse_products`
+-- Đang đổ dữ liệu cho bảng `computer_mouse_products`
 --
 
-LOCK TABLES `computer_mouse_products` WRITE;
-/*!40000 ALTER TABLE `computer_mouse_products` DISABLE KEYS */;
-INSERT INTO `computer_mouse_products` VALUES (2,20001,1,'USB Receiver',1,'3.89 in  x 2.36 in  x 1.54 in');
-/*!40000 ALTER TABLE `computer_mouse_products` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `computer_mouse_products` (`computer_mouse_product_id`, `product_id`, `standard_connection`, `connection_protocol`, `is_led`, `size`) VALUES
+(2, 20001, 1, 'USB Receiver', 1, '3.89 in  x 2.36 in  x 1.54 in');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `computer_products`
+-- Cấu trúc bảng cho bảng `computer_products`
 --
 
-DROP TABLE IF EXISTS `computer_products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `computer_products` (
-  `computer_product_id` int NOT NULL AUTO_INCREMENT,
-  `product_id` int NOT NULL,
+  `computer_product_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `s_cpu` varchar(50) DEFAULT NULL,
   `s_ram` varchar(50) DEFAULT NULL,
-  `s_storage` int DEFAULT NULL,
+  `s_storage` int(11) DEFAULT NULL,
   `screen` varchar(50) DEFAULT NULL,
   `s_card` varchar(50) DEFAULT NULL,
   `main_connection` varchar(50) DEFAULT NULL,
-  `os` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`computer_product_id`),
-  KEY `product_id` (`product_id`),
-  CONSTRAINT `computer_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `os` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `computer_products`
+-- Đang đổ dữ liệu cho bảng `computer_products`
 --
 
-LOCK TABLES `computer_products` WRITE;
-/*!40000 ALTER TABLE `computer_products` DISABLE KEYS */;
-INSERT INTO `computer_products` VALUES (10,10001,'AMD Ryzen 7 3700U','8GB DDR4 bus 2400MHz',512,'14.0\" FHD IPS (1920x1080)','AMD Radeon Vega 10',' USB-C 3.0','Windows 10 Home'),(12,10002,'Intel Core i3-1115G4','4GB DDR4 bus 3200 MHz',256,'15.6\\\" FHD IPS','Intel UHD G4','USB-C 3.2','Windows 10 Home SL'),(13,10003,'Intel Core i5-9300H','8GB DDR4 bus 2666 MHz',256,'15.6\" FHD IPS','NVIDIA GeForce GTX 1650 4GB','USB-A, C','Windows 10'),(14,30001,'Ryzen 7 PRO 2700','8GB DDR4 bus 2666 MHz',256,'','Nvidia Geforce GT730 2GB','USB-A, SD','Windows 10'),(15,10004,'Intel Core i5 10300H','8GB DDR4 bus 2933 MHz',256,'15.6\" FHD+ IPS',' Intel UHD 630','USB-C','Windows 10');
-/*!40000 ALTER TABLE `computer_products` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `computer_products` (`computer_product_id`, `product_id`, `s_cpu`, `s_ram`, `s_storage`, `screen`, `s_card`, `main_connection`, `os`) VALUES
+(10, 10001, 'AMD Ryzen 7 3700U', '8GB DDR4 bus 2400MHz', 512, '14.0\" FHD IPS (1920x1080)', 'AMD Radeon Vega 10', ' USB-C 3.0', 'Windows 10 Home'),
+(12, 10002, 'Intel Core i3-1115G4', '4GB DDR4 bus 3200 MHz', 256, '15.6\\\" FHD IPS', 'Intel UHD G4', 'USB-C 3.2', 'Windows 10 Home SL'),
+(13, 10003, 'Intel Core i5-9300H', '8GB DDR4 bus 2666 MHz', 256, '15.6\" FHD IPS', 'NVIDIA GeForce GTX 1650 4GB', 'USB-A, C', 'Windows 10'),
+(14, 30001, 'Ryzen 7 PRO 2700', '8GB DDR4 bus 2666 MHz', 256, '', 'Nvidia Geforce GT730 2GB', 'USB-A, SD', 'Windows 10'),
+(15, 10004, 'Intel Core i5 10300H', '8GB DDR4 bus 2933 MHz', 256, '15.6\" FHD+ IPS', ' Intel UHD 630', 'USB-C', 'Windows 10');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `evaluate`
+-- Cấu trúc bảng cho bảng `evaluate`
 --
 
-DROP TABLE IF EXISTS `evaluate`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `evaluate` (
   `user_name` varchar(50) NOT NULL,
-  `product_id` int NOT NULL,
-  `star` int DEFAULT NULL,
-  `your_comment` text,
-  `date_comment` datetime DEFAULT NULL,
-  PRIMARY KEY (`user_name`,`product_id`),
-  KEY `product_id` (`product_id`),
-  CONSTRAINT `evaluate_ibfk_1` FOREIGN KEY (`user_name`) REFERENCES `guest` (`user_name`),
-  CONSTRAINT `evaluate_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `product_id` int(11) NOT NULL,
+  `star` int(11) DEFAULT NULL,
+  `your_comment` text DEFAULT NULL,
+  `date_comment` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `evaluate`
+-- Đang đổ dữ liệu cho bảng `evaluate`
 --
 
-LOCK TABLES `evaluate` WRITE;
-/*!40000 ALTER TABLE `evaluate` DISABLE KEYS */;
-/*!40000 ALTER TABLE `evaluate` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `evaluate` (`user_name`, `product_id`, `star`, `your_comment`, `date_comment`) VALUES
+('hoangbui', 10003, 4, 'Máy đẹp, xứng đáng với số tiền bỏ ra', '2021-05-16 12:35:30'),
+('hoangbui', 10004, 4, 'Máy ổn, nhưng hơi nóng', '2021-05-16 13:49:27'),
+('hoangbui', 20001, 1, 'Chất lượng quá tệ', '2021-05-16 13:48:26'),
+('huy0628', 10001, 5, 'Máy rất đẹp, tôi rất thích', '2021-05-16 13:48:26'),
+('huy0628', 10002, 5, 'Máy đẹp, nhẹ', '2021-05-16 13:49:27'),
+('huy0628', 10003, 5, 'Con máy tôi ưng nhất từ trước đến nay', '2021-05-16 13:50:13'),
+('huy0628', 30001, 5, 'Máy chạy rất mượt', '2021-05-16 13:50:13');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `guest`
+-- Cấu trúc bảng cho bảng `guest`
 --
 
-DROP TABLE IF EXISTS `guest`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `guest` (
   `user_name` varchar(50) NOT NULL,
   `your_password` varchar(50) DEFAULT NULL,
-  `your_name` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`user_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `your_name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `guest`
+-- Đang đổ dữ liệu cho bảng `guest`
 --
 
-LOCK TABLES `guest` WRITE;
-/*!40000 ALTER TABLE `guest` DISABLE KEYS */;
-INSERT INTO `guest` VALUES ('huy0628','123456','Nguyen Quang Huy');
-/*!40000 ALTER TABLE `guest` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `guest` (`user_name`, `your_password`, `your_name`) VALUES
+('hoangbui', 'viethoang123', 'BuiVietHoang'),
+('huy0628', '123456', 'Nguyen Quang Huy');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `laptop`
+-- Cấu trúc bảng cho bảng `laptop`
 --
 
-DROP TABLE IF EXISTS `laptop`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `laptop` (
-  `laptop_id` int NOT NULL AUTO_INCREMENT,
-  `product_id` int NOT NULL,
-  `battery` int DEFAULT NULL,
-  PRIMARY KEY (`laptop_id`),
-  KEY `product_id` (`product_id`),
-  CONSTRAINT `laptop_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `laptop_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `battery` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `laptop`
+-- Đang đổ dữ liệu cho bảng `laptop`
 --
 
-LOCK TABLES `laptop` WRITE;
-/*!40000 ALTER TABLE `laptop` DISABLE KEYS */;
-INSERT INTO `laptop` VALUES (2,10001,37),(3,10002,41),(4,10003,59),(5,10004,56);
-/*!40000 ALTER TABLE `laptop` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `laptop` (`laptop_id`, `product_id`, `battery`) VALUES
+(2, 10001, 37),
+(3, 10002, 41),
+(4, 10003, 59),
+(5, 10004, 56);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `pc`
+-- Cấu trúc bảng cho bảng `pc`
 --
 
-DROP TABLE IF EXISTS `pc`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `pc` (
-  `pc_id` int NOT NULL AUTO_INCREMENT,
-  `product_id` int NOT NULL,
-  `i_case` text,
-  PRIMARY KEY (`pc_id`),
-  KEY `product_id` (`product_id`),
-  CONSTRAINT `pc_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `pc_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `i_case` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pc`
+-- Đang đổ dữ liệu cho bảng `pc`
 --
 
-LOCK TABLES `pc` WRITE;
-/*!40000 ALTER TABLE `pc` DISABLE KEYS */;
-INSERT INTO `pc` VALUES (4,30001,'');
-/*!40000 ALTER TABLE `pc` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `pc` (`pc_id`, `product_id`, `i_case`) VALUES
+(4, 30001, '');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
-DROP TABLE IF EXISTS `products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
-  `product_id` int NOT NULL,
+  `product_id` int(11) NOT NULL,
   `model` varchar(50) DEFAULT NULL,
-  `image` text,
+  `image` text DEFAULT NULL,
   `price` double DEFAULT NULL,
   `weigh` double DEFAULT NULL,
   `color` varchar(10) DEFAULT NULL,
-  `number_of_product` int DEFAULT NULL,
+  `number_of_product` int(11) DEFAULT NULL,
   `supplier` varchar(50) DEFAULT NULL,
-  `p_description` text,
-  PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `p_description` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (10001,'AVITA Liber V14 AMD','https://lumen.thinkpro.vn//backend/uploads/product/color_images/2021/4/23/liberv14a-summerpink-1.jpg',14990000,1.28,'Pink',100,'AVITA',NULL),(10002,'HP Pavilion 15 (Intel Gen 11)','https://lumen.thinkpro.vn//backend/uploads/product/color_images/2021/3/17/pavi15g11silver-1.jpg',13790000,1.75,'Grey',100,'HP',NULL),(10003,'Acer Nitro 5 2019','https://lumen.thinkpro.vn//backend/uploads/product/color_images/2020/7/16/acer-nitro-5-Nitro501NF-Adv.jpg',17490000,2.45,'Black',100,'Acer',''),(10004,'Dell XPS 15 9500','https://lumen.thinkpro.vn//backend/uploads/product/color_images/2020/9/6/Dell-XPS-15-9500-1.jpg',35990000,2,'Silver',100,'Dell',NULL),(20001,'Chuột Logitech M185','https://lumen.thinkpro.vn//backend/uploads/product/color_images/2020/9/15/m185-01jpg',229000,0.076,'Black',1000,'Logitech',''),(30001,'Lenovo ThinkCentre M725s SFF','https://lumen.thinkpro.vn//backend/uploads/product/color_images/2020/7/16/lenovo-thinkcentre-m725s-sff-ThinkCentreM725sSFF01NO-pwN.jpg',15990000,8,'Black',50,'Lenovo','');
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `products` (`product_id`, `model`, `image`, `price`, `weigh`, `color`, `number_of_product`, `supplier`, `p_description`) VALUES
+(10001, 'AVITA Liber V14 AMD', 'https://lumen.thinkpro.vn//backend/uploads/product/color_images/2021/4/23/liberv14a-summerpink-1.jpg', 14990000, 1.28, 'Pink', 100, 'AVITA', NULL),
+(10002, 'HP Pavilion 15 (Intel Gen 11)', 'https://lumen.thinkpro.vn//backend/uploads/product/color_images/2021/3/17/pavi15g11silver-1.jpg', 13790000, 1.75, 'Grey', 100, 'HP', NULL),
+(10003, 'Acer Nitro 5 2019', 'https://lumen.thinkpro.vn//backend/uploads/product/color_images/2020/7/16/acer-nitro-5-Nitro501NF-Adv.jpg', 17490000, 2.45, 'Black', 100, 'Acer', ''),
+(10004, 'Dell XPS 15 9500', 'https://lumen.thinkpro.vn//backend/uploads/product/color_images/2020/9/6/Dell-XPS-15-9500-1.jpg', 35990000, 2, 'Silver', 100, 'Dell', NULL),
+(20001, 'Chuột Logitech M185', 'https://lumen.thinkpro.vn//backend/uploads/product/color_images/2020/9/15/m185-01jpg', 229000, 0.076, 'Black', 1000, 'Logitech', ''),
+(30001, 'Lenovo ThinkCentre M725s SFF', 'https://lumen.thinkpro.vn//backend/uploads/product/color_images/2020/7/16/lenovo-thinkcentre-m725s-sff-ThinkCentreM725sSFF01NO-pwN.jpg', 15990000, 8, 'Black', 50, 'Lenovo', '');
 
 --
--- Dumping routines for database 'selling_computer'
+-- Chỉ mục cho các bảng đã đổ
 --
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Chỉ mục cho bảng `bill`
+--
+ALTER TABLE `bill`
+  ADD PRIMARY KEY (`bill_id`),
+  ADD KEY `cart_id` (`cart_id`);
+
+--
+-- Chỉ mục cho bảng `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cart_id`),
+  ADD KEY `user_name` (`user_name`);
+
+--
+-- Chỉ mục cho bảng `cart_products`
+--
+ALTER TABLE `cart_products`
+  ADD PRIMARY KEY (`cart_id`,`product_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
+-- Chỉ mục cho bảng `computer_mouse_products`
+--
+ALTER TABLE `computer_mouse_products`
+  ADD PRIMARY KEY (`computer_mouse_product_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
+-- Chỉ mục cho bảng `computer_products`
+--
+ALTER TABLE `computer_products`
+  ADD PRIMARY KEY (`computer_product_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
+-- Chỉ mục cho bảng `evaluate`
+--
+ALTER TABLE `evaluate`
+  ADD PRIMARY KEY (`user_name`,`product_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
+-- Chỉ mục cho bảng `guest`
+--
+ALTER TABLE `guest`
+  ADD PRIMARY KEY (`user_name`);
+
+--
+-- Chỉ mục cho bảng `laptop`
+--
+ALTER TABLE `laptop`
+  ADD PRIMARY KEY (`laptop_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
+-- Chỉ mục cho bảng `pc`
+--
+ALTER TABLE `pc`
+  ADD PRIMARY KEY (`pc_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
+-- Chỉ mục cho bảng `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `bill`
+--
+ALTER TABLE `bill`
+  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `computer_mouse_products`
+--
+ALTER TABLE `computer_mouse_products`
+  MODIFY `computer_mouse_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `computer_products`
+--
+ALTER TABLE `computer_products`
+  MODIFY `computer_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT cho bảng `laptop`
+--
+ALTER TABLE `laptop`
+  MODIFY `laptop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT cho bảng `pc`
+--
+ALTER TABLE `pc`
+  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Các ràng buộc cho các bảng đã đổ
+--
+
+--
+-- Các ràng buộc cho bảng `bill`
+--
+ALTER TABLE `bill`
+  ADD CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`);
+
+--
+-- Các ràng buộc cho bảng `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_name`) REFERENCES `guest` (`user_name`);
+
+--
+-- Các ràng buộc cho bảng `cart_products`
+--
+ALTER TABLE `cart_products`
+  ADD CONSTRAINT `cart_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
+  ADD CONSTRAINT `cart_products_ibfk_2` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`);
+
+--
+-- Các ràng buộc cho bảng `computer_mouse_products`
+--
+ALTER TABLE `computer_mouse_products`
+  ADD CONSTRAINT `computer_mouse_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
+
+--
+-- Các ràng buộc cho bảng `computer_products`
+--
+ALTER TABLE `computer_products`
+  ADD CONSTRAINT `computer_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
+
+--
+-- Các ràng buộc cho bảng `evaluate`
+--
+ALTER TABLE `evaluate`
+  ADD CONSTRAINT `evaluate_ibfk_1` FOREIGN KEY (`user_name`) REFERENCES `guest` (`user_name`),
+  ADD CONSTRAINT `evaluate_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
+
+--
+-- Các ràng buộc cho bảng `laptop`
+--
+ALTER TABLE `laptop`
+  ADD CONSTRAINT `laptop_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
+
+--
+-- Các ràng buộc cho bảng `pc`
+--
+ALTER TABLE `pc`
+  ADD CONSTRAINT `pc_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2021-05-05  1:13:17
