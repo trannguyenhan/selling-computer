@@ -1,4 +1,6 @@
-<?php ?>
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +18,10 @@
 <div class='title'><b>THÔNG TIN SẢN PHẨM</b></div>
 <?php
 	require_once ROOT . DS . 'services' . DS . 'TypeProductsServices.php';
+	require_once ROOT . DS . 'services' . DS . 'EvaluateServices.php';
 ?>
+
+<!-- print all information -->
 <div class='info'>
 	<img src=<?php echo $product->getImage() ?> ></img>
 	<div class='desc'>
@@ -30,6 +35,7 @@
 		<?php
 		$check = TypeProductsServices::checkType($product->getProductID());
 
+		// if this product is computer
 		if($check == Type::PC || $check == Type::LAPTOP) {
 		?>
 			<div><b>Vi xử lý</b>: <?php echo $product->getCPU() ?></div>
@@ -40,6 +46,7 @@
 			<div><b>Kết nối chính</b>: <?php echo $product->getMainConnection() ?></div>
 			<div><b>Hệ điều hành</b>: <?php echo $product->getOS() ?></div>
 			<?php
+			
 			if($check == Type::PC) {
 			?>
 				<div><b>Case</b>: <?php echo $product->getCase()?></div>
@@ -51,6 +58,8 @@
 			<?php
 			}
 		}
+
+		// if this product is mouse
 		else {
 		?>
 			<div><b>Kết nối tiêu chuẩn</b>: <?php echo $product->getStandardConnection() ?></div>
@@ -71,16 +80,56 @@
 	?>
 	</div>
 </div>
+
+<!-- allow user to evaluate -->
 <div class='cmt-title'><b>Đánh giá của bạn</b></div>
+<form action="details.php" method="POST">
 <div class='your-evaluate'>
 	<div class='your-star'><b>Điểm đánh giá</b>: <input class='rating' type="number" name="star" min="1" max="5"></div>
 	<div class='your-cmt'><b>Bình luận</b>: </div>
 	<textarea class='comment' rows='1' name="cmt" placeholder='Hãy để lại bình luận của bạn'></textarea>
 	<input class='submit' type='submit' value='Gửi'>
 </div>
+
+<?php
+// if click submit
+if(isset($_POST['submit'])) {
+	$star = isset($_POST['star']) ? $_POST['star'] : '';
+	$cmt = isset($_POST['cmt']) ? $_POST['cmt'] : '';
+	$username = $_SESSION['username'];
+	date_default_timezone_set('Asia/Ho_Chi_Minh');
+	$date = date('Y-m-d h:i:s', time());
+	$productID = $product->getProductID();
+	// if not log in
+	if($username == null) {
+		echo "	<script language='javascript'>
+		 			alert('Vui lòng đăng nhập để đánh giá!')
+				</script>";	
+	}
+	// if not rating
+	elseif($star == '') {
+		echo "	<script language='javascript'>
+		 			alert('Vui lòng nhập điểm đánh giá!')
+				</script>";
+	}
+	// if not comment
+	elseif($cmt == '') {
+		echo "	<script language='javascript'>
+					alert('Vui lòng nhập bình luận!')
+   				</script>";
+	}
+	// insert to database
+	else {
+		$evalate = new Evaluate($username, $productID, $star, $cmt, $date);
+		$eS = new EvaluateServices();
+		$eS.insert($evalate);
+	}
+}
+?>
+</form>
+<!-- print all evaluate -->
 <div class='cmt-title'><b>Ý kiến đánh giá</b></div>
 <?php
-require_once ROOT . DS . 'services' . DS . 'EvaluateServices.php';
 
 $evaluateService = new EvaluateServices();
 $listEvaluates = $evaluateService->getAll($product->getProductID());
