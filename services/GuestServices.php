@@ -13,12 +13,21 @@ class GuestServices extends MySqlConnect {
      */
     public function insert($guest) {
         // add to guest table
-        $query = "insert into guest(user_name, your_password, your_name)
-                    value (" .
-                    "'" . $guest->getUsername() . "' ," .
-                    "'" . $guest->getPassword() . "' ," .
-                    "'" . $guest->getName() . "'"
-                        . ")";
+        // $query = "insert into guest(user_name, your_password, your_name)
+        //             value (" .
+        //             "'" . $guest->getUsername() . "' ," .
+        //             "'" . $guest->getPassword() . "' ," .
+        //             "'" . $guest->getName() . "'"
+        //                 . ")";
+        $username = $guest->getUsername();
+        $password = $guest->getPassword();
+        $name = $guest->getName();
+        $address = $guest->getAddress();
+        $telephone = $guest->getTelephone();
+
+        $query = "insert into guest(user_name, your_password, your_name, address, telephone)
+                  value('$username', '$password', '$name', '$address', '$telephone')
+                  ";
 
         parent::addQuerry($query);
         parent::updateQuery();
@@ -77,8 +86,10 @@ class GuestServices extends MySqlConnect {
             $username = $row["user_name"];
             $password = $row["your_password"];
             $name = $row["your_name"];
+            $address = $row["address"];
+            $telephone = $row["telephone"];
 
-            $guest = new Guest($username, $password, $name);
+            $guest = new Guest($username, $password, $name, $address, $telephone);
 
             array_push($listGuest, $guest);
         }
@@ -101,8 +112,10 @@ class GuestServices extends MySqlConnect {
             $username = $row["user_name"];
             $password = $row["your_password"];
             $name = $row["your_name"];
+            $address = $row["address"];
+            $telephone = $row["telephone"];
 
-            $guest = new Guest($username, $password, $name);
+            $guest = new Guest($username, $password, $name, $address, $telephone);
             return $guest;
         }
 
@@ -115,12 +128,27 @@ class GuestServices extends MySqlConnect {
      */
     public function update($guest) {
         // update to products table
+        // $query = "update guest
+        //             set " .
+        //             "your_password = " . "'" . $guest->getPassword() . "' ," .
+        //             "your_name = " . "'" . $guest->getPassword() . "'" .
+        //             "where user_name = '" . $guest->getUsername() . "'"
+        //             . "";
+
+        $username = $guest->getUsername();
+        $password = $guest->getPassword();
+        $name = $guest->getName();
+        $address = $guest->getAddress();
+        $telephone = $guest->getTelephone();
+
         $query = "update guest
-                    set " .
-                    "your_password = " . "'" . $guest->getPassword() . "' ," .
-                    "your_name = " . "'" . $guest->getPassword() . "'" .
-                    "where user_name = '" . $guest->getUsername() . "'"
-                    . "";
+                  set your_password = '$password',
+                      your_name = '$name',
+                      address = '$address',
+                      telephone = '$telephone'
+                  where user_name = '$username'
+                  ";
+
         parent::addQuerry($query);
         parent::updateQuery();
     }
