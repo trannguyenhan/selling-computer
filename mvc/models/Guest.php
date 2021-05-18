@@ -4,13 +4,17 @@ class Guest {
     private $username;
     private $password;
     private $name;
-    
-    public function __construct($username, $password, $name) {
+    private $address;
+    private $telephone;
+
+    public function __construct($username, $password, $name, $address, $telephone) {
         self::setUsername($username);
         self::setPassword($password);
         self::setName($name);
+        self::setAddress($address);
+        self::setTelephone($telephone);
     }
-    
+
     /**
      * @return mixed
      */
@@ -33,6 +37,22 @@ class Guest {
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
     }
 
     /**
@@ -59,4 +79,19 @@ class Guest {
         $this->name = $name;
     }
 
+    /**
+     * @param mixed $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+
+    /**
+     * @param mixed $telephone
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+    }
 }
