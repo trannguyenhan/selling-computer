@@ -51,10 +51,12 @@ class ComputerMouseProductsServices extends ProductsServices {
             $connectionProtocal = $row["connection_protocol"];
             $isLed = $row["is_led"];
             $size = $row["size"];
-            
+            $disable = $row["dis"];
+
             $mouse = new ComputerMouseProducts($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, 
                 $supplier, $standardConnection, $connectionProtocal, $isLed, $size, $description);
-            
+            $mouse->setDisable($disable);
+
             array_push($listMouse, $mouse);
         }
         
@@ -88,10 +90,12 @@ class ComputerMouseProductsServices extends ProductsServices {
             $connectionProtocal = $row["connection_protocol"];
             $isLed = $row["is_led"];
             $size = $row["size"];
-            
+            $disable = $row["dis"];
+
             $mouse = new ComputerMouseProducts($productID, $model, $image, $price, $weigh, $color, $numberOfProducts,
                 $supplier, $standardConnection, $connectionProtocal, $isLed, $size, $description);
-            
+            $mouse->setDisable($disable);
+
             return $mouse;
         }
         

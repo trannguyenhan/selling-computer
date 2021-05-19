@@ -1,0 +1,175 @@
+.img-icon {
+    border: 1px #d4d4d4 solid;
+    padding: 7px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width: 200px;
+    height: 200px;
+    margin-top: 5%;
+}
+
+.btn-icon{
+    margin: 5%;
+    font-size: 20px;
+    background-color: rgb(35, 102, 226);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 7px; 
+    width: 80%;
+    height: 50px;
+}
+
+.btn-icon:hover{
+    margin-top: 4%;
+    margin-bottom: 6%;
+    background-color: rgb(62, 184, 46);
+    transition: 0.4s;
+}
+
+.main{
+    width: 25%;
+    margin: 4%;
+    border-radius: 10px;
+}
+
+.main:hover{
+    margin-top: 3%;
+    margin-bottom: 5%;
+    transition: 0.5s;
+}
+
+/*ADD LAPTOP*/
+.btn-back{
+    margin: 5%;
+    font-size: 20px;
+    background-color: rgb(35, 102, 226);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 7px; 
+    width: 80%;
+    height: 50px;
+}
+
+.btn-back:hover{
+    margin-top: 4%;
+    margin-bottom: 6%;
+    background-color: rgb(214, 147, 46);
+    transition: 0.4s;
+}
+
+form p {
+    color: rgb(36, 71, 228);
+    font-size: 1.5vw;
+    margin: 0px;
+    padding: 0px;
+}
+
+.form-left{
+    margin-left:20px;
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.form-add{
+    background-color: bisque;
+    width: 100%;
+    float: left;
+}
+
+.ql-search{
+    background-color: rgb(46, 204, 80);
+    width: 100%;
+    float: left;
+}
+
+form input{
+    width: 70%;
+}
+
+.form-left:focus {
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    border-color: rgb(31, 31, 170);
+}
+
+textarea {
+    margin-left:20px;
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+}
+
+textarea:focus {
+    border: 2px solid #ccc;
+    border-color: rgb(31, 31, 170);
+}
+
+.submit {
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(29, 89, 180);
+    height: 50px;
+    margin: 30px;
+}
+
+.submit:hover{
+    background-color: rgb(64, 144, 219);
+    margin-top: 25px;
+    margin-bottom: 35px;
+    transition: 0.4s;
+}
+
+.active{
+    background-color: rgb(109, 72, 56);
+}
+
+.product{
+    float: left;
+    width: 200px;
+    height: 340px;
+    margin-left: 5%;
+    background-color: rgb(148, 160, 175);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(125, 77, 129);
+    color: azure;
+}
+
+.product:hover{
+    margin-top: 17px;
+    margin-bottom: 23px;
+    transition: 0.4s;
+}
+
+.btn-ql-xx{
+    background-color: rgb(45, 163, 218);
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    margin-top: 2px;
+    font-size: 20px;
+}
+
+.btn-ql-xx:hover{
+    background-color: rgb(26, 172, 70);
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+
+/*ql-sp*/

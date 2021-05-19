@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+  }
+.left {
+    background-color: #2196F3;
+    float: left;
+    width: 50%; /* The width is 20%, by default */
+    font-size: 3vw;
+    color: #fff;
+  }
+
+  .left:hover{background-color:#1f45ec}
+  .right:hover{background-color:#177448}
+  
+  .right {
+    background-color: #4CAF50;
+    float: left;
+    width: 50%; /* The width is 20%, by default */
+    font-size: 3vw;
+    color: #fff;
+  }
+  p{
+      padding: 20px;
+  }
+  
+  /* Use a media query to add a break point at 800px: */
+  @media screen and (max-width: 800px) {
+    .left, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }

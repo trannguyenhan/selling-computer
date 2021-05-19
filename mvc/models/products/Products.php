@@ -14,7 +14,7 @@ class Products {
     private $description;       // String
     private $disable;           // 0 or 1, 0 : no disable, 1 : disable
 
-    public int $type = Type::NONE;
+    public $type = Type::NONE;
 
     public function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier, $description) {
         self::setDisable(0);  // new products is no disable
