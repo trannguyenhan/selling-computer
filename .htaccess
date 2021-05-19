@@ -1,5 +1,16 @@
 <IfModule mod_rewrite.c>
-    RewriteEngine on
-    RewriteRule    ^$    public/    [L]
-    RewriteRule    (.*) public/$1    [L]
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_URI} /about$ [OR]
+    RewriteCond %{REQUEST_URI} /profile$ [OR]
+    RewriteCond %{REQUEST_URI} /login$ [OR]
+    RewriteCond %{REQUEST_URI} /home$ [OR]
+    RewriteCond %{REQUEST_URI} /products$ [OR]
+    RewriteCond %{REQUEST_URI} /contact$ [OR]
+    RewriteCond %{REQUEST_URI} /cart$ [OR]
+    RewriteCond %{REQUEST_URI} /details [OR]
+    RewriteCond %{REQUEST_URI} /search [OR]
+    RewriteCond %{REQUEST_URI} .jpg|.png [OR]
+    RewriteCond %{REQUEST_URI} /$
+    RewriteRule (.*) public/$1 [L]
 </IfModule>

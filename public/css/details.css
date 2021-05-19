@@ -38,12 +38,11 @@
 }
 
 .number {
-    height: 50px;
+    
+    height: 100px;
 }
 
-.add {
-    height: 50px;
-}
+
 
 .cmt-title {
     width: 100%;

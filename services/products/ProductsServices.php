@@ -91,7 +91,7 @@ class ProductsServices extends  MySqlConnect {
                     "color = " . "'" . $product->getColor() . "' ," .
                     "number_of_product = " . $product->getNumberOfProducts() . "," .
                     "supplier = " . "'" . $product->getSupplier() . "' ," .
-                    "p_description = " . "'" . $product->getDescription() . "'" .
+                    "p_description = " . "'" . $product->getDescription() . "' ," .
                     "dis = " . $product->getDisable() . " " .
                     "where product_id = " . $product->getProductID()
                     . "";
