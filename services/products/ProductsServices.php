@@ -97,6 +97,27 @@ class ProductsServices extends  MySqlConnect {
         parent::updateQuery();
     }
 
+    /**
+     * The method disable product
+     * @param int $productID
+     */
+    public function disable($productID){
+        $query = "update products set dis = 1 where product_id = '$productID'";
+
+        parent::addQuerry();
+        parent::updateQuery();
+    }
+
+    /**
+     * The method enable product
+     * @param int $productID
+     */
+    public function enable($productID){
+        $query = "update products set dis = 0 where product_id = '$productID'";
+
+        parent::addQuerry();
+        parent::updateQuery();
+    }
 }
 
 // $products = new ProductsServices().getAll();
