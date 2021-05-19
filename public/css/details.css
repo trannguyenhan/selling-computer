@@ -42,7 +42,34 @@
     height: 100px;
 }
 
+.add-product {
+    padding-top: 50px;
+    position: relative;
+    margin-bottom: 30px;
+}
 
+.add {
+    height: 40px;
+    background: #b1154a;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid #b1154a;
+    width: 150px;
+    position: absolute;
+    right: 0;
+}
+
+.number {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #b1154a;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 45px;
+    width: 100px;
+    position: absolute;
+    right: 200px;
+}
 
 .cmt-title {
     width: 100%;

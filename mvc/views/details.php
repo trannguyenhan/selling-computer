@@ -82,9 +82,9 @@ session_start();
 	</div>
 </div>
 <form action="" method="POST">
-<div class='add-product'>
-	<input class='number' type='number' name='number' min='1' >
-	<input class='add' type='submit' value='Thêm vào giỏ hàng' >
+<div class="add-product" style="padding-top: 50px;position: relative;margin-bottom: 30px;/* justify-content: space-between; */">
+	<input class="number" type="number" name="number" min="1">
+	<input class="add" type="submit" value="Thêm vào giỏ hàng" style="margin-left:30px;">
 </div>
 </form>
 <!-- allow user to evaluate -->
