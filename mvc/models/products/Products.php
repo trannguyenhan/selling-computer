@@ -3,19 +3,21 @@
 require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Type.php';
 
 class Products {
-    private $productID;         // int 
+    private $productID;         // int
     private $model;             // String
     private $image;             // String : path of image
     private $price;             // double
-    private $weigh;             // double 
+    private $weigh;             // double
     private $color;             // String
-    private $numberOfProducts;  // int 
-    private $supplier;          // String 
+    private $numberOfProducts;  // int
+    private $supplier;          // String
     private $description;       // String
-    
-    public int $type = Type::NONE;      
-    
+    private $disable;           // 0 or 1, 0 : no disable, 1 : disable
+
+    public int $type = Type::NONE;
+
     public function __construct($productID, $model, $image, $price, $weigh, $color, $numberOfProducts, $supplier, $description) {
+        self::setDisable(0);  // new products is no disable
         self::setProductID($productID);
         self::setModel($model);
         self::setImage($image);
@@ -26,7 +28,7 @@ class Products {
         self::setSupplier($supplier);
         self::setDescription($description);
     }
-    
+
     /**
      * @return mixed
      */
@@ -92,6 +94,14 @@ class Products {
     }
 
     /**
+     * @return mixed
+     */
+    public function getDisable()
+    {
+        return $this->disable;
+    }
+
+    /**
      * @param mixed $productID
      */
     public function setProductID($productID)
@@ -154,7 +164,7 @@ class Products {
     {
         $this->supplier = $supplier;
     }
-    
+
     /**
      * @return mixed
      */
@@ -162,7 +172,7 @@ class Products {
     {
         return $this->description;
     }
-    
+
     /**
      * @param mixed $description
      */
@@ -171,4 +181,11 @@ class Products {
         $this->description = $description;
     }
 
+    /**
+     * @param mixed $disable
+     */
+    public function setDisable($disable)
+    {
+        $this->disable = $disable;
+    }
 }
