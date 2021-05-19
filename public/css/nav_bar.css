@@ -2,6 +2,7 @@
   padding:0;
   margin: 0;
   text-decoration: none;
+  float: right;
 }
 .nav_bar {
   display: flex;

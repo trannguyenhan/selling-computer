@@ -15,6 +15,7 @@
 		</ul>
 	</nav>
 	<div class="cart-logo">
-		<a href=<?php echo "/" . $path_project . "/" . "cart" ?>><img src=<?php echo "/" . $path_project . "/" . "images/logo/cart.png" ?> width="30px"></a>
+		<a href=<?php echo "/" . $path_project . "/" . "cart" ?>><img src=<?php echo "/" . $path_project . "/" . "images/logo/cart.png" ?> width="30px"> &nbsp;</a>
+    <a href="search"><img src="https://icon-library.com/images/search-box-icon-png/search-box-icon-png-1.jpg" width="30px"></a>
 	</div>
 </div>

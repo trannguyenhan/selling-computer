@@ -47,15 +47,15 @@
 			<h1 class = "title">Danh mục sản phẩm</h1>
 			<div class="row">
 				<div class="col-3">
-					<a href="all_products_page.php"><img src="https://hanoicomputercdn.com/media/product/47380_laptop_dell_latitude_3400_l3400i5ssd_i5_8265u_8gb_ddr4_256gb_ssd_14_0_hd_dos_1.jpg"></a>
+					<a href="search&label=laptop"><img src="https://hanoicomputercdn.com/media/product/47380_laptop_dell_latitude_3400_l3400i5ssd_i5_8265u_8gb_ddr4_256gb_ssd_14_0_hd_dos_1.jpg"></a>
 					<h3>Laptop</h3>
 				</div>
 				<div class="col-3">
-					<a href="all_products_page.php"><img src="https://sc01.alicdn.com/kf/HTB1o3hKIKSSBuNjy0Flq6zBpVXaj/224199322/HTB1o3hKIKSSBuNjy0Flq6zBpVXaj.jpg_.webp"></a>
+					<a href="search&label=pc"><img src="https://sc01.alicdn.com/kf/HTB1o3hKIKSSBuNjy0Flq6zBpVXaj/224199322/HTB1o3hKIKSSBuNjy0Flq6zBpVXaj.jpg_.webp"></a>
 					<h3>PC</h3>
 				</div>
 				<div class="col-3">
-					<a href="all_products_page.php"><img src="https://gpcantho.com/wp-content/uploads/2020/01/i98E59_simg_de2fe0_500x500_maxb.jpg"></a>
+					<a href="search&label=mouse"><img src="https://gpcantho.com/wp-content/uploads/2020/01/i98E59_simg_de2fe0_500x500_maxb.jpg"></a>
 					<h3>Phụ kiện</h3>
 				</div>
 			</div>
