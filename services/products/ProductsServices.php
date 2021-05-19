@@ -10,7 +10,7 @@ class ProductsServices extends  MySqlConnect {
      */
     public function insert($product) {
         // add to products table
-        $query = "insert into products(product_id, model, image, price, weigh, color, number_of_product, supplier, p_description)
+        $query = "insert into products(product_id, model, image, price, weigh, color, number_of_product, supplier, p_description, dis)
                     value (" .
                     $product->getProductID() . "," .
                     "'" . $product->getModel() . "' ," .
@@ -20,7 +20,8 @@ class ProductsServices extends  MySqlConnect {
                     "'" . $product->getColor() . "' ," .
                     $product->getNumberOfProducts() . "," .
                     "'" . $product->getSupplier() . "' ," .
-                    "'" . $product->getDescription() . "'"
+                    "'" . $product->getDescription() . "' ," .
+                   $product->getDisable()
                         . ")";
 
         parent::addQuerry($query);
@@ -91,6 +92,7 @@ class ProductsServices extends  MySqlConnect {
                     "number_of_product = " . $product->getNumberOfProducts() . "," .
                     "supplier = " . "'" . $product->getSupplier() . "' ," .
                     "p_description = " . "'" . $product->getDescription() . "'" .
+                    "dis = " . $product->getDisable() . " " .
                     "where product_id = " . $product->getProductID()
                     . "";
         parent::addQuerry($query);
@@ -102,9 +104,9 @@ class ProductsServices extends  MySqlConnect {
      * @param int $productID
      */
     public function disable($productID){
-        $query = "update products set dis = 1 where product_id = '$productID'";
+        $query = "update products set dis = 1 where product_id = $productID";
 
-        parent::addQuerry();
+        parent::addQuerry($query);
         parent::updateQuery();
     }
 
@@ -113,9 +115,9 @@ class ProductsServices extends  MySqlConnect {
      * @param int $productID
      */
     public function enable($productID){
-        $query = "update products set dis = 0 where product_id = '$productID'";
+        $query = "update products set dis = 0 where product_id = $productID";
 
-        parent::addQuerry();
+        parent::addQuerry($query);
         parent::updateQuery();
     }
 }

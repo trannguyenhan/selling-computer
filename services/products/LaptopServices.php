@@ -11,7 +11,7 @@ class LaptopServices extends ComputerProductsServices {
     public function insert($laptop) {
         // add to products table and computer_products table
         parent::insert($laptop);
-        
+
         // add to pc table
         $query = "insert into laptop(product_id, battery)
                     value (" .
@@ -21,7 +21,7 @@ class LaptopServices extends ComputerProductsServices {
         parent::addQuerry($query);
         parent::updateQuery();
     }
-    
+
     /**
      * Return all product in products table
      * @return array
@@ -33,7 +33,7 @@ class LaptopServices extends ComputerProductsServices {
                     inner join laptop l on p.product_id = l.product_id";
         parent::addQuerry($query);
         $result = parent::executeQuery();
-        
+
         while($row = mysqli_fetch_array($result)){
             $productID = $row["product_id"];
             $model = $row["model"];
@@ -52,16 +52,18 @@ class LaptopServices extends ComputerProductsServices {
             $mainConnection = $row["main_connection"];
             $os = $row["os"];
             $battery = $row["battery"];
-            
+            $disable = $row["dis"];
+
             $laptop = new Laptop($productID, $model, $image, $price, $weigh, $color, $numberOfProducts,
                 $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os, $battery, $description);
-            
+            $laptop->setDisable($disable);
+
             array_push($listLaptop, $laptop);
         }
-        
+
         return $listLaptop;
     }
-    
+
     /**
      * Return product have product_id = $product_id
      * @param int $product_id
@@ -74,7 +76,7 @@ class LaptopServices extends ComputerProductsServices {
                     where p.product_id=" . $product_id;
         parent::addQuerry($query);
         $result = parent::executeQuery();
-        
+
         if($row = mysqli_fetch_array($result)){
             $productID = $row["product_id"];
             $model = $row["model"];
@@ -93,16 +95,18 @@ class LaptopServices extends ComputerProductsServices {
             $mainConnection = $row["main_connection"];
             $os = $row["os"];
             $battery = $row["battery"];
-            
+            $disable = $row["dis"];
+
             $laptop = new Laptop($productID, $model, $image, $price, $weigh, $color, $numberOfProducts,
                 $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os, $battery, $description);
-            
+            $laptop->setDisable($disable);
+
             return $laptop;
         }
-        
+
         return null;
     }
-    
+
     /**
      * The method update data to database
      * @param Laptop $laptop
@@ -110,11 +114,11 @@ class LaptopServices extends ComputerProductsServices {
     public function update($laptop) {
         // update to products table and computer_products table
         parent::update($laptop);
-        
+
         // update pc table
         $query = "update laptop
                     set " .
-                    "battery = " . $laptop->getBattery() . " " . 
+                    "battery = " . $laptop->getBattery() . " " .
                     "where product_id = " . $laptop->getProductID()
                     . "";
 
@@ -122,5 +126,3 @@ class LaptopServices extends ComputerProductsServices {
         parent::updateQuery();
     }
 }
-
-

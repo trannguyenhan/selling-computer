@@ -52,9 +52,11 @@ class PCServices extends  ComputerProductsServices {
             $mainConnection = $row["main_connection"];
             $os = $row["os"];
             $case = $row["i_case"];
+            $disable = $row["dis"];
 
             $pc = new PC($productID, $model, $image, $price, $weigh, $color, $numberOfProducts,
                 $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os, $case, $description);
+            $pc->setDisable($disable);
 
             array_push($listPC, $pc);
         }
@@ -93,9 +95,11 @@ class PCServices extends  ComputerProductsServices {
             $mainConnection = $row["main_connection"];
             $os = $row["os"];
             $case = $row["i_case"];
+            $disable = $row["dis"];
 
             $pc = new PC($productID, $model, $image, $price, $weigh, $color, $numberOfProducts,
                 $supplier, $cpu, $ram, $storage, $screen, $card, $mainConnection, $os, $case, $description);
+            $pc->setDisable($disable);
 
             return $pc;
         }
