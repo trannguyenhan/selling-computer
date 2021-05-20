@@ -9,7 +9,7 @@
 </head>
 <body>
     <center><img src="public/images/admin/admin.jpg" alt="" width="50%"></center>
-    <a href=""><div class="left">
+    <a href="account-management"><div class="left">
         <p>Quản lý tài khoản</p>
       </div></a>
     <a href="product-management"><div class="right">
