@@ -38,7 +38,7 @@
     $ram=$_POST['ram'];
     $storage=$_POST['storage'];
     $card=$_POST['card'];
-    $img=$_POST['img'];
+    $img='public/images/products/' . $_POST['img'];
     $depscription=$_POST['depscription'];
     
     $product=new PC($productID,$model, $img, $price, 

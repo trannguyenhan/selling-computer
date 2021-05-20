@@ -24,12 +24,12 @@
             if(($product->getProductID()==$id || $id=="") && ($product->getModel()== $model || $model=="") && ($product->getSupplier()==$sup || $sup=="") && $product->getDisable()=='0'){
                 echo '<div class="product">';
                 echo ' <div>';
-                echo '<img src="public/images/products/' . $product->getImage() . '" alt="" width="200px;" height="200px">';
+                echo '<img src="' . $product->getImage() . '" alt="" width="200px;" height="200px">';
                 echo '<p style="margin-left: 5px;">' . $product->getModel() . '</p>';
                 echo '<p style="margin-top: 0px; margin-right: 0px;">' . $product->getPrice() . 'Đ</p>';
                 echo '</div>';
                 echo '<div>';
-                echo '<button class="btn-ql-xx" onclick="sc_ct_sp(this)" value="'. $product->getProductID() . '">Xem</button>';
+                echo '<button class="btn-ql-xx" onclick="sc_ct_sp(this.value)" value="'. $product->getProductID() . '">Xem</button>';
                 echo '<button class="btn-ql-xx" onclick="delete_by_id(this)" value="'. $product->getProductID() .'">Xóa</button>';
                 echo '</div>';
                 echo '</div>';
@@ -44,12 +44,12 @@
             if(($product->getProductID()==$id || $id=="") && ($product->getModel()== $model || $model=="") && ($product->getSupplier()==$sup || $sup=="") && $product->getDisable()=='0'){
                 echo '<div class="product">';
                 echo ' <div>';
-                echo '<img src="public/images/products/' . $product->getImage() . '" alt="" width="200px;" height="200px">';
+                echo '<img src="' . $product->getImage() . '" alt="" width="200px;" height="200px">';
                 echo '<p style="margin-left: 5px;">' . $product->getModel() . '</p>';
                 echo '<p style="margin-top: 0px; margin-right: 0px;">' . $product->getPrice() . 'Đ</p>';
                 echo '</div>';
                 echo '<div>';
-                echo '<button class="btn-ql-xx" onclick="sc_ct_sp(this)" value="'. $product->getProductID() . '">Xem</button>';
+                echo '<button class="btn-ql-xx" onclick="sc_ct_sp(this.value)" value="'. $product->getProductID() . '">Xem</button>';
                 echo '<button class="btn-ql-xx" onclick="delete_by_id(this)"  value="'. $product->getProductID() .'">Xóa</button>';
                 echo '</div>';
                 echo '</div>';
@@ -64,12 +64,12 @@
             if(($product->getProductID()==$id || $id=="") && ($product->getModel()== $model || $model=="") && ($product->getSupplier()==$sup || $sup=="") && $product->getDisable()=='0'){
                 echo '<div class="product">';
                 echo ' <div>';
-                echo '<img src="public/images/products/' . $product->getImage() . '" alt="" width="200px;" height="200px">';
+                echo '<img src="' . $product->getImage() . '" alt="" width="200px;" height="200px">';
                 echo '<p style="margin-left: 5px;">' . $product->getModel() . '</p>';
                 echo '<p style="margin-top: 0px; margin-right: 0px;">' . $product->getPrice() . 'Đ</p>';
                 echo '</div>';
                 echo '<div>';
-                echo '<button class="btn-ql-xx" onclick="sc_ct_sp(this)" value="'. $product->getProductID() . '">Xem</button>';
+                echo '<button class="btn-ql-xx" onclick="sc_ct_sp(this.value)" value="'. $product->getProductID() . '">Xem</button>';
                 echo '<button class="btn-ql-xx" onclick="delete_by_id(this)" value="'. $product->getProductID() .'">Xóa</button>';
                 echo '</div>';
                 echo '</div>';

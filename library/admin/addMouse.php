@@ -34,7 +34,7 @@
     $connectionProtocal=$_POST['connectionProtocal'];
     $isLed=$_POST['isLed'];
     $size=$_POST['size'];
-    $img=$_POST['img'];
+    $img='public/images/products/' . $_POST['img'];
     $depscription=$_POST['depscription'];
     
     $product=new ComputerMouseProducts($productID,$model, $img, $price, 

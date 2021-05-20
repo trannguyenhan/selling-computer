@@ -11,7 +11,7 @@
 <body>
     <div>
         <div style="float: left; width: 20%; height: 120px;">
-            <center><img src="images/admin/admin.jpg" alt="" width="50%"></center>
+            <center><img src="images/admin/admin.jpg" alt="" width="50%" height="100%"></center>
         </div>
         <div style="width: 80%; height: 120px;">
             <center><h1 style="color: rgb(50, 158, 98); padding: 20px;">QUẢN LÝ SẢN PHẨM</h1></center>
@@ -592,10 +592,10 @@
         var size =document.getElementById('edit_size').value;
         var img_text;
         if(img==""){
-            img_text=document.getElementById('edit_img1').value;
+            img_text=document.getElementById('edit_img1').src;
         }else{
             var imgs = img.split("\\");
-            img_text=imgs[2];
+            img_text='public/images/products/' +imgs[2];
         }
 
         var str= "type="+type+"&id="+id+"&model="+model+"&img="+img_text+"&price="+price+"&w="+w+
@@ -634,6 +634,7 @@
         var cp =document.getElementById('edit_cp').style.border='none';
         var led =document.getElementById('edit_led').style.border='none';
         var size =document.getElementById('edit_size').style.border='none';
+        sc_ct_sp(document.getElementById('edit_id').value);
     }
 
     // cho phép sửa trong chi tiết sp
@@ -790,7 +791,7 @@
 
         // chi tiết sp
         function sc_ct_sp(x){
-            var id = x.value;
+            var id = x;
             document.getElementById('ql_sp').style.display='none';
             document.getElementById('ct_sp').style.display='inherit';
             var type = document.getElementById('type-search').value;
@@ -845,7 +846,7 @@
                         var s = this.responseText.split("&");
                         document.getElementById('edit_id').value=s[0];
                         document.getElementById('edit_model').value=s[1];
-                        document.getElementById('edit_img1').src='public/images/products/'+s[2];
+                        document.getElementById('edit_img1').src=s[2];
                         document.getElementById('edit_img1').value=s[2];
                         document.getElementById('edit_price').value=s[3];
                         document.getElementById('edit_w').value=s[4];
@@ -901,6 +902,7 @@
         var cp =document.getElementById('edit_cp').style.border='none';
         var led =document.getElementById('edit_led').style.border='none';
         var size =document.getElementById('edit_size').style.border='none';
+        get_data_search();
         }
 
         // ADD LAPTOP
