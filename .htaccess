@@ -10,7 +10,7 @@
     RewriteCond %{REQUEST_URI} /cart$ [OR]
     RewriteCond %{REQUEST_URI} /details [OR]
     RewriteCond %{REQUEST_URI} /admin$ [OR]
-    RewriteCond %{REQUEST_URI} /productmanagement [OR]
+    RewriteCond %{REQUEST_URI} /product-management [OR]
     RewriteCond %{REQUEST_URI} /search [OR]
     RewriteCond %{REQUEST_URI} .jpg|.png [OR]
     RewriteCond %{REQUEST_URI} /$

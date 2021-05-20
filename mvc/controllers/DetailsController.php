@@ -1,7 +1,8 @@
 <?php
 require_once ROOT . DS . 'mvc' . DS . 'controllers' . DS . 'Controller.php';
+require_once ROOT . DS . 'mvc' . DS . 'controllers' . DS . 'DefaultController.php';
 
-class DetailsController implements Controller {
+class DetailsController extends DefaultController implements Controller {
 		private $id; 					// int
 
 		public function __construct($id){

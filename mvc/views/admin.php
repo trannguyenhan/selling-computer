@@ -12,7 +12,7 @@
     <a href=""><div class="left">
         <p>Quản lý tài khoản</p>
       </div></a>
-    <a href="productmanagement"><div class="right">
+    <a href="product-management"><div class="right">
         <p>Quản lý sản phẩm</p>
       </div>
     </a>

@@ -44,7 +44,7 @@ if(isset($_SESSION['username']) && isset($_SESSION['password'])){
 			<input type="text" name="username" placeholder="Email hoặc username" required>
 			<input type="password" name="password" placeholder="Password" required>
 			<div class="btn-box">
-				<input type="submit" value="Login">
+				<button type="submit">Login</button>
 			</div>
 		</form>
 		<a href="account"><b><i><u>Chưa có tài khoản đăng kí tại đây</u></i></b></a>

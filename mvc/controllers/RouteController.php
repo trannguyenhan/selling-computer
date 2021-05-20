@@ -3,9 +3,11 @@
 class RouteController {
     private $_url;
     private $_dispath;
+    private $_is_footer;
 
     function __construct($url) {
         $this->_url = $url;
+        $this->_is_footer = 1;
 
         self::parsingURL();
     }
@@ -23,11 +25,19 @@ class RouteController {
         $controller = $urlArray[0]; array_shift($urlArray);
         $id = -1;
 
+        // check if details -> add id to url
         if(strcmp($controller, "details") == 0){
             $id = intval($urlArray[0]); array_shift($urlArray);
         }
 
+        // check if admin -> no footer
+        if(strcmp($controller, "admin") == 0 || strcmp($controller, "product-management") == 0){
+            $this->_is_footer = 0;
+        }
+
+        $controller = str_replace('-', ' ', $controller);
         $controller = ucwords($controller);
+        $controller = str_replace(' ', '', $controller);
         $controller .= "Controller"; // example : AboutController, ContactController,...
 
         require_once ROOT . DS . 'mvc' . DS . 'controllers' . DS . $controller . '.php';
@@ -41,5 +51,6 @@ class RouteController {
 
     function show() {
         $this->_dispath->__render();
+        if($this->_is_footer == 1) $this->_dispath->__footer();
     }
 }

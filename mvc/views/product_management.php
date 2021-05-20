@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProductManagement</title>
+    <title>Product Management | MTHH</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="public/css/admin/productManagement.css">
 </head>
@@ -17,7 +17,7 @@
             <center><h1 style="color: rgb(50, 158, 98); padding: 20px;">QUẢN LÝ SẢN PHẨM</h1></center>
         </div>
     </div>
-    
+
     <div id="main" style="display: flex;">
         <div style="background-color: rgb(212, 188, 109);" class="main">
             <center>
@@ -30,7 +30,7 @@
                     <button class="btn-icon" onclick="ql_laptop()">Quản lý sản phẩm</button>
                 </div>
             </center>
-            
+
         </div>
         <div style="background-color: rgb(94, 117, 139);" class="main">
             <center>
@@ -43,7 +43,7 @@
                     <button class="btn-icon"  onclick="ql_pc()">Quản lý sản phẩm</button>
                 </div>
             </center>
-            
+
         </div>
         <div style="background-color: rgb(121, 165, 92);" class="main">
             <center>
@@ -112,13 +112,13 @@
                             <p class="form-left">Depscription</p>
                             <textarea cols="70" rows="20" id="lt-dep"></textarea>
                         </div>
-                        
+
                         <!--center><input type="submit" class="submit" value="ADD" onclick="lt_add()"></center>-->
-                    </form>  
+                    </form>
                     <center><button  class="submit" onclick="add_laptop('lt-img')" style="width: 70%;">ADD</button></center>
                 </div>
             </div>
-        </div>  
+        </div>
     </div>
 
     <!--ADD-PC-->
@@ -173,14 +173,14 @@
                             <input style="margin-left: 20px;" type="file" id="pc-img">
                             <p class="form-left">Depscription</p>
                             <textarea id="pc-dep" cols="70" rows="20"></textarea>
-                        </div>    
+                        </div>
                     </form>
                     <center><button  class="submit" onclick="add_pc('pc-img')" style="width: 70%;">ADD</button></center>
                 </div>
             </div>
-        </div>  
+        </div>
     </div>
-    
+
     <!--ADD-MOUSE-->
     <div id='add_mouse' style=" display: none;">
         <div style="display: flex; background-color: rgb(97, 182, 133);">
@@ -213,7 +213,7 @@
                             <input class="form-left" type="text" id="m-sup">
                             <p class="form-left">StandardConnection</p>
                             <input class="form-left" type="text" id="m-sc">
-                            
+
                         </div>
                         <div style="float: left; width: 50%;">
                             <p class="form-left">ConnectionProtocal</p>
@@ -231,7 +231,7 @@
                     <center><button  class="submit" onclick="add_mouse('m-img')" style="width: 70%;">ADD</button></center>
                 </div>
             </div>
-        </div>  
+        </div>
     </div>
 
     <!--Tìm kiếm sản phẩm-->
@@ -275,15 +275,15 @@
                 <!--div class="product" style="">
                     <div>
                         <img src="images/admin/laptop.jpg" alt="" width="200px;" height="200px">
-                        <p style="margin-left: 5px;">LAPTOP HP ZBOOK G2</p>            
+                        <p style="margin-left: 5px;">LAPTOP HP ZBOOK G2</p>
                         <p style="margin-top: 0px; margin-right: 0px;">15.000.000Đ</p>
                     </div>
                     <div>
                         <button class="btn-ql-xx">Xem</button>
                         <button class="btn-ql-xx">Xóa</button>
                     </div>
-       
-                </div-->  
+
+                </div-->
         </div>
     </div>
 
@@ -704,7 +704,7 @@
             ql_sp.style.display='inherit';
             get_data_search();
         }
-        
+
         // quản lý chuột
         function ql_mouse(){
             var div_main = document.getElementById('main');
@@ -718,7 +718,7 @@
             get_data_search();
         }
 
-       
+
         // post data
         function funcPOST(url, cFunction) {
             var xhttp;
@@ -787,7 +787,7 @@
             }
             get_data_search();
         }
-        
+
         // chi tiết sp
         function sc_ct_sp(x){
             var id = x.value;
@@ -823,7 +823,7 @@
                     document.getElementById('edit_cp').style.display='none';
                     document.getElementById('edit_led').style.display='none';
                     document.getElementById('edit_size').style.display='none';
-            } 
+            }
             if(type=='3'){
                     document.getElementById('edit_cpu').style.display='none';
                     document.getElementById('edit_ram').style.display='none';
@@ -838,7 +838,7 @@
                     document.getElementById('edit_cp').style.display='flex';
                     document.getElementById('edit_led').style.display='flex';
                     document.getElementById('edit_size').style.display='flex';
-            }      
+            }
             var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
@@ -943,7 +943,7 @@
            "&depscription="+dep+
            "&img="+img_text;
            return str;
-           
+
         }
 
         function add_laptop(id_element) {
@@ -973,9 +973,9 @@
             var card =document.getElementById('lt-card').value;
             var dep =document.getElementById('lt-dep').value;
             var img =document.getElementById('lt-img').value;
-            
+
             if(productID=="" || model=="" || price=="" || weight=="" || color=="" || numOfProduct=="" || supplier=="" ||
-                mainC=="" || os=="" || bat=="" || sc=="" || cpu=="" || ram=="" || storage=="" || card=="" 
+                mainC=="" || os=="" || bat=="" || sc=="" || cpu=="" || ram=="" || storage=="" || card==""
                 || dep=="" || img ==""){
                     return false;
                 }else{
@@ -1044,7 +1044,7 @@
            "&depscription="+dep+
            "&img="+img_text;
            return str;
-           
+
         }
 
         function add_pc(id_element) {
@@ -1075,9 +1075,9 @@
             var card =document.getElementById('pc-card').value;
             var dep =document.getElementById('pc-dep').value;
             var img =document.getElementById('pc-img').value;
-            
+
             if(productID=="" || model=="" || price=="" || weight=="" || color=="" || numOfProduct=="" || supplier=="" ||
-                mainC=="" || os=="" || cas=="" || sc=="" || cpu=="" || ram=="" || storage=="" || card=="" 
+                mainC=="" || os=="" || cas=="" || sc=="" || cpu=="" || ram=="" || storage=="" || card==""
                 || dep=="" || img ==""){
                     return false;
                 }else{
@@ -1138,7 +1138,7 @@
            "&depscription="+dep+
            "&img="+img_text;
            return str;
-           
+
         }
 
         function add_mouse(id_element) {
@@ -1165,9 +1165,9 @@
             var size =document.getElementById('m-size').value;
             var dep =document.getElementById('m-dep').value;
             var img =document.getElementById('m-img').value;
-            
+
             if(productID=="" || model=="" || price=="" || weight=="" || color=="" || numOfProduct=="" || supplier==""
-                || sc==""|| cp=="" || isLed=="" || size=="" 
+                || sc==""|| cp=="" || isLed=="" || size==""
                 || dep=="" || img ==""){
                     return false;
                 }else{
@@ -1195,7 +1195,7 @@
         function upload_img(id_element){
 			let photo = document.getElementById(id_element).files[0];
 			let formData = new FormData();
-     
+
 			formData.append("file", photo);
 			fetch('http://localhost/selling-computer/library/admin/uploadImg.php', {method: "POST", body: formData});
 		}
