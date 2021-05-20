@@ -59,6 +59,10 @@
     right: 0;
 }
 
+.add:hover {
+    background-color: #b1154a;
+}
+
 .number {
     height: 40px;
     border-radius: 5px;

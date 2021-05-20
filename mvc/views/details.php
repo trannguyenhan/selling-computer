@@ -81,12 +81,37 @@ session_start();
 	?>
 	</div>
 </div>
+
 <form action="" method="POST">
 <div class="add-product" style="padding-top: 50px;position: relative;margin-bottom: 30px;/* justify-content: space-between; */">
 	<input class="number" type="number" name="number" min="1">
 	<input class="add" type="submit" value="Thêm vào giỏ hàng" style="margin-left:30px;">
 </div>
 </form>
+
+<?php
+if(array_key_exists('number', $_POST)) {
+	$number = isset($_POST['number']) ? $_POST['number'] : '';
+
+	if($number == '') { // if not type number
+		alert("Vui lòng nhập số lượng!");
+	}
+	elseif(!isset($_SESSION['username'])) { // if not log in
+		alert("Vui lòng đăng nhập!");
+	}
+	else {
+		require_once ROOT . DS . 'services' . DS . 'GuestServices.php';
+
+		$username = $_SESSION['username'];
+		$quantity = $_POST['number'];
+
+		$guestServiecs = new GuestServices();
+		$guestServiecs->insertProduct($username, $product, $quantity);
+		echo header('location: details.php');
+	}
+}
+?>
+
 <!-- allow user to evaluate -->
 <div class='cmt-title'><b>Đánh giá của bạn</b></div>
 <form action="" method="POST">
