@@ -10,11 +10,11 @@
 </head>
 <body>
     <div>
-        <div style="float: left; width: 20%; height: 120px;">
+        <div style="float: left; width: 20%; height: 150px;">
             <center><img src="images/admin/admin.jpg" alt="" width="50%" height="100%"></center>
         </div>
-        <div style="width: 80%; height: 120px;">
-            <center><h1 style="color: rgb(50, 158, 98); padding: 20px;">QUẢN LÝ SẢN PHẨM</h1></center>
+        <div style="width: 80%; height: 150px;">
+            <center><h1 style="color: rgb(50, 158, 98); padding: 20px;">PRODUCT  MANAGEMENT</h1></center>
         </div>
     </div>
 
@@ -24,10 +24,10 @@
                 <img src="images/admin/laptop.jpg" alt="" class="img-icon">
                 <h1 style="color: white">LAPTOP</h1>
                 <div>
-                    <button class="btn-icon" onclick="sc_laptop()">Thêm sản phẩm</button>
+                    <button class="btn-icon" onclick="sc_laptop()">Add Laptop</button>
                 </div>
                 <div>
-                    <button class="btn-icon" onclick="ql_laptop()">Quản lý sản phẩm</button>
+                    <button class="btn-icon" onclick="ql_laptop()">Laptop Management</button>
                 </div>
             </center>
 
@@ -37,10 +37,10 @@
                 <img src="images/admin/pc.jpg" alt="" class="img-icon">
                 <h1 style="color: white">PC</h1>
                 <div>
-                    <button class="btn-icon" onclick="sc_pc()">Thêm sản phẩm</button>
+                    <button class="btn-icon" onclick="sc_pc()">Add PC</button>
                 </div>
                 <div>
-                    <button class="btn-icon"  onclick="ql_pc()">Quản lý sản phẩm</button>
+                    <button class="btn-icon"  onclick="ql_pc()">PC Management</button>
                 </div>
             </center>
 
@@ -50,10 +50,10 @@
                 <img src="images/admin/mouse.jpg" alt="" class="img-icon">
                 <h1 style="color: white">MOUSE</h1>
                 <div>
-                    <button class="btn-icon" onclick="sc_mouse()">Thêm sản phẩm</button>
+                    <button class="btn-icon" onclick="sc_mouse()">Add Computer Mouse</button>
                 </div>
                 <div>
-                    <button class="btn-icon" onclick="ql_mouse()">Quản lý sản phẩm</button>
+                    <button class="btn-icon" onclick="ql_mouse()">Computer Mouse Management</button>
                 </div>
             </center>
         </div>
@@ -61,22 +61,22 @@
 
     <!--ADD-LAPTOP-->
     <div id='add_laptop' style=" display: none;">
-        <div style="display: flex; background-color: rgb(97, 182, 133);">
+        <div style="display: flex; background-color: rgb(97, 182, 133); border-top-left-radius: 20px; border-top-right-radius: 20px;">
             <div style="width: 10%;">
                 <center><button class="btn-back" onclick="back_main()">&lt&lt&lt</button></center>
             </div>
             <div  style="width: 80%;">
-                <center><h2 style="color:white;">THÊM LAPTOP</h2></center>
+                <center><h2 style="color:white;">ADD LAPTOP</h2></center>
             </div>
         </div>
 
         <div >
-            <div id="" class="form-add">
+            <div id="" class="form-add" style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; margin-bottom: 50px;">
                 <div class="form" id="form">
                     <form action="">
                         <div style="float: left; width: 50%;">
                             <p class="form-left p-add">ProductID</p>
-                            <input class="form-left" type="text" id="lt-id">
+                            <input class="form-left" type="number" id="lt-id">
                             <p class="form-left p-add">Model</p>
                             <input class="form-left" type="text" id="lt-model">
                             <p class="form-left p-add" >Price</p>
@@ -94,7 +94,7 @@
                             <p class="form-left">OS</p>
                             <input class="form-left" type="text" id="lt-os">
                             <p class="form-left">Battery</p>
-                            <input class="form-left" type="text" id="lt-bat">
+                            <input class="form-left" type="number" id="lt-bat">
                             <p class="form-left">Screen</p>
                             <input class="form-left" type="text" id="lt-sc">
                         </div>
@@ -104,7 +104,7 @@
                             <p class="form-left">RAM</p>
                             <input class="form-left" type="text" id="lt-ram">
                             <p class="form-left">Storage</p>
-                            <input class="form-left" type="text" id="lt-storage">
+                            <input class="form-left" type="number" id="lt-storage">
                             <p class="form-left">Card</p>
                             <input class="form-left" type="text" id="lt-card">
                             <p class="form-left">Image</p>
@@ -123,22 +123,22 @@
 
     <!--ADD-PC-->
     <div id='add_pc' style=" display: none;">
-        <div style="display: flex; background-color: rgb(97, 182, 133);">
+        <div style="display: flex; background-color: rgb(97, 182, 133); border-top-left-radius: 20px; border-top-right-radius: 20px;">
             <div style="width: 10%;">
                 <center><button class="btn-back" onclick="back_main()">&lt&lt&lt</button></center>
             </div>
             <div  style="width: 80%;">
-                <center><h2 style="color:white;">THÊM PC</h2></center>
+                <center><h2 style="color:white;">ADD PC</h2></center>
             </div>
         </div>
 
         <div >
-            <div id="" class="form-add">
+            <div id="" class="form-add" style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; margin-bottom: 50px;">
                 <div>
                     <form action="">
                         <div style="float: left; width: 50%;">
                             <p class="form-left">ProductID</p>
-                            <input class="form-left" type="text" id="pc-id">
+                            <input class="form-left" type="number" id="pc-id">
                             <p class="form-left">Model</p>
                             <input class="form-left" type="text" id="pc-model">
                             <p class="form-left" >Price</p>
@@ -166,7 +166,7 @@
                             <p class="form-left">RAM</p>
                             <input class="form-left" type="text" id="pc-ram">
                             <p class="form-left">Storage</p>
-                            <input class="form-left" type="text" id="pc-storage">
+                            <input class="form-left" type="number" id="pc-storage">
                             <p class="form-left">Card</p>
                             <input class="form-left" type="text" id="pc-card">
                             <p class="form-left">Image</p>
@@ -183,22 +183,22 @@
 
     <!--ADD-MOUSE-->
     <div id='add_mouse' style=" display: none;">
-        <div style="display: flex; background-color: rgb(97, 182, 133);">
+        <div style="display: flex; background-color: rgb(97, 182, 133); border-top-left-radius: 20px; border-top-right-radius: 20px;">
             <div style="width: 10%;">
                 <center><button class="btn-back" onclick="back_main()">&lt&lt&lt</button></center>
             </div>
             <div  style="width: 80%;">
-                <center><h2 style="color:white;">THÊM MOUSE</h2></center>
+                <center><h2 style="color:white;">ADD MOUSE</h2></center>
             </div>
         </div>
 
-        <div >
-            <div id="" class="form-add">
+        <div>
+            <div id="" class="form-add" style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; margin-bottom: 50px;">
                 <div>
                     <form action="">
                         <div style="float: left; width: 50%;">
                             <p class="form-left">ProductID</p>
-                            <input class="form-left" type="text" id="m-id">
+                            <input class="form-left" type="number" id="m-id">
                             <p class="form-left">Model</p>
                             <input class="form-left" type="text" id="m-model">
                             <p class="form-left" >Price</p>
@@ -212,14 +212,14 @@
                             <p class="form-left">Supplier</p>
                             <input class="form-left" type="text" id="m-sup">
                             <p class="form-left">StandardConnection</p>
-                            <input class="form-left" type="text" id="m-sc">
+                            <input class="form-left" type="number" id="m-sc">
 
                         </div>
                         <div style="float: left; width: 50%;">
                             <p class="form-left">ConnectionProtocal</p>
                             <input class="form-left" type="text" id="m-cp">
                             <p class="form-left">IsLed</p>
-                            <input class="form-left" type="text" id="m-isLed">
+                            <input class="form-left" type="number" id="m-isLed">
                             <p class="form-left">Size</p>
                             <input class="form-left" type="text" id="m-size">
                             <p class="form-left">Image</p>
@@ -236,7 +236,7 @@
 
     <!--Tìm kiếm sản phẩm-->
     <div id='ql_sp' style=" display: none;">
-        <div style="display: flex; background-color: rgb(97, 182, 133);">
+        <div style="display: flex; background-color: rgb(97, 182, 133); border-top-left-radius: 20px; border-top-right-radius: 20px;">
             <div style="width: 10%;">
                 <center><button class="btn-back" onclick="back_main()">&lt&lt&lt</button></center>
             </div>
@@ -263,6 +263,9 @@
                     <option>Dell</option>
                     <option>Hp</option>
                     <option>Lenovo</option>
+                    <option>Asus</option>
+                    <option>MSI</option>
+                    <option>Acer</option>
                     </select>
                 </div>
                 <div style="float: left; width: 10%;">
@@ -290,25 +293,25 @@
 
     <!--CHI TIẾT SẢN PHẨM -->
     <div id='ct_sp' style=" display: none;">
-        <div style="display: flex; background-color: rgb(97, 182, 133);">
+        <div style="display: flex; background-color: rgb(97, 182, 133); border-top-left-radius: 20px; border-top-right-radius: 20px;">
             <div style="width: 10%;">
                 <center><button class="btn-back" onclick="back_qlsp()">&lt&lt&lt</button></center>
             </div>
             <div  style="width: 80%;">
-                <center><h2 style="color:white;">CHI TIẾT SẢN PHẨM</h2></center>
+                <center><h2 style="color:white;">PRODUCT DETAILS </h2></center>
             </div>
         </div>
 
         <div>
             <div style="display: flex;">
                 <div style="width:50%;">
-                    <p style="margin: 20px; padding:0px; color:dodgerblue; font-size: 25px;">ProductID</p>
+                    <p style="margin: 20px; padding:0px; color:dodgerblue; font-size: 25px;">ProductID(not edit)</p>
                 </div>
                 <div style="width:40%;">
-                    <input disabled="" type="text" value="" id="edit_id" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
+                    <input disabled="" type="number" value="" id="edit_id" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
                 </div>
                 <div style="width:10%;">
-                    <button style="margin: 20px; font-size: 25px;" onclick="edit(this.value)" value="edit_id" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    <button style="margin: 20px; font-size: 25px;" value="edit_id" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                 </div>
             </div>
             <hr>
@@ -329,7 +332,7 @@
                     <p style="margin: 20px; padding:0px; color:dodgerblue; font-size: 25px;">Price</p>
                 </div>
                 <div style="width:40%;">
-                    <input disabled="" type="text" value="" id="edit_price" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
+                    <input disabled="" type="number" value="" id="edit_price" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
                 </div>
                 <div style="width:10%;">
                     <button style="margin: 20px; font-size: 25px;" onclick="edit(this.value)" value="edit_price" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
@@ -341,7 +344,7 @@
                     <p style="margin: 20px; padding:0px; color:dodgerblue; font-size: 25px;">Weight</p>
                 </div>
                 <div style="width:40%;">
-                    <input disabled="" type="text" value="" id="edit_w" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
+                    <input disabled="" type="number" value="" id="edit_w" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
                 </div>
                 <div style="width:10%;">
                     <button style="margin: 20px; font-size: 25px;" onclick="edit(this.value)" value="edit_w" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
@@ -365,7 +368,7 @@
                     <p style="margin: 20px; padding:0px; color:dodgerblue; font-size: 25px;">Num Of Product</p>
                 </div>
                 <div style="width:40%;">
-                    <input disabled="" type="text" value="" id="edit_num" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
+                    <input disabled="" type="number" value="" id="edit_num" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
                 </div>
                 <div style="width:10%;">
                     <button style="margin: 20px; font-size: 25px;" onclick="edit(this.value)" value="edit_num" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
@@ -413,7 +416,7 @@
                     <p style="margin: 20px; padding:0px; color:dodgerblue; font-size: 25px;">Storage(Laptop/PC)</p>
                 </div>
                 <div style="width:40%;">
-                    <input disabled="" type="text" value="" id="edit_storage" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
+                    <input disabled="" type="number" value="" id="edit_storage" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
                 </div>
                 <div style="width:10%;">
                     <button style="margin: 20px; font-size: 25px;" onclick="edit(this.value)" value="edit_storage" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
@@ -473,7 +476,7 @@
                     <p style="margin: 20px; padding:0px; color:dodgerblue; font-size: 25px;">Battery(Laptop)</p>
                 </div>
                 <div style="width:40%;">
-                    <input disabled="" type="text" value="" id="edit_bat" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
+                    <input disabled="" type="number" value="" id="edit_bat" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
                 </div>
                 <div style="width:10%;">
                     <button style="margin: 20px; font-size: 25px;" onclick="edit(this.value)" value="edit_bat" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
@@ -495,7 +498,7 @@
                     <p style="margin: 20px; padding:0px; color:dodgerblue; font-size: 25px;">Standard Connection(Mouse)</p>
                 </div>
                 <div style="width:40%;">
-                    <input disabled="" type="text" value="" id="edit_sc" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
+                    <input disabled="" type="number" value="" id="edit_sc" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
                 </div>
                 <div style="width:10%;">
                     <button style="margin: 20px; font-size: 25px;" onclick="edit(this.value)" value="edit_sc" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
@@ -517,7 +520,7 @@
                     <p style="margin: 20px; padding:0px; color:dodgerblue; font-size: 25px;">Led(Mouse)</p>
                 </div>
                 <div style="width:40%;">
-                    <input disabled="" type="text" value="" id="edit_led" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
+                    <input disabled="" type="number" value="" id="edit_led" style="margin: 20px; font-size: 25px; border: none;  border-radius: 5px; color:dodgerblue;">
                 </div>
                 <div style="width:10%;">
                     <button style="margin: 20px; font-size: 25px;" onclick="edit(this.value)" value="edit_led" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
@@ -558,7 +561,7 @@
                 </div>
             </div>
             <hr>
-            <center><button type="button" onclick="update()" style="width: 70%;" class="submit">Cập nhật</button></center>
+            <center><button type="button" onclick="update()" style="width: 70%;" class="submit">UPDATE</button></center>
 
         </div>
     </div>
@@ -566,6 +569,14 @@
     <script>
 
     // update sp
+    function check_img(s){
+        imgs=s.split(".");
+        if(imgs[1]=='jpg' || imgs[1]=='png' || imgs[1]=='gif'|| imgs[1]=='tiff' || imgs[1]=='bmp'){
+            return true;
+        }
+        return false;
+    }
+
     function update(){
         var type = document.getElementById('type-search').value;
         var id = document.getElementById('edit_id').value;
@@ -590,15 +601,53 @@
         var cp =document.getElementById('edit_cp').value;
         var led =document.getElementById('edit_led').value;
         var size =document.getElementById('edit_size').value;
+
+        var str="";
+        if(id<=0){
+            str+="productID must be greater than 0\n";
+        }
+        if(price<=0){
+            str+="price must be greater than 0\n";
+        }
+        if(w<=0){
+            str+="weight must be greater than 0\n";
+        }
+        if(num<0){
+            str+="(numOfProduct must be greater than 0 or equal to 0\n";
+        }
+        if(bat<=0 && type==1){
+            str+="battery must be greater than 0\n";
+        }
+        if(storage<=0  &&( type==1  || type==2)){
+            str+="storage must be greater than 0\n";
+        }
+        if(sc<=0  && type==3){
+            str+="StandardConnection must be greater than 0\n";
+        }
+        if((!(led==0 || led ==1))  && type==3){
+            str+="Led must be equal to 0(not led) or equal to 1(led)\n";
+        }
+
+        if(str!=""){
+            alert(str);
+            return;
+        }
+
         var img_text;
         if(img==""){
             img_text=document.getElementById('edit_img1').src;
         }else{
             var imgs = img.split("\\");
             img_text='public/images/products/' +imgs[2];
+            if(check_img(img_text)){
+                upload_img('edit_img2');
+            }else{
+                alert("Wrong image format!");
+                return;
+            }
         }
 
-        var str= "type="+type+"&id="+id+"&model="+model+"&img="+img_text+"&price="+price+"&w="+w+
+        var str1= "type="+type+"&id="+id+"&model="+model+"&img="+img_text+"&price="+price+"&w="+w+
         "&color="+color+"&num="+num+"&supplier="+supplier+"&cpu="+cpu+"&ram="+ram+"&storage="+storage+
         "&screen="+screen+"&card="+card+"&mc="+mc+"&os="+os+"&bat="+bat+"&dep="+dep+"&case="+cas+"&sc="+sc+
         "&cp="+cp+"&led="+led+"&size="+size;
@@ -611,7 +660,7 @@
             };
             xhttp.open("POST", "http://localhost/selling-computer/library/admin/updateProduct.php", false);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send(str);
+            xhttp.send(str1);
             var id = document.getElementById('edit_id').style.border='none';
         var model =document.getElementById('edit_model').style.border='none';
         var img =document.getElementById('edit_img2').style.border='none';
@@ -687,7 +736,7 @@
             var type=document.getElementById('type-search');
             var text=document.getElementById('ql_sp_text');
             type.value='1';
-            text.innerHTML="QUẢN LÝ LAPTOP";
+            text.innerHTML="LAPTOP MANAGEMENT";
             div_main.style.display='none';
             ql_sp.style.display='inherit';
             get_data_search();
@@ -700,7 +749,7 @@
             var type=document.getElementById('type-search');
             var text=document.getElementById('ql_sp_text');
             type.value='2';
-            text.innerHTML="QUẢN LÝ PC";
+            text.innerHTML="PC MANAGEMENT";
             div_main.style.display='none';
             ql_sp.style.display='inherit';
             get_data_search();
@@ -713,7 +762,7 @@
             var type=document.getElementById('type-search');
             var text=document.getElementById('ql_sp_text');
             type.value='3';
-            text.innerHTML="QUẢN LÝ MOUSE";
+            text.innerHTML="COMPUTER MOUSE MANAGEMENT";
             div_main.style.display='none';
             ql_sp.style.display='inherit';
             get_data_search();
@@ -729,7 +778,7 @@
                 if (this.readyState == 4 && this.status == 200) {
                     //document.getElementById("rs").innerHTML=this.responseText;
                     alert(this.responseText);
-                    if(this.responseText=="Thêm thành công!") {
+                    if(this.responseText=="Add success!") {
                         remove_add_laptop();
                         remove_add_pc();
                         remove_add_mouse();
@@ -766,7 +815,7 @@
         // xóa sp theo id
         function delete_by_id(x){
             var id = x.value;
-            if(confirm("Bạn có chắc chắn muốn xóa không?")==true){
+            if(confirm("Are you sure you want to delete?")==true){
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
@@ -949,11 +998,21 @@
         }
 
         function add_laptop(id_element) {
-            if(check_add_laptop()==false){
-                alert("Các trường không được trống!");
+            str = check_add_laptop();
+            if(str!=""){
+                alert(str);
                 return;
             }
-            upload_img(id_element);
+            var img =document.getElementById('lt-img').value;
+            var imgs = img.split("\\");
+            var img_text=imgs[2];
+            if(check_img(img_text)){
+                upload_img(id_element);
+            }else{
+                alert("Wrong image format!");
+                return;
+            }
+            
             funcPOST("http://localhost/selling-computer/library/admin/addLaptop.php", get_value_add_laptop);
         }
 
@@ -976,13 +1035,32 @@
             var dep =document.getElementById('lt-dep').value;
             var img =document.getElementById('lt-img').value;
 
+            var str="";
             if(productID=="" || model=="" || price=="" || weight=="" || color=="" || numOfProduct=="" || supplier=="" ||
                 mainC=="" || os=="" || bat=="" || sc=="" || cpu=="" || ram=="" || storage=="" || card==""
                 || dep=="" || img ==""){
-                    return false;
-                }else{
-                    return true;
+                    str+= "Fields cannot be null!";
+            }else{
+                if(productID<=0){
+                    str+="productID must be greater than 0\n";
                 }
+                if(price<=0){
+                    str+="price must be greater than 0\n";
+                }
+                if(weight<=0){
+                    str+="weight must be greater than 0\n";
+                }
+                if(numOfProduct<0){
+                    str+="(numOfProduct must be greater than 0 or equal to 0\n";
+                }
+                if(bat<=0){
+                    str+="battery must be greater than 0\n";
+                }
+                if(storage<=0){
+                    str+="storage must be greater than 0\n";
+                }
+            }
+                return str;
         }
 
         function remove_add_laptop(){
@@ -1050,11 +1128,20 @@
         }
 
         function add_pc(id_element) {
-            if(check_add_pc()==false){
-                alert("Các trường không được trống!");
+            str = check_add_pc();
+            if(str!=""){
+                alert(str);
                 return;
             }
-            upload_img(id_element);
+            var img =document.getElementById('pc-img').value;
+            var imgs = img.split("\\");
+            var img_text=imgs[2];
+            if(check_img(img_text)){
+                upload_img(id_element);
+            }else{
+                alert("Wrong image format!");
+                return;
+            }
             funcPOST("http://localhost/selling-computer/library/admin/addPC.php", get_value_add_pc);
 
         }
@@ -1078,13 +1165,29 @@
             var dep =document.getElementById('pc-dep').value;
             var img =document.getElementById('pc-img').value;
 
+            var str="";
             if(productID=="" || model=="" || price=="" || weight=="" || color=="" || numOfProduct=="" || supplier=="" ||
                 mainC=="" || os=="" || cas=="" || sc=="" || cpu=="" || ram=="" || storage=="" || card==""
                 || dep=="" || img ==""){
-                    return false;
-                }else{
-                    return true;
+                    str+= "Fields cannot be null!";
+            }else{
+                if(productID<=0){
+                    str+="productID must be greater than 0\n";
                 }
+                if(price<=0){
+                    str+="price must be greater than 0\n";
+                }
+                if(weight<=0){
+                    str+="weight must be greater than 0\n";
+                }
+                if(numOfProduct<0){
+                    str+="(numOfProduct must be greater than 0 or equal to 0\n";
+                }
+                if(storage<=0){
+                    str+="storage must be greater than 0\n";
+                }
+            }
+                return str;
         }
 
         function remove_add_pc(){
@@ -1144,11 +1247,20 @@
         }
 
         function add_mouse(id_element) {
-            if(check_add_mouse()==false){
-                alert("Các trường không được trống!");
+            str = check_add_mouse();
+            if(str!=""){
+                alert(str);
                 return;
             }
-            upload_img(id_element);
+            var img =document.getElementById('m-img').value;
+            var imgs = img.split("\\");
+            var img_text=imgs[2];
+            if(check_img(img_text)){
+                upload_img(id_element);
+            }else{
+                alert("Wrong image format!");
+                return;
+            }
             funcPOST("http://localhost/selling-computer/library/admin/addMouse.php", get_value_add_mouse);
 
         }
@@ -1168,13 +1280,32 @@
             var dep =document.getElementById('m-dep').value;
             var img =document.getElementById('m-img').value;
 
+            var str="";
             if(productID=="" || model=="" || price=="" || weight=="" || color=="" || numOfProduct=="" || supplier==""
                 || sc==""|| cp=="" || isLed=="" || size==""
                 || dep=="" || img ==""){
-                    return false;
-                }else{
-                    return true;
+                    str+= "Fields cannot be null!";
+            }else{
+                if(productID<=0){
+                    str+="productID must be greater than 0\n";
                 }
+                if(price<=0){
+                    str+="price must be greater than 0\n";
+                }
+                if(weight<=0){
+                    str+="weight must be greater than 0\n";
+                }
+                if(numOfProduct<0){
+                    str+="(numOfProduct must be greater than 0 or equal to 0\n";
+                }
+                if(sc<=0){
+                    str+="StandardConnection must be greater than 0\n";
+                }
+                if(!(isLed==0 || isLed ==1)){
+                    str+="isLed must be equal to 0(not led) or equal to 1(led)\n";
+                }
+            }
+                return str;
         }
 
         function remove_add_mouse(){

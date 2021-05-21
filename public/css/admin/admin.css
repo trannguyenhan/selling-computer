@@ -4,20 +4,36 @@
 .left {
     background-color: #2196F3;
     float: left;
-    width: 50%; /* The width is 20%, by default */
+    width: 45%; /* The width is 20%, by default */
     font-size: 3vw;
     color: #fff;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
-  .left:hover{background-color:#1f45ec}
-  .right:hover{background-color:#177448}
+  .left:hover{
+    background-color:#1f45ec;
+    margin-top: 0px;
+    transition: 0.5s;
+  }
+  .right:hover{
+    background-color:#177448;
+    margin-top: 0px;
+    transition: 0.5s;
+  }
   
   .right {
     background-color: #4CAF50;
     float: left;
-    width: 50%; /* The width is 20%, by default */
+    width: 45%; /* The width is 20%, by default */
     font-size: 3vw;
     color: #fff;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
   }
   p{
       padding: 20px;

@@ -9,6 +9,6 @@
     $id=$_GET['id'];
     $service = new ProductsServices();
     $service->disable($id);
-    echo "Xóa thành công!";                                                
+    echo "Delete success!";                                                
 ?>
     

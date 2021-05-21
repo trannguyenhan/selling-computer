@@ -10,10 +10,10 @@
 <body>
     <center><img src="public/images/admin/admin.jpg" alt="" width="50%"></center>
     <a href="account-management"><div class="left">
-        <p>Quản lý tài khoản</p>
+        <p>Account Management</p>
       </div></a>
     <a href="product-management"><div class="right">
-        <p>Quản lý sản phẩm</p>
+        <p>Product Management</p>
       </div>
     </a>
 </body>

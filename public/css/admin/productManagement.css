@@ -136,7 +136,7 @@ textarea:focus {
 .product{
     float: left;
     width: 200px;
-    height: 340px;
+    height: 370px;
     margin-left: 5%;
     background-color: rgb(148, 160, 175);
     margin-top: 20px;
@@ -157,10 +157,10 @@ textarea:focus {
     border-radius: 2px;
     border: none;
     outline: none;
-    width: 50px;
+    width: 80px;
     height: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     color: white;
     margin-top: 2px;
     font-size: 20px;
