@@ -11,6 +11,37 @@ session_start();
 	<link rel="stylesheet" href="../../public/css/footer_container.css" type="text/css">
 	<link rel="stylesheet" href="../../public/css/nav_bar.css" type="text/css">
 	<link rel="stylesheet" href="../../public/css/details.css" type="text/css">
+	<script>
+			var session = "";
+			<?php
+			if(isset($_SESSION['username'])){
+					echo "session = '" . $_SESSION['username'] . "' ;";
+			}
+			?>
+
+			function validComment(){
+					if(session == ""){
+							alert("Vui lòng đăng nhập để bình luận!");
+							return false;
+					}
+					let comment = document.getElementById("your_comment").value;
+					if(comment == ""){
+							alert("Nhập bình luận để tiếp tục!");
+							return false;
+					}
+
+					return true;
+			}
+
+			function validCart(){
+					if(session == ""){
+							alert("Vui lòng đăng nhập để sử dụng giỏ hàng!")
+							return false;
+					}
+
+					return true;
+			}
+	</script>
 	<title>Product Detail | MTHH</title>
 </head>
 <body>
@@ -82,57 +113,39 @@ session_start();
 	</div>
 </div>
 
-<form action="" method="POST">
+<form action="" method="POST" onsubmit="return validCart();">
 <div class="add-product" style="padding-top: 50px;position: relative;margin-bottom: 30px;/* justify-content: space-between; */">
-	<input class="number" type="number" name="number" min="1">
+	<input class="number" type="number" name="number" min="1" value="1">
 	<input class="add" type="submit" value="Thêm vào giỏ hàng" style="margin-left:30px;">
 </div>
 </form>
 
 <?php
 if(array_key_exists('number', $_POST)) {
-	$number = isset($_POST['number']) ? $_POST['number'] : '';
-
-	if($number == '') { // if not type number
-		alert("Vui lòng nhập số lượng!");
-	}
-	elseif(!isset($_SESSION['username'])) { // if not log in
-		alert("Vui lòng đăng nhập!");
-	}
-	else {
 		require_once ROOT . DS . 'services' . DS . 'GuestServices.php';
 
 		$username = $_SESSION['username'];
 		$quantity = $_POST['number'];
 
 		$guestServiecs = new GuestServices();
-		$guestServiecs->insertProduct($username, $product, $quantity);
-		echo header('location: details.php');
-	}
+		$listProducts = $guestServiecs->getListCartProducts($_SESSION['username']);
+		if(!in_array($product, $listProducts)){
+				$guestServiecs->insertProduct($username, $product, $quantity);
+		}
 }
 ?>
 
 <!-- allow user to evaluate -->
 <div class='cmt-title'><b>Đánh giá của bạn</b></div>
-<form action="" method="POST">
+<form action="" method="POST" onsubmit="return validComment();">
 <div class='your-evaluate'>
-	<div class='your-star'><b>Điểm đánh giá</b>: <input class='rating' type="number" name="star" min="1" max="5"></div>
+	<div class='your-star'><b>Điểm đánh giá</b>: <input class='rating' type="number" name="star" min="1" max="5" value="5"></div>
 	<div class='your-cmt'><b>Bình luận</b>: </div>
-	<textarea class='comment' rows='1' name="cmt" placeholder='Hãy để lại bình luận của bạn'></textarea>
-	<input class='submit' type='submit' value='Gửi'>
+	<textarea class='comment' rows='1' name="cmt" placeholder='Hãy để lại bình luận của bạn' id="your_comment"></textarea>
+	<input class='submit' type='submit' value='Gửi' id="submit_evaluate">
 </div>
 </form>
-<?php
 
-function alert($msg) {
-	echo "<script type='text/javascript'>alert('$msg');</script>";
-}
-
-function formatMoney($money) {
-
-}
-
-?>
 <?php
 // if click submit
 if(array_key_exists("cmt", $_POST)) {
@@ -143,25 +156,14 @@ if(array_key_exists("cmt", $_POST)) {
 	$date = date('Y-m-d h:i:s', time());
 	$productID = $product->getProductID();
 
-	if($star == '') { // if not rating
-		alert("Vui lòng nhập điểm đánh giá!");
-	}
-	elseif($cmt == '') { // if not comment
-		alert('Vui lòng nhập bình luận!');
-	} 
-	elseif(!isset($_SESSION['username'])) { // if not log in
-		alert('Vui lòng đăng nhập để đánh giá!');
-	}
-	else { 	// insert to database
-		require_once ROOT . DS . 'services' . DS . 'EvaluateServices.php';
-		require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'Evaluate.php';
+	require_once ROOT . DS . 'services' . DS . 'EvaluateServices.php';
+	require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'Evaluate.php';
 
-		$username = $_SESSION['username'];
-		$evalate = new Evaluate($username, $productID, $star, $cmt, $date);
-		$service = new EvaluateServices();
-		$service->insert($evalate);
-		echo header('location: details.php');
-	}
+	$username = $_SESSION['username'];
+	$evalate = new Evaluate($username, $productID, $star, $cmt, $date);
+	$service = new EvaluateServices();
+	$service->insert($evalate);
+	// echo header('location: details.php');
 }
 ?>
 

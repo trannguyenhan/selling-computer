@@ -41,10 +41,10 @@
 							<span class="product-trend-label">Xem sản phẩm</span>
 							<span class="product-discount-label">50%</span>
 							<ul class="social">
-								<li><a href="<?php;?>" data-toggle="tooltip" data-placement="top" title="Add to cart"><i class = "fa fa-shopping-cart" onclick="cart_change()"></i></a></li>
-								<li><a href="#" data-toggle="tooltip" data-placement="top" title="Wish List"><i class = "fa fa-heart"></i></a></li>
-								<li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class = "fa fa-random"></i></a></li>
-								<li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class = "fa fa-search"></i></a></li>
+								<li><a href="<?php echo "details/" . $laptop->getProductID() . "/" . $path ?>" data-toggle="tooltip" data-placement="top" title="Add to cart"><i class = "fa fa-shopping-cart" onclick="cart_change()"></i></a></li>
+								<li><a href="<?php echo "details/" . $laptop->getProductID() . "/" . $path ?>" data-toggle="tooltip" data-placement="top" title="Wish List"><i class = "fa fa-heart"></i></a></li>
+								<li><a href="<?php echo "details/" . $laptop->getProductID() . "/" . $path ?>" data-toggle="tooltip" data-placement="top" title="Compare"><i class = "fa fa-random"></i></a></li>
+								<li><a href="<?php echo "details/" . $laptop->getProductID() . "/" . $path ?>" data-toggle="tooltip" data-placement="top" title="Quick View"><i class = "fa fa-search"></i></a></li>
 							</ul>
 						</div>
 					</a>

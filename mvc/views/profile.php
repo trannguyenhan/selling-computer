@@ -58,16 +58,16 @@
 							<!-- <label for="birthday">Sinh nhật:</label> -->
 						</div>
 						<div class="input">
-              <form action="" method="POST">
+              <form action="library/refresh_profile.php" method="POST">
   							<div class="input_text">
-  								<p><input type="text" class="sign_name" value = "<?php echo $person->getUsername(); ?>">
+  								<p><input type="text" name="username" class="sign_name" value = "<?php echo $person->getUsername(); ?>" readonly="readonly">
   								<!-- <a href="">Change</a></p> -->
-  								<p><input type="text" class = "name" value = "<?php echo $person->getName(); ?>">
+  								<p><input type="text" name="name" class = "name" value = "<?php echo $person->getName(); ?>">
   								<!-- <a href="">Change</a></p> -->
   								<!-- <p><input type="email" class="useremail" value = "buiviethoang12062000@gmail.com">
   								<a href="">Change</a></p> -->
-  								<p><input type="text" class="phone" value="<?php echo $person->getTelephone(); ?>">
-                  <p><input type="text" class="phone" value="<?php echo $person->getAddress(); ?>">
+  								<p><input type="text" name="telephone" class="phone" value="<?php echo $person->getTelephone(); ?>">
+                  <p><input type="text" name="address" class="phone" value="<?php echo $person->getAddress(); ?>">
   								<!-- <a href="">Change</a></p> -->
   							</div>
   							<!-- <div class="radio">
@@ -108,44 +108,73 @@
 						</ul>
 					</div>
 					<div class="search">
-						<p><i class="fa fa-search" aria-hidden="true"></i><input type="text" placeholder="Tim kiem theo ten shop, ten sp"></p>
+            <br /><!-- Chức năng tìm kiếm, phát triển sau -->
+						<!-- <p><i class="fa fa-search" aria-hidden="true"></i><input type="text" placeholder="Tim kiem theo ten shop, ten sp"></p> -->
 					</div>
 					<div class="main_order">
-						<div class="service">
-							<ul>
-								<li><a href=""><img src="https://thietkeweb9999.com/data/upload/blog/logo/tong-hop-30-mau-logo-dep-hinh-con-dai-bang-06.jpg" alt=""><span>Hoang's shop</span></a></li>
-								<li><a href=""><i class="fa fa-comments-o" aria-hidden="true"></i>chat</a></li>
-								<li><a href=""><i class="fa fa-eye" aria-hidden="true"></i>
-								xem shop</a></li>
-								<li ><a href="" id = 'ship' ><i class="fa fa-truck" aria-hidden="true"></i>giao hang thanh cong</a></li>
-							</ul>
-							<hr>
-						</div>
-						<div class="detail">
-							<div class="col-1">
-								<img src="sweater/ao_len_1.jpg" alt="">
-							</div>
-							<div class="col-2">
-								<p id = 'deal'>Deal soc</p>
-								<p>kajfkdjkfajkfjdskfjkfjksdjfdkjkdafkj kdfjkadsf jf aj kdf f</p>
-								<p id = 'quantity'>x1</p>
-							</div>
-							<div class="col-3">
-								<p><del>1293$</del>3489$</p>
-							</div>
-							<hr>
-						</div>
+            <?php
+                $service = new GuestServices();
+                $listProductsBill = $service->getListProductsBill($username);
+                $sum = 0;
+                require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php';
+                require_once ROOT . DS . 'services' . DS . 'products' . DS . 'PCServices.php';
+                require_once ROOT . DS . 'services' . DS . 'products' . DS . 'ComputerMouseProductsServices.php';
+                require_once ROOT . DS . 'services' . DS . 'TypeProductsServices.php';
+                require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Type.php';
+                foreach ($listProductsBill as $bill) {
+
+                    $product;
+                    $type = TypeProductsServices::checkType($bill->getProductID());
+                    if($type == Type::PC){
+                        $service = new PCServices();
+                        $product = $service->get($bill->getProductID());
+                    } else if ($type == Type::LAPTOP){
+                        $service = new LaptopServices();
+                        $product = $service->get($bill->getProductID());
+                    } else if ($type == Type::MOUSE){
+                        $service = new ComputerMouseProductsServices();
+                        $product = $serive->get($bill->getProductID());
+                    }
+                    $sum += intval($product->getPrice()) * intval($bill->getQuantity());
+
+            ?>
+  						<!-- <div class="service">
+  							<ul>
+  								<li><a href=""><img src="https://thietkeweb9999.com/data/upload/blog/logo/tong-hop-30-mau-logo-dep-hinh-con-dai-bang-06.jpg" alt=""><span>Hoang's shop</span></a></li>
+  								<li><a href=""><i class="fa fa-comments-o" aria-hidden="true"></i>chat</a></li>
+  								<li><a href=""><i class="fa fa-eye" aria-hidden="true"></i>
+  								xem shop</a></li>
+  								<li ><a href="" id = 'ship' ><i class="fa fa-truck" aria-hidden="true"></i>giao hang thanh cong</a></li>
+  							</ul>
+  							<hr>
+  						</div> -->
+  						<div class="detail">
+  							<div class="col-1">
+  								<img src="<?php echo $product->getImage() ?>" alt="">
+  							</div>
+  							<div class="col-2">
+  								<p id = 'deal'><?php echo $bill->getDateBill() ?></p>
+  								<p><?php echo $product->getModel() ?></p>
+  								<p id = 'quantity'>x<?php echo $bill->getQuantity() ?></p>
+  							</div>
+  							<div class="col-3">
+  								<p><!--<del>1293$</del>--><?php echo intval($product->getPrice())*intval($bill->getQuantity()) ?></p>
+  							</div>
+  							<hr>
+  						</div>
+            <?php } ?>
 						<div class="result">
-							<p><i class="fa fa-shield" aria-hidden="true"></i>Sum: <span>84938$</span> </p>
+							<p><i class="fa fa-shield" aria-hidden="true"></i>Tổng :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span><?php echo $sum ?> VNĐ</span> </p>
 							<hr>
-							<div class="action">
+							<!-- <div class="action">
 								<button>Mua lan nua</button>
 								<button>Xem chi tiet don hang</button>
 								<select name="Them" id="">
 									<option value="">Xem danh gia shop</option>
 									<option value="">Xem danh gia nguoi mua</option>
 								</select>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
@@ -221,22 +250,20 @@
 						<label for="new_pwd_verify">Mật khẩu mới</label>
 						<label for="validation">Xác nhận mật khẩu mới</label>
 					</div>
-          <form acction="" method="POST">
+          <form action="library/refresh_password.php" method="POST">
   					<div class="input">
-  						<input type="text" name="old_password">
+  						<input type="password" name="old_password">
   						<br>
-  						<input type="text" name="new_password">
+  						<input type="password" name="new_password">
   						<br>
-  						<input type="text" name="re_new_password"><!--<span>Gui ma xac minh</span>-->
+  						<input type="password" name="re_new_password"><!--<span>Gui ma xac minh</span>-->
   						<br>
   						<button type="submit">Xác nhận</button>
   					</div>
           </form>
 				</div>
 			</div>
-      <form acction="http://localhost/selling-computer/library/refresh_session.php" method="POST">
-        <button type="submit">Đăng xuất</button>
-      </form>
+        <a href="library/refresh_session.php"><button type="submit">Đăng xuất</button></a>
 		</div>
 
 				<!-- <div class="right_side_bar">

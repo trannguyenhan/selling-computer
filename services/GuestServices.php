@@ -3,6 +3,7 @@
 require_once ROOT . DS . 'services' . DS . 'MySqlConnect.php';
 require_once ROOT . DS . 'services' . DS . 'TypeProductsServices.php';
 require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'Guest.php';
+require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'Bill.php';
 require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Products.php';
 require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . "Type.php";
 
@@ -226,6 +227,18 @@ class GuestServices extends MySqlConnect {
         $query = "insert into cart_products(cart_id, product_id, quantity)
                     value($cart_id, $product_id, $quantity)
                   ";
+        
+        parent::addQuerry($query);
+        parent::updateQuery();
+    }
+
+    /**
+     * Method help remove product from cart
+     * @param int $product_id
+     */
+    public function removeProduct($product_id, $username){
+        $cart_id = self::getCartID($username);
+        $query = "delete from cart_products where product_id = $product_id and cart_id = $cart_id";
 
         parent::addQuerry($query);
         parent::updateQuery();
@@ -247,6 +260,51 @@ class GuestServices extends MySqlConnect {
         } else {
             return False;
         }
+    }
+
+    /**
+    * Get all product in bill
+    * @param String $username
+    * @return array
+    */
+    public function getListProductsBill($username){
+        $listProductsBill = array();
+
+        $query = "select * from bill where user_name = '$username'";
+        parent::addQuerry($query);
+        $result = parent::executeQuery();
+
+        while($row = mysqli_fetch_array($result)){
+            $product_id = $row["product_id"];
+            $bill_id = $row["bill_id"];
+            $date_bill = $row["date_bill"];
+            $total_money = $row["total_money"];
+            $quantity = $row["quantity"];
+
+            $bill = new Bill($product_id, $username, $date_bill, $total_money, $quantity);
+            array_push($listProductsBill, $bill);
+        }
+
+        return $listProductsBill;
+    }
+
+    /**
+    * Insert product to bill
+    * @param Bil $bill
+    */
+    public function submitBill($bill){
+        $product_id = $bill->getProductID();
+        $username = $bill->getUsername();
+        $date_bill = $bill->getDateBill();
+        $total_money = $bill->getTotalMoney();
+        $quantity = $bill->getQuantity();
+
+        $query = "insert into bill(product_id, user_name, date_bill, total_money, quantity)
+                  value($product_id, '$username', '$date_bill', $total_money, $quantity)
+                  ";
+        echo $query;
+        parent::addQuerry($query);
+        parent::updateQuery();
     }
 }
 
