@@ -14,5 +14,5 @@ $username = $_SESSION['username'];
 require_once ROOT . DS . 'services' . DS . 'GuestServices.php';
 $service = new GuestServices();
 $service->removeProduct($product_id, $username);
-echo "<script>alert("Thêm thành công!")</script>"
+// echo "<script>alert("Thêm thành công!")</script>"
 header("Location: ../cart");

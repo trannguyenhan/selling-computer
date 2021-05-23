@@ -1,55 +1,3 @@
-/* Slideshow container */
-.slideshow-container {
-  /* max-width: 1000px; */
-  /* height: 100%; */
-  position: relative;
-  margin: auto;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active {
-  background-color: #717171;
-}
-
-/* end dots */
-
 * {
   margin: 0;
   padding: 0;
@@ -64,17 +12,6 @@ ul {
   flex-wrap: wrap;
   align-items: center;
 }
-/* .clearfix {
-  zoom: 1;
-}
-.clearfix:after {
-  clear: both;
-  content: ".";
-  display: block;
-  height: 0;
-  line-height: 0;
-  visibility: hidden;
-} */
 #home {
   background: radial-gradient(white, green);
 }
@@ -115,9 +52,10 @@ ul {
   display: inline-block;
   margin-top: 20px;
   text-decoration: none;
+  background: linear-gradient(to right, #ff105f, #ffad06);
 }
 .btn:hover {
-  background: red;
+ background: linear-gradient(to right, #7fa2d1, #06ff4b);
 }
 #collection {
   margin-top: 70px;
@@ -199,6 +137,56 @@ ul {
   width: 100%;
   height: 80%;
 }
+/* Slideshow container */
+.slideshow-container {
+  /* max-width: 1000px; */
+  /* height: 100%; */
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
 @media only screen and (min-width: 960px) {
 /* styles for browsers larger than 960px; */
   .btn {
@@ -213,12 +201,15 @@ ul {
 }
 @media only screen and (max-device-width: 480px) {
 /* styles for mobile browsers smaller than 480px; (iPhone) */
-.row {
+ .row {
     text-align: center;
     font-size: 30px;
   }
   .categories .row .col-3 , .col-2{
     flex-basis:100%;
+  }
+  .categories .row .col-3 h3 {
+    font-size: 20px;
   }
   .col-7 {
     flex-basis: 100%;
@@ -229,13 +220,14 @@ ul {
     height: 30%;
   }
   .categories .row .col-3 img {
-    width: 50%;
-    height:50%;
+    width: 40%;
+    height:40%;
     margin-top: 20px;
   }
   .featured_products .row .col-3 {
-    flex-basis: 70%;
+    flex-basis: 60%;
     margin-top: 30px;
+    font-size: 20px;
   }
   .title {
     font-size: 80px;
@@ -244,16 +236,88 @@ ul {
     margin-top: 50px;
   }
   .col-2 h1 {
-    font-size: 70px;
+    font-size: 30px;
+  }
+  .col-2 q {
+    font-size: 20px;
+    color: white;
   }
   .btn {
     border-radius: 50px;
     margin-top: 40px;
+    font-size: 15px;
   }
-
+  .title {
+    font-size: 30px;
+  }
 }
+
 @media only screen and (device-width: 768px) {
 /* default iPad screens */
+  .categories .row .col-3 , .col-2{
+  
+  }
+  .categories .row .col-3 h3 {
+    font-size: 20px;
+  }
+  .categories .row .col-3 img {
+    width: 40%;
+    height:40%;
+    margin-top: 20px;
+  }
+
+  .col-2 img {
+    margin-top: 50px;
+  }
+  .col-2 h1 {
+    font-size: 30px;
+  }
+  .col-2 q {
+    font-size: 20px;
+    color: white;
+  }
+  .btn {
+    border-radius: 50px;
+    margin-top: 40px;
+    font-size: 15px;
+  }
+  .title {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (device-width: 834px) {
+/* default iPad screens */
+  .categories .row .col-3 , .col-2{
+  
+  }
+  .categories .row .col-3 h3 {
+    font-size: 20px;
+  }
+  .categories .row .col-3 img {
+    width: 40%;
+    height:40%;
+    margin-top: 20px;
+  }
+
+  .col-2 img {
+    margin-top: 50px;
+  }
+  .col-2 h1 {
+    font-size: 30px;
+  }
+  .col-2 q {
+    font-size: 20px;
+    color: white;
+  }
+  .btn {
+    border-radius: 50px;
+    margin-top: 40px;
+    font-size: 15px;
+  }
+  .title {
+    font-size: 30px;
+  }
 }
 /* different techniques for iPad screening */
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {

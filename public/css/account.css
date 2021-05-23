@@ -6,7 +6,7 @@
 ul {
   list-style: none;
 }
-.clearfix {
+/*.clearfix {
   zoom: 1;
 }
 .clearfix:after {
@@ -16,11 +16,12 @@ ul {
   height: 0;
   line-height: 0;
   visibility: hidden;
-}
+}*/
 .row {
   display: flex;
   justify-content: space-around;
-  /*border: 1px solid black;*/
+  align-items: center;
+  flex-wrap: wrap;
 }
 body {
 	background-image: url('https://i.stack.imgur.com/vzbuQ.jpg');
@@ -36,7 +37,7 @@ body {
 	position: relative;
 	overflow: hidden;
 }
-h3 {
+.container h3 {
 	text-align: center;
 	margin-bottom: 40px;
 	color: #777;
@@ -114,6 +115,14 @@ form button {
 	right: -20px;
 	top: 0;
 	border-left: 20px solid #ffad06;
+}
+.container i {
+	position: absolute;
+	font-style: normal;
+	padding: 0px 7px;
+    border-radius: 2px;
+	background: linear-gradient(to right, #ff105f, #ffad06);
+
 }
 @media only screen and (min-width: 960px) {
 /* styles for browsers larger than 960px; */

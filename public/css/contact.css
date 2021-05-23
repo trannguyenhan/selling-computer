@@ -6,7 +6,7 @@
 ul {
   list-style: none;
 }
-.clearfix {
+/*.clearfix {
   zoom: 1;
 }
 .clearfix:after {
@@ -16,10 +16,11 @@ ul {
   height: 0;
   line-height: 0;
   visibility: hidden;
-}
+}*/
 .row {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 body {
 	background: #fff;

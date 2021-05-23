@@ -7,6 +7,7 @@
 	margin: auto;
 	padding-left: 25px;
 	padding-right: 25px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	/*border: 1px solid black;*/
 }
 .cart .cart-page {
@@ -15,22 +16,28 @@
 .cart table {
 	width: 100%;
 	border-collapse: collapse;
+	
 }
 .cart .cart-info {
 	display: flex;
 	flex-wrap: wrap;
+
 }
 .cart .btn {
   background: orange;
   color: white;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 30px;
   display: inline-block;
-  margin-top: 20px;
-  margin-left: 10px; 
+  margin: 20px 0px 20px 10px; 
   text-decoration: none;
-  width : 150px;
+  width : 100px;
+  background: linear-gradient(to right, #ff105f, #ffad06);
+
+}
+.cart .btn:hover {
+	background: linear-gradient(to right, #7fa2d1, #06ff4b);
 }
 .cart th {
 	text-align: left;

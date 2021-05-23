@@ -10,58 +10,51 @@ sup {
   color: red;
   font-weight: 500;
 }
-.clearfix {
-  zoom: 1;
-}
-.clearfix:after {
-  clear: both;
-  content: ".";
-  display: block;
-  height: 0;
-  line-height: 0;
-  visibility: hidden;
-}
+
 .row {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.product-container {
+  display: flex;
+}
+.left-bar {
+  flex-basis: 20%;
 }
 .title {
-  font-size: 20px;
-  margin: 50px auto;
-  text-align: center;
-  font-weight: 500;
+  background: #3daab7;
+  padding: 10px;
+  color: #fff;
+  margin: 10px 0px;
+}
+#xem {
   color: orange;
-  position: relative;
+  border: 1px solid;
 }
-.title:after {
-  content: "";
-  height: 3px;
-  width: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-  background: green;
-  bottom: 0px;
-  border-radius: 10px;
+#xem:hover {
+  color: green;
 }
-
 /*all-product*/
 .all-product {
   flex-basis: 80%;
-}
-.col-4 {
+  margin-top: 50px;
+ }
+.all-product .col-4 {
   width: 25%;
-  padding: 10px;
+/*   padding: 10px 20px; */
   float: left;
   margin: 0px;
-  <!-- border: 1px solid; -->
 }
-.col-4 img {
+.all-product .col-4 img {
   width: 100%;
   height: 300px;
 }
 .product-grid {
+  margin-top: 5px;
   position: relative;
+  margin-right: 50px;
 }
 .product-grid .product-image {
   position: relative;
@@ -91,7 +84,7 @@ sup {
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 0 10px;
+  padding: 0 5px;
   top: 12px;
   left: 12px;
   z-index: 3;
@@ -152,4 +145,58 @@ sup {
 .next-pages ul li a {
   text-decoration: none;
   color: white;
+}
+.left-bar {
+  /*position: relative;*/
+  flex-basis: 20%;
+}
+.sidenav {
+  min-height: 300px;
+  width: 250px;
+  position: relative;
+  z-index: 1;
+  top: 60px;
+  left: 20px;
+  background: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  border-radius: 10px;
+}
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  color: #818181;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  transition: all 1s ease;
+}
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+.active {
+  background-color: green;
+  color: white;
+}
+.sidenav span {
+  float: right;
+}
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+.fa-plus{
+  float: right;
+  padding-right: 8px;
+}
+.list-group {
+  width: 250px;
+  margin-left: 20px;
+  margin-top: 200px;
 }

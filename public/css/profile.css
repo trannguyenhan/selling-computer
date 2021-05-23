@@ -14,9 +14,9 @@ body {
   font-family: 'Roboto',sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  background: #FDF2E9;
+    background: #d7e7e4;
 }
-.clearfix {
+/* .clearfix {
   zoom: 1;
 }
 .clearfix:after {
@@ -26,7 +26,7 @@ body {
   height: 0;
   line-height: 0;
   visibility: hidden;
-}
+} */
 html {
   scroll-behavior: smooth;
 }
@@ -36,8 +36,7 @@ html {
   margin: 100px 100px;
   background: white;
   display: flex;
-/*   justify-content: flex-end; */
-/*   position: relative; */
+  background: #f9f9f9;
 }
 .left_side_bar {
   flex-basis: 30%;
@@ -45,9 +44,9 @@ html {
 }
 .right_side_bar {
   flex-basis: 15%;
-  position: relative;
+/*   position: relative; */
 }
-
+/* 
 #myBtn {
   display: none;
   position: absolute;
@@ -62,11 +61,11 @@ html {
   cursor: pointer;
   padding: 15px;
   border-radius: 4px;
-}
+} */
 
-#myBtn:hover {
+/* #myBtn:hover {
   background-color: #555;
-}
+} */
 
 .account_container h1 {
   font-size: 30px;
@@ -108,10 +107,10 @@ html {
   text-align: center;
 }
 .left_side_bar ul li a i{
-    background: #f8e269
+    background: linear-gradient(to right, #ff105f, #ffad06);
 }
 .left_side_bar ul li a i:hover {
-  background: #98fb93
+  background: linear-gradient(to right, #7fa2d1, #06ff4b);
 }
 .account_container .main_content{
   display: block;
@@ -152,16 +151,17 @@ html {
   margin-top: 20px;;
   width: 70%;
   line-height: 1.7;
-  border: 1px dotted gray;
+  border: 1px dotted #ebe7e7;
   outline: none;
+  padding-left: 5px;
 }
 .input .input_text a {
   text-decoration: none;
-  color: orange;
+  color: #eb9900;
 
 }
 .input .input_text a:hover {
-  color: #1684d0;
+  color: #0f8ce2;
 }
 .input .radio p{
   display: inline-block;
@@ -191,8 +191,6 @@ html {
 .extra-content p {
   text-align: center;
 }
-
-
 
 
 /* order */
@@ -251,11 +249,12 @@ html {
   border-radius: 5px;
   margin-top: 5px;
   background: #eeecec;
-  border: 1px solid gray;
+  border: 1px solid #ebe7e7;
   outline: none;
+  padding-left: 5px;
 }
 .order_content .search input:hover {
-  border: 1px solid #b07406;
+  border: 1px solid #ffffff;
 }
 .order_content .main_order .service ul {
   display: flex;
@@ -267,13 +266,13 @@ html {
 }
 .order_content .main_order .service ul li a{
   text-decoration: none;
-  color: #d78e09;
+  color: #ffa500;
 }
 .order_content .main_order .service ul li a i {
   margin-right: 5px;
 }
 .order_content .main_order .service ul li span {
-  color: red;
+  color: #fff600;
   font-weight: bold;
   font-style: italic;
   margin-left: 5px;
@@ -301,7 +300,7 @@ html {
   border-bottom: 1px solid #d8d0d0;
 }
 .detail .col-1  {
-/*   border: 1px solid; */
+  border-right: 1px solid #ebe7e7;
   flex-basis: 20%;
 }
 .detail .col-2 {
@@ -317,25 +316,25 @@ html {
 }
 #deal {
   border: 1px solid red;
-  color: red;
+  color: #f50000;
   width: fit-content;
   margin-top: 0px;
 }
 #quantity {
-  font-size: 50px;
-  color: green;
+  font-size: 40px;
+  color: #22cd22;
   font-family: 'Roboto';
   font-style: italic;
 }
-.col-3 {
+.account_container .col-3 {
   margin-top: 50px;
 }
-.col-3 del {
+.account_container .col-3 del {
   margin-right: 5px;
   color: gray;
 }
-.col-3 p {
-  color: red;
+.account_container .col-3 p {
+  color: #ff0000;
   font-style :italic;
 }
 .result {
@@ -353,12 +352,12 @@ html {
   font-size: 30px;
   font-weight: bold;
   font-family: ui-sans-serif;
-  color: #d68e0a;
+  color: #5db48e;
   margin-right: 130px;
   font-style: italic;
 }
 .result span {
-  color: red;
+  color: #d40000;
   font-size:40px;
   font-style: italic;
   position: absolute;
@@ -397,7 +396,8 @@ html {
 .address_title {
   flex-basis: 100%;
 }
-.address_content button {
+.address_content 
+{
   float: left;
 }
 .main_address {
@@ -515,11 +515,12 @@ span {
 .password .input input {
   display: inline-block;
   margin-top: 20px;;
-  width: 70%;
+  width: 100%;
   line-height: 1.7;
+  padding-left: 5px;
   border: 1px dotted gray;
   outline: none;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .password span {
 /*   border: 1px solid orange; */
@@ -532,14 +533,15 @@ button {
   border-radius: 50px;
   width: 80px;
   height: 30px;
-  background: linear-gradient(to right, #fff, #EAF733);
-  color: #06548b;
+  background: linear-gradient(to right, #ff105f, #ffad06);
+  color: white;
   border: none;
   outline: none;
   cursor: pointer;
+  margin: 10px 0px;
 }
 button:hover {
-  background: linear-gradient(to right, #fff,#33F771);
+  background: linear-gradient(to right, #7fa2d1, #06ff4b);
 }
 .password button {
   margin: 10px;
@@ -699,7 +701,7 @@ footer p {
 }
 hr {
   border: none;
-  background: #b5b5b5;
+  background: #ebe7e7;
   height: 1px;
   margin: 20px 0;
 }
