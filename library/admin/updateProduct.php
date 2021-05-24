@@ -42,7 +42,7 @@
         $card, $mainConnection, $os, $battery, $depscription);
     
         $service->update($product);
-        echo "Update thành công!";
+        echo "Update success!";
     }
     else if($type=='2'){
         $service=new PCServices();
@@ -51,7 +51,7 @@
         $card, $mainConnection, $os, $case, $depscription);
     
         $service->update($product);
-        echo "Update thành công!";
+        echo "Update success!";
 
     }
     elseif($type=='3'){
@@ -61,7 +61,7 @@
         $size, $depscription);
     
         $service->update($product);
-        echo "Update thành công!";
+        echo "Update success!";
     }
     
 ?>

@@ -1,36 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
 .row {
   display: flex;
   justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
 }
 .cart .small-container {
-	max-width: 1080px;
+	max-width: 70%;
 	margin: auto;
 	padding-left: 25px;
 	padding-right: 25px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	/*border: 1px solid black;*/
 }
 .cart .cart-page {
 	margin: 80px auto;
+/* 	border: 1px solid */
 }
 .cart table {
 	width: 100%;
 	border-collapse: collapse;
+/* 	border: 1px solid black; */
 }
 .cart .cart-info {
 	display: flex;
 	flex-wrap: wrap;
+
 }
 .cart .btn {
   background: orange;
   color: white;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 30px;
   display: inline-block;
-  margin-top: 20px;
-  margin-left: 10px; 
+  margin: 20px 0px 20px 10px; 
   text-decoration: none;
-  width : 150px;
+  background: linear-gradient(to right, #ff105f, #ffad06);
+
+}
+.cart .btn:hover {
+	background: linear-gradient(to right, #7fa2d1, #06ff4b);
 }
 .cart th {
 	text-align: left;
@@ -38,12 +55,14 @@
 	color: white;
 	background-color: #ff523b;
 	font-weight: normal;
+	border: 1px solid
 }
 .cart td {
 	padding: 10px 50px;
+/* 	border: 1px solid gray; */
 }
 .cart td input {
-	width :40px;
+	width :50px;
 	height: 30px;
 	padding: 5px;
 }
@@ -73,4 +92,71 @@
 }
 del {
 	text-decoration: line-through;
+}
+@media only screen and (min-width: 960px) {
+/* styles for browsers larger than 960px; */
+  
+}
+@media only screen and (min-width: 1440px) {
+/* styles for browsers larger than 1440px; */
+}
+@media only screen and (min-width: 2000px) {
+/* for sumo sized (mac) screens */
+	
+}
+@media only screen and (max-device-width: 480px) {
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+	.cart .small-container {
+	}
+	.cart .cart-page {
+		margin: 10px auto;
+	}
+	.cart table {
+		display: block;
+		width: 100%;
+		
+	}
+	.cart  th{
+		display: block;
+	}
+	.cart  td{
+		display: inline-block;
+	}
+	.cart .btn {
+		margin: 20px 40px;
+	}
+	.cart th:last-child {
+		text-align: left;
+	}
+}
+@media only screen and (device-width: 768px) {
+/* default iPad screens */
+	.cart {
+		margin-top: 80px;
+	}
+	.cart .cart-page {
+		margin: 10px auto;
+	}
+	.cart table {
+/* 		display: block; */
+		width: 100%;
+		
+	}
+	.cart td {
+		padding: 10px 45px;
+	}
+	.cart .btn {
+		margin: 20px 40px;
+	}
+}
+@media only screen and (device-width: 834px) {
+/* default iPad screens */
+	
+}
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+/* For portrait layouts only */
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+/* For landscape layouts only */
 }

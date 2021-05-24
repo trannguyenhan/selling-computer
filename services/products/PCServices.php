@@ -17,7 +17,7 @@ class PCServices extends  ComputerProductsServices {
                     value (" .
                     $pc->getProductID() . "," .
                     "'" . $pc->getCase() . "'"
-                        . ")";
+                        . ")"; 
         parent::addQuerry($query);
         parent::updateQuery();
     }

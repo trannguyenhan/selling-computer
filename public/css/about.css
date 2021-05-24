@@ -6,21 +6,12 @@
 ul {
   list-style: none;
 }
-.clearfix {
-  zoom: 1;
-}
-.clearfix:after {
-  clear: both;
-  content: ".";
-  display: block;
-  height: 0;
-  line-height: 0;
-  visibility: hidden;
-}
+
 .row {
   display: flex;
   justify-content: space-around;
-  /*border: 1px solid black;*/
+  flex-wrap: wrap;
+  align-items: center;
 }
 .about_container {
   height: 80%;
@@ -59,6 +50,10 @@ ul {
   height: 470px;
   object-fit: cover;
   border-radius: 50%;
+}
+.about_container .col-2 i {
+  margin-top: 20px;
+  margin-left: 20px;
 }
 .about_container .col-2 h4{
   font-size: 25px;

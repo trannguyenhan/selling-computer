@@ -29,8 +29,8 @@
                 echo '<p style="margin-top: 0px; margin-right: 0px;">' . $product->getPrice() . 'Đ</p>';
                 echo '</div>';
                 echo '<div>';
-                echo '<button class="btn-ql-xx" onclick="sc_ct_sp(this.value)" value="'. $product->getProductID() . '">Xem</button>';
-                echo '<button class="btn-ql-xx" onclick="delete_by_id(this)" value="'. $product->getProductID() .'">Xóa</button>';
+                echo '<button class="btn-ql-xx" onclick="sc_ct_sp(this.value)" value="'. $product->getProductID() . '">Detail</button>';
+                echo '<button class="btn-ql-xx" onclick="delete_by_id(this)" value="'. $product->getProductID() .'">Delete</button>';
                 echo '</div>';
                 echo '</div>';
             }
@@ -49,8 +49,8 @@
                 echo '<p style="margin-top: 0px; margin-right: 0px;">' . $product->getPrice() . 'Đ</p>';
                 echo '</div>';
                 echo '<div>';
-                echo '<button class="btn-ql-xx" onclick="sc_ct_sp(this.value)" value="'. $product->getProductID() . '">Xem</button>';
-                echo '<button class="btn-ql-xx" onclick="delete_by_id(this)"  value="'. $product->getProductID() .'">Xóa</button>';
+                echo '<button class="btn-ql-xx" onclick="sc_ct_sp(this.value)" value="'. $product->getProductID() . '">Detail</button>';
+                echo '<button class="btn-ql-xx" onclick="delete_by_id(this)"  value="'. $product->getProductID() .'">Delete</button>';
                 echo '</div>';
                 echo '</div>';
             }
@@ -69,8 +69,8 @@
                 echo '<p style="margin-top: 0px; margin-right: 0px;">' . $product->getPrice() . 'Đ</p>';
                 echo '</div>';
                 echo '<div>';
-                echo '<button class="btn-ql-xx" onclick="sc_ct_sp(this.value)" value="'. $product->getProductID() . '">Xem</button>';
-                echo '<button class="btn-ql-xx" onclick="delete_by_id(this)" value="'. $product->getProductID() .'">Xóa</button>';
+                echo '<button class="btn-ql-xx" onclick="sc_ct_sp(this.value)" value="'. $product->getProductID() . '">Detail</button>';
+                echo '<button class="btn-ql-xx" onclick="delete_by_id(this)" value="'. $product->getProductID() .'">Delete</button>';
                 echo '</div>';
                 echo '</div>';
 

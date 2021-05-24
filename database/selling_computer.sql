@@ -400,6 +400,22 @@ create table evaluate (
     foreign key (product_id) references products(product_id)
 );
 
+drop table bill;
+create table bill (
+	bill_id int not null auto_increment,
+    product_id int not null,
+    user_name varchar(50) not null,
+    date_bill datetime,
+    total_money int,
+    primary key (bill_id),
+    foreign key (product_id) references products(product_id),
+    foreign key (user_name) references guest(user_name)
+);
+
+alter table bill 
+add quantity int;
+
+INSERT INTO `cart` VALUES (2,'hoangbui'),(1,'huy0628');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
