@@ -11,6 +11,7 @@ session_start();
 		<link rel="stylesheet" href="../../public/css/footer_container.css" type="text/css">
 		<link rel="stylesheet" href="../../public/css/nav_bar.css" type="text/css">
 		<link rel="stylesheet" href="../../public/css/details.css" type="text/css">
+		<script src="javascript/details.js"></script>
 		<script>
 			var session = "";
 			<?php
@@ -41,7 +42,7 @@ session_start();
 
 					return true;
 			}
-	</script>
+		</script>
 		<title>Product Detail | MTHH</title>
 	</head>
 	<body>

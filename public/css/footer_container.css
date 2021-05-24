@@ -95,7 +95,7 @@ color: white;
 /* for sumo sized (mac) screens */
 }
 @media only screen and (max-device-width: 480px) {
-  
+
 /* styles for mobile browsers smaller than 480px; (iPhone) */
   .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4, .footer-col-5 {
 flex-basis: 100%;
@@ -106,7 +106,7 @@ margin: 5px auto;
 
   footer p {
 margin: 2px;
-} 
+}
   hr {
 border: none;
 background: #b7b7b7;
@@ -133,7 +133,7 @@ margin: 10px auto 0;
 
 .footer-col-4 ul li a{
 margin-right: 30px;
-  
+
 }
 .footer-col-4 ul li i {
 margin-right: 20px;
@@ -176,7 +176,7 @@ margin-top: 10px;
   }
 .footer-col-4 {
   flex-basis: 50%;
-  margin-bottom: 100px; 
+  margin-bottom: 100px;
 }
   .footer-col-4 h3 {
     margin-bottom: 5px;
@@ -225,7 +225,7 @@ margin-top: 10px;
   }
 .footer-col-4 {
   flex-basis: 50%;
-  margin-bottom: 100px; 
+  margin-bottom: 100px;
 }
   .footer-col-4 h3 {
     margin-bottom: 5px;

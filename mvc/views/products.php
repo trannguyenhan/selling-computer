@@ -20,33 +20,33 @@
 		<div class="product-container">
 			<div class="left-bar">
 				<div class="sidenav">
-					<button class="dropdown-btn">Categories<i class = "fa fa-plus"></i></button>
+					<button class="dropdown-btn">Thương hiệu<i class = "fa fa-plus"></i></button>
 					<div class="dropdown-container">
-						<a href="all_products_page.php?view=view&id_categories=1">Tank top<span>(30000)</span></a>
-						<a href="all_products_page.php?view=view&id_categories=1">Tank top<span>(30000)</span></a>
-						<a href="all_products_page.php?view=view&id_categories=1">Tank top<span>(30000)</span></a>
-						<a href="all_products_page.php?view=view&id_categories=1">Tank top<span>(30000)</span></a>
+						<a href="search&label=all&supplier=dell">DELL<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&supplier=hp">HP<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&supplier=logitech">LOGITECH<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&supplier=avita">AVITA<!--<span>(30000)</span>--></a>
 					</div>
-					<button class="dropdown-btn">Brands<i class = "fa fa-plus"></i></button>
+					<button class="dropdown-btn">Giá tiền<i class = "fa fa-plus"></i></button>
 					<div class="dropdown-container">
-						<a href="all_products_page.php?view=view&id_brands=1">Gucci<span>(4000)</span></a>
-						<a href="all_products_page.php?view=view&id_brands=1">Gucci<span>(4000)</span></a>
-						<a href="all_products_page.php?view=view&id_brands=1">Gucci<span>(4000)</span></a>
-						<a href="all_products_page.php?view=view&id_brands=1">Gucci<span>(4000)</span></a>
+						<a href="search&label=all&price=1">1.000.000 - 2.000.000<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&price=2">2.000.000 - 10.000.000<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&price=10">10.000.000 - 20.000.000<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&price=20">20.000.000 - <!--<span>(30000)</span>--></a>
 					</div>
-					<button class="dropdown-btn">Size<i class = "fa fa-plus"></i></button>
+					<button class="dropdown-btn">Cân nặng<i class = "fa fa-plus"></i></button>
 					<div class="dropdown-container">
-						<a href="all_products_page.php?view=view&id_size=1">XL<span>(200)</span></a>
-						<a href="all_products_page.php?view=view&id_size=1">XL<span>(200)</span></a>
-						<a href="all_products_page.php?view=view&id_size=1">XL<span>(200)</span></a>
-						<a href="all_products_page.php?view=view&id_size=1">XL<span>(200)</span></a>
+						<a href="search&label=all&weigh=1">Nhỏ hơn 1kg<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&weigh=2">1kg - 2kg<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&weigh=3">2kg - 3kg<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&weigh=4">Lớn hơn 3kg<!--<span>(30000)</span>--></a>
 					</div>
-					<button class="dropdown-btn">Prices<i class = "fa fa-plus"></i></button>
+					<button class="dropdown-btn">Hệ điều hành<i class = "fa fa-plus"></i></button>
 					<div class="dropdown-container">
-						<a href="all_products_page.php?view=view&id_price=200000"><200000đ</a>
-						<a href="all_products_page.php?view=view&id_price=200000"><200000đ</a>
-						<a href="all_products_page.php?view=view&id_price=200000"><200000đ</a>
-						<a href="all_products_page.php?view=view&id_price=200000"><200000đ</a>
+						<a href="search&label=all&os=windows">Windows</a>
+						<a href="search&label=all&os=linux">Linux</a>
+						<!-- <a href="all_products_page.php?view=view&id_price=200000"><200000đ</a>
+						<a href="all_products_page.php?view=view&id_price=200000"><200000đ</a> -->
 					</div>
 				</div>
 			</div>
@@ -169,7 +169,7 @@
 						?>
 					</div>
 				</div>
-				<div class="next-pages">
+				<!-- <div class="next-pages">
 					<ul>
 						<li><a href="">1</a></li>
 						<li><a href="">2</a></li>
@@ -177,7 +177,7 @@
 						<li><a href="">4</a></li>
 						<a href=""><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 					</ul>
-				</div>
+				</div> -->
 			</div>
 		</div>
 

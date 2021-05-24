@@ -10,16 +10,27 @@ require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php
 		<link rel="stylesheet" href="public/css/home.css" type="text/css">
 		<link rel="stylesheet" href="public/css/footer_container.css" type="text/css">
 		<link rel="stylesheet" href="public/css/nav_bar.css">
-		<script type="text/javascript" src="public/javascript/home.js"></script>
+
 		<title>Home | MTHH</title>
 	</head>
 	<body>
 		<!-- includes nav bar -->
 		<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
+		<!-- <div class="row">
+        <div class="col-2" style="padding-left: 100px">
+            <h1>Tìm kiếm những mẫu máy tính mới nhất của chúng tôi!</h1>
+            <p>Khai thông sức mạnh, dẫn đâu xu hướng</p>
+            <a href="products" class = "btn">Khám phá ngay&#8594;</a>
+        </div>
+        <div class="col-2">
+            <img src="https://i0.wp.com/s1.uphinh.org/2021/04/25/zapmaster_serviceability_01_tcm2649_2908010_tcm2649_2908098_tcm2649-2908010.png">
+        </div>
+    </div> -->
+
 		<div class="slideshow-container">
 			<div class="slides" id="home">
 				<div class="row">
-					<div class="col-2">
+					<div class="col-2" style="padding-left:10%;">
 						<h1>Tìm kiếm những mẫu máy tính mới nhất của chúng tôi!</h1><br>
 						<q>Khai thông sức mạnh, dẫn đâu xu hướng</q><br>
 						<a href="products" class = "btn">Khám phá ngay&#8594;</a>
@@ -29,19 +40,18 @@ require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php
 					</div>
 				</div>
 			</div>
-			<div class="slides" id="collection">
-				<!-- <h1 class = "title">Ưu đãi lớn khi mua hàng tại MTHH</h1> -->
+			<!-- <div class="slides" id="collection">
 				<img src="https://lumen.thinkpro.vn//backend/uploads/baiviet/2021/4/9/microsoft365_thumb.jpg">
 			</div>
 			<br />
 			<div style="text-align:center">
 				<span class="dot" onclick="currentSlide(1)"></span>
 				<span class="dot" onclick="currentSlide(1)"></span>
-				<!-- <span class="dot"></span> -->
 			</div>
 			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a> -->
 		</div>
+
 		<div class="categories">
 			<div class="small-container">
 				<h1 class = "title">Danh mục sản phẩm</h1>
@@ -113,26 +123,29 @@ require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php
 			<div class="small-container">
 				<div class="row">
 					<div class="col-7">
-						<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg">
+						<img src="images/logo/Dell_Logo.svg">
 					</div>
 					<div class="col-7">
-						<img src="https://www.lg.com/lg5-common-gp/images/common/share/share-default.jpg" alt="">
+						<img src="images/logo/LG.jpg" alt="">
 					</div>
 					<div class="col-7">
-						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="">
+						<img src="images/logo/HP.png" alt="">
 					</div>
 					<div class="col-7">
-						<img src="https://hitechsys.com/wp-content/uploads/avita-logo.png" alt="">
+						<img src="images/logo/avita.png" alt="">
 					</div>
 					<div class="col-7">
-						<img src="https://i.pinimg.com/originals/ba/b7/8b/bab78b1ab6202c17519384fb90b06412.png" alt="">
+						<img src="images/logo/logitech.png" alt="">
 					</div>
 					<div class="col-7">
-						<img src="https://www.fpt.com.vn/Content/home/images/icon/ic-logo.png" alt="">
+						<img src="images/logo/fpt.png" alt="">
 					</div>
 					<div class="col-7">
-						<img src="https://yt3.ggpht.com/ytc/AAUvwngqV6FGOKwpL5mBQThsaBhqkSnkhejYBUEYhddiTw=s900-c-k-c0x00ffffff-no-rj" alt="">
+						<img src="images/logo/ttdd.jpg" alt="">
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<!-- Js for slide show -->
+		<script type="text/javascript" src="public/javascript/home.js"></script>

@@ -32,7 +32,7 @@ array_push($users, $g);
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>D</title>
+        <title>Account Management | MTHH</title>
         <style>
         p {
         color:rgb(35, 102, 226); font-size: 25px; margin-bottom:0px;
@@ -71,7 +71,7 @@ array_push($users, $g);
                     <p>User</p>
                     <input class="input1" type="text" name="user">
                 </div>
-                
+
                 <div style="width:28%; float:left; height: 70px;">
                     <p>Name</p>
                     <input class="input1" type="text" name="name">
@@ -83,7 +83,7 @@ array_push($users, $g);
                 <div style="width:16%; float:left; height: 70px;">
                     <input class="btn" type="submit" value="Tìm kiếm">
                 </div>
-                
+
             </div>
         </form>
         <br>

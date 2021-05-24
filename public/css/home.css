@@ -140,7 +140,7 @@ ul {
 /* Slideshow container */
 .slideshow-container {
   /* max-width: 1000px; */
-  /* height: 100%; */
+  height: auto;
   position: relative;
   margin: auto;
 }
@@ -255,7 +255,7 @@ ul {
 @media only screen and (device-width: 768px) {
 /* default iPad screens */
   .categories .row .col-3 , .col-2{
-  
+
   }
   .categories .row .col-3 h3 {
     font-size: 20px;
@@ -289,7 +289,7 @@ ul {
 @media only screen and (device-width: 834px) {
 /* default iPad screens */
   .categories .row .col-3 , .col-2{
-  
+
   }
   .categories .row .col-3 h3 {
     font-size: 20px;
