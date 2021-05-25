@@ -2,7 +2,16 @@
 ob_start();
 session_start();
 
-unset($_SESSION['username']);
-unset($_SESSION['password']);
-header("Location: ../login");
+if(array_key_exists("username", $_SESSION)){
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: ../login");
+}
+
+if(array_key_exists("admin_username", $_SESSION)){
+    unset($_SESSION['admin_username']);
+    unset($_SESSION['admin_password']);
+    header("Location: ../login-admin");
+}
+
 ?>

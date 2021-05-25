@@ -31,15 +31,20 @@ class RouteController {
         }
 
         // check if admin -> no footer
-        if(strcmp($controller, "admin") == 0 || strcmp($controller, "product-management") == 0 || strcmp($controller, "account-management") == 0){
+        if(strcmp($controller, "admin") == 0
+            || strcmp($controller, "product-management") == 0
+            || strcmp($controller, "account-management") == 0
+            || strcmp($controller, "login-admin") === 0){
             $this->_is_footer = 0;
         }
 
+        // if link is account-management => controller of link is AccountManagementController
         $controller = str_replace('-', ' ', $controller);
         $controller = ucwords($controller);
         $controller = str_replace(' ', '', $controller);
         $controller .= "Controller"; // example : AboutController, ContactController,...
 
+        // include controller
         require_once ROOT . DS . 'mvc' . DS . 'controllers' . DS . $controller . '.php';
         if($id == -1){
             $this->_dispath = new $controller();

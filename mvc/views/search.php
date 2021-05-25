@@ -219,7 +219,12 @@ $lens = count($listProducts);				// number of product in search
 				<div id="search">
 				<form action="" method="POST">
 					<input type="text" name="search_request" placeholder="nhập từ cần tìm kiếm vào đây..." id="request"><br />
-					<select name="search_label" id="search_label"><option>Laptop</option><option>PC</option><option>Phụ kiện</option><option>Tất cả</option></select>
+					<select name="search_label" id="search_label">
+						<option>Laptop</option>
+						<option>PC</option>
+						<option>Phụ kiện</option>
+						<option>Tất cả</option>
+					</select>
 					<input type="submit" value="Search" id="submit">
 				</form>
 				</div>

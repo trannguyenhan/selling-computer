@@ -417,6 +417,14 @@ add quantity int;
 
 INSERT INTO `cart` VALUES (2,'hoangbui'),(1,'huy0628');
 
+create table admin(
+	admin_username varchar(50) not null,
+    admin_password varchar(50)
+);
+
+insert admin(admin_username, admin_password)
+value('admin', 'admin');
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

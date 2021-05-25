@@ -1,3 +1,12 @@
+.logout a {
+  background-color: #EEEEEE;
+  padding: 8px 20px;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:5px;
+  cursor:pointer;
+}
+
 * {
     box-sizing: border-box;
   }
@@ -24,7 +33,7 @@
     margin-top: 0px;
     transition: 0.5s;
   }
-  
+
   .right {
     background-color: #4CAF50;
     float: left;
@@ -38,7 +47,7 @@
   p{
       padding: 20px;
   }
-  
+
   /* Use a media query to add a break point at 800px: */
   @media screen and (max-width: 800px) {
     .left, .right {

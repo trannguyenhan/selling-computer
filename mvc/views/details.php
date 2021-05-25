@@ -44,7 +44,7 @@ session_start();
 	<body>
 		<!-- includes nav bar -->
 		<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
-		<div class='title'><b>THÔNG TIN SẢN PHẨM</b></div>
+		<div class='title'><b>THÔNG TIN SẢN PHẨM </b><b style="color: red"> <?php if($product->getDisable() == 1) echo "( NGỪNG KINH DOANH)" ?></b></div>
 		<?php
 			require_once ROOT . DS . 'services' . DS . 'TypeProductsServices.php';
 			require_once ROOT . DS . 'services' . DS . 'EvaluateServices.php';

@@ -1,3 +1,16 @@
+<?php
+// check session
+ob_start();
+session_start();
+if(!isset($_SESSION['admin_username'])){
+    header("Location: login-admin");
+} else {
+    if($_SESSION['admin_username'] == ""){
+        header("Location: login-admin");
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,6 +21,9 @@
         <link rel="stylesheet" href="public/css/admin/admin.css">
     </head>
     <body>
+        <div class="logout">
+          <a href="library/refresh_session.php">Đăng xuất</a>
+        </div>
         <center><img src="public/images/admin/admin.jpg" alt="" width="50%"></center>
         <a href="account-management"><div class="left">
             <p>Account Management</p>
