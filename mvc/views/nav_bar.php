@@ -19,8 +19,8 @@ global $path_project;
 		<a href=<?php echo "/" . $path_project . "/" . "cart" ?>><img src=<?php echo "/" . $path_project . "/" . "images/logo/cart.png" ?> width="30px"> &nbsp;</a>
 		<a href=<?php echo "/" . $path_project . "/" . "search" ?>><img src=<?php echo "/" . $path_project . "/" . "images/logo/searchbox.jpg" ?> width="30px"></a>
 		<!-- <div class="menu"> -->
-		<img src=<?php echo "/" . $path_project . "/" . "images/logo/menu.png" ?> alt="" class = "menu" onclick="menuToggle()">
+		<img src=<?php echo "/" . $path_project . "/" . "images/logo/menu.png" ?> alt="" class = "menu" onclick="menuToggle()" />
 		<!-- </div> -->
 	</div>
 </div>
-<script type="text/javascript" src = "public/javascript/nav_bar.js"></script>
+<script type="text/javascript" src = <?php echo "/" . $path_project . "/" . "public/javascript/nav_bar.js" ?>></script>

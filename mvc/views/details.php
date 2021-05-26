@@ -60,7 +60,7 @@ session_start();
 			<img src=<?php echo $product->getImage() ?> ></img>
 		</div>
 		<div class='desc' >
-			<div class='name'><h3><?php echo $product->getModel() ?></h3></div><br />
+			<div class='name'><h3><?php echo $product->getModel() ?></h3></div><br /><br />
 			<div><b>Giá bán</b>: <?php echo $product->getPrice() ?> đồng</div>
 			<div><b>Cân nặng</b>: <?php echo $product->getWeigh() ?> kg</div>
 			<div><b>Màu sắc</b>: <?php echo $product->getColor() ?></div>
@@ -175,7 +175,7 @@ session_start();
 	}
 	?>
 	<!-- print all evaluate -->
-	<div class='cmt-title'><b>Ý kiến đánh giá (<?php echo count($listEvaluates)?> đánh giá)</b></div>
+	<div class='cmt-title'><b>Ý kiến đánh giá (<?php echo count($listEvaluates)?> đánh giá)</b></div><br /><br />
 	<?php
 	for($i = 0; $i < count($listEvaluates); $i++) {
 		$temp = $listEvaluates[$i];

@@ -19,9 +19,9 @@
 		<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
 		<div class="product-container">
 			<div class="left-bar">
-				<div class="hidden">
-					<button class="openbtn" onclick="openNav()">☰ Filter</button> 
-				</div>
+				<!-- <div class="hidden">
+					<button class="openbtn" onclick="openNav()">☰ Filter</button>
+				</div> -->
 				<div class="sidenav">
 					<div>
 						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></a>
