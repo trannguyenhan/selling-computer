@@ -187,17 +187,4 @@
 			</div>
 		</div>
 
-<!-- <script type="text/javascript">
-	var temp = document.getElem
-</script> -->
 <script type="text/javascript" src = "public/javascript/product.js"></script>
-<script>
-function openNav() {
-  document.getElementsByClassName("sidenav")[0].style.display = "inline";
-}
-
-function closeNav() {
-  document.getElementsByClassName("sidenav")[0].style.display = "none";
-
-}
-</script>

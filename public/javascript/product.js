@@ -17,3 +17,12 @@ for (i = 0; i < dropdown.length; i++) {
 function cart_change() {
     alert('add 1 product to cart');
 }
+
+function openNav() {
+  document.getElementsByClassName("sidenav")[0].style.display = "inline";
+}
+
+function closeNav() {
+  document.getElementsByClassName("sidenav")[0].style.display = "none";
+
+}
