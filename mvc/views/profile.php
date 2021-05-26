@@ -141,7 +141,10 @@ $person = $service->get($username);
 									<img src="<?php echo $product->getImage() ?>" alt="">
 								</div>
 								<div class="col-2">
-									<p id = 'deal'><?php echo $bill->getDateBill() ?></p>
+									<p id = 'deal'><?php echo $bill->getDateBill() ?></p><p id = 'status'><?php
+                    if($bill->getStatus() == 0) echo "Đang đặt hàng";
+                    else echo "Thành công";
+                    ?></p>
 									<p><?php echo $product->getModel() ?></p>
 									<p id = 'quantity'>x<?php echo $bill->getQuantity() ?></p>
 								</div>
