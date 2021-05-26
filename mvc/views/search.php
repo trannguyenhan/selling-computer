@@ -156,7 +156,7 @@ if(array_key_exists("search_request", $_POST)){
 		if($_POST['search_request'] != ""){
 				$search_keys = $_POST['search_request'];
 				for($i=0; $i<count($listProducts); $i++){
-						if(strpos($listProducts[$i]->getModel(), $search_keys) !== false){
+						if(strpos(strtolower($listProducts[$i]->getModel()), strtolower($search_keys)) !== false){
 								array_push($listTmpProducts, $listProducts[$i]);
 						}
 				}

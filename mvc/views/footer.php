@@ -26,7 +26,7 @@
 			</ul>
 		</div>
 		<div class="footer-col-3">
-			<img src="https://i0.wp.com/s1.uphinh.org/2021/04/25/Untitled-Design-3.png" width="125px">
+			<img src=<?php echo "/" . $path_project . "/" . "images/logo/logo.png" ?> width="125px">
 			<p>Chúng tôi cam kết mang tới sự an tâm cho công việc của bạn</p>
 		</div>
 		<div class="footer-col-4">
