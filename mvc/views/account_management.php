@@ -32,35 +32,9 @@ array_push($users, $g);
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="public/css/account_management.css">
         <title>Account Management | MTHH</title>
-        <style>
-        p {
-        color:rgb(35, 102, 226); font-size: 25px; margin-bottom:0px;
-        }
-        .input1 {
-        width: 70%;
-        height: 30px;
-        border-radius: 5px;
-        }
-        .btn{
-        border: none;
-        background-color: dodgerblue;
-        color: white;
-        font-size: 20px;
-        margin-top: 47px;
-        padding: 10px;
-        border-radius: 5px;
-        }
-        th {
-        width:25%;
-        color:rgb(35, 102, 226);
-        font-size: 30px;
-        }
-        td {
-        color:rgb(26, 12, 7);
-        font-size: 25px;
-        }
-        </style>
+       
     </head>
     <body>
         <div style="color:rgb(35, 102, 226);"><center><h1>ACCOUNT MANAGEMENT</h1></center></div>
