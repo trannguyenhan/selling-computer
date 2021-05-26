@@ -412,7 +412,7 @@ create table bill (
     foreign key (user_name) references guest(user_name)
 );
 
-alter table bill 
+alter table bill
 add quantity int;
 
 INSERT INTO `cart` VALUES (2,'hoangbui'),(1,'huy0628');
@@ -421,6 +421,9 @@ create table admin(
 	admin_username varchar(50) not null,
     admin_password varchar(50)
 );
+
+alter table bill
+add bill_status int ;
 
 insert admin(admin_username, admin_password)
 value('admin', 'admin');

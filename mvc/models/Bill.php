@@ -3,11 +3,13 @@
  * Bill
  */
 class Bill {
+    private $bill_id;     // int
     private $product_id;  // int
     private $user_name;   //  String
     private $date_bill;   //  String
     private $total_money; // double
     private $quantity;    // int
+    private $status;      // int
 
     public function __construct($product_id, $user_name, $date_bill, $total_money, $quantity) {
         self::setProductID($product_id);
@@ -15,6 +17,12 @@ class Bill {
         self::setDateBill($date_bill);
         self::setTotalMoney($total_money);
         self::setQuantity($quantity);
+
+        self::setStatus(0);
+    }
+
+    public function getBillID(){
+        return $this->bill_id;
     }
 
     public function getProductID(){
@@ -37,6 +45,10 @@ class Bill {
         return $this->quantity;
     }
 
+    public function getStatus(){
+        return $this->status;
+    }
+
     public function setProductID($product_id){
         $this->product_id = $product_id;
     }
@@ -55,5 +67,13 @@ class Bill {
 
     public function setQuantity($quantity){
         $this->quantity = $quantity;
+    }
+
+    public function setStatus($status){
+        $this->status = $status;
+    }
+
+    public function setBillID($bill_id){
+        $this->bill_id = $bill_id;
     }
 }

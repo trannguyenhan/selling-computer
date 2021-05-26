@@ -112,17 +112,17 @@ $person = $service->get($username);
 							require_once ROOT . DS . 'services' . DS . 'TypeProductsServices.php';
 							require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Type.php';
 							foreach ($listProductsBill as $bill) {
-							$product;
-							$type = TypeProductsServices::checkType($bill->getProductID());
+								$product;
+								$type = TypeProductsServices::checkType($bill->getProductID());
 							if($type == Type::PC){
-							$service = new PCServices();
-							$product = $service->get($bill->getProductID());
+								$service = new PCServices();
+								$product = $service->get($bill->getProductID());
 							} else if ($type == Type::LAPTOP){
-							$service = new LaptopServices();
-							$product = $service->get($bill->getProductID());
+								$service = new LaptopServices();
+								$product = $service->get($bill->getProductID());
 							} else if ($type == Type::MOUSE){
-							$service = new ComputerMouseProductsServices();
-							$product = $serive->get($bill->getProductID());
+								$service = new ComputerMouseProductsServices();
+								$product = $serice->get($bill->getProductID());
 							}
 							$sum += intval($product->getPrice()) * intval($bill->getQuantity());
 							?>
