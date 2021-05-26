@@ -30,14 +30,6 @@ foreach($guests as $g){
 <!DOCTYPE html>
 <html lang="en">
     <head>
-<<<<<<< HEAD
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="public/css/account_management.css">
-        <title>Account Management | MTHH</title>
-       
-=======
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,7 +62,7 @@ foreach($guests as $g){
         font-size: 25px;
         }
     </style>
->>>>>>> 42b004690c805fb66acb7917df9db30f8057e223
+
     </head>
     <body>
         <div style="color:rgb(35, 102, 226);"><center><h1>ACCOUNT MANAGEMENT</h1></center></div>
