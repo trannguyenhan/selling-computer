@@ -1,8 +1,5 @@
 <?php
-    $path_project = 'selling-computer';
-
-    define('DS', DIRECTORY_SEPARATOR);
-    define('ROOT', $_SERVER['DOCUMENT_ROOT'] . DS . $path_project);
+    require_once '../lib_config.php';
 
     require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'ComputerMouseProducts.php';
     require_once ROOT . DS . 'services' . DS . 'products' . DS .'LaptopServices.php';
@@ -56,11 +53,11 @@
     $size=$_POST['size'];
     $img='public/images/products/' . $_POST['img'];
     $depscription=$_POST['depscription'];
-    
-    $product=new ComputerMouseProducts($productID,$model, $img, $price, 
+
+    $product=new ComputerMouseProducts($productID,$model, $img, $price,
     $weight, $color, $numberOfProduct, $supplier, $standardConnection, $connectionProtocal, $isLed,
     $size, $depscription);
-    
+
     $service->insert($product);
     echo "Add success!";
 ?>

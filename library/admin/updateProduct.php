@@ -1,9 +1,6 @@
 <?php
-    $path_project = 'selling-computer';
+    require_once '../lib_config.php';
 
-    define('DS', DIRECTORY_SEPARATOR);
-    define('ROOT', $_SERVER['DOCUMENT_ROOT'] . DS . $path_project);
-    
     require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Laptop.php';
     require_once ROOT . DS . 'services' . DS . 'products' . DS .'LaptopServices.php';
     require_once ROOT . DS . 'services' . DS . 'products' . DS .'PCServices.php';
@@ -37,31 +34,31 @@
 
     if($type=='1'){
         $service= new LaptopServices();
-        $product=new Laptop($productID,$model, $img, $price, 
-        $weight, $color, $numberOfProduct, $supplier, $cpu, $ram, $storage, $screen, 
+        $product=new Laptop($productID,$model, $img, $price,
+        $weight, $color, $numberOfProduct, $supplier, $cpu, $ram, $storage, $screen,
         $card, $mainConnection, $os, $battery, $depscription);
-    
+
         $service->update($product);
         echo "Update success!";
     }
     else if($type=='2'){
         $service=new PCServices();
-        $product=new PC($productID,$model, $img, $price, 
-        $weight, $color, $numberOfProduct, $supplier, $cpu, $ram, $storage, $screen, 
+        $product=new PC($productID,$model, $img, $price,
+        $weight, $color, $numberOfProduct, $supplier, $cpu, $ram, $storage, $screen,
         $card, $mainConnection, $os, $case, $depscription);
-    
+
         $service->update($product);
         echo "Update success!";
 
     }
     elseif($type=='3'){
         $service=new ComputerMouseProductsServices();
-        $product=new ComputerMouseProducts($productID,$model, $img, $price, 
+        $product=new ComputerMouseProducts($productID,$model, $img, $price,
         $weight, $color, $numberOfProduct, $supplier, $standardConnection, $connectionProtocal, $isLed,
         $size, $depscription);
-    
+
         $service->update($product);
         echo "Update success!";
     }
-    
+
 ?>

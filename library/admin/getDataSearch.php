@@ -1,9 +1,6 @@
 <?php
-    $path_project = 'selling-computer';
+    require_once '../lib_config.php';
 
-    define('DS', DIRECTORY_SEPARATOR);
-    define('ROOT', $_SERVER['DOCUMENT_ROOT'] . DS . $path_project);
-    
     require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'ComputerMouseProducts.php';
     require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Laptop.php';
     require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'PC.php';
@@ -74,7 +71,7 @@
                 echo '</div>';
                 echo '</div>';
 
-        
+
         }}
     }
 ?>

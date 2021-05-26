@@ -11,7 +11,16 @@
 				require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'Guest.php';
 				$guest = new Guest($username, $password, $name, $address, $telephone);
 				$service = new GuestServices();
-				$service->insert($guest);
+
+				$listGuests = $service->getAll();
+				$tmpGuest = $service->get($username);
+
+				if(!in_array($tmpGuest, $listGuests)){
+						$service->insert($guest);
+						header("Location: login");
+				} else {
+						echo "<script>Tài khoản bị trùng</script>";
+				}
 		}
 ?>
 <!DOCTYPE html>

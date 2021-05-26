@@ -1,9 +1,6 @@
 <?php
-    $path_project = 'selling-computer';
+    require_once '../lib_config.php';
 
-    define('DS', DIRECTORY_SEPARATOR);
-    define('ROOT', $_SERVER['DOCUMENT_ROOT'] . DS . $path_project);
-    
     require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'PC.php';
     require_once ROOT . DS . 'services' . DS . 'products' . DS .'LaptopServices.php';
     require_once ROOT . DS . 'services' . DS . 'products' . DS .'PCServices.php';
@@ -60,11 +57,11 @@
     $card=$_POST['card'];
     $img='public/images/products/' . $_POST['img'];
     $depscription=$_POST['depscription'];
-    
-    $product=new PC($productID,$model, $img, $price, 
-    $weight, $color, $numberOfProduct, $supplier, $cpu, $ram, $storage, $screen, 
+
+    $product=new PC($productID,$model, $img, $price,
+    $weight, $color, $numberOfProduct, $supplier, $cpu, $ram, $storage, $screen,
     $card, $mainConnection, $os, $case, $depscription);
-    
+
     $service->insert($product);
     echo "Add success!";
 ?>

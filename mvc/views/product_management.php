@@ -633,7 +633,7 @@
     alert(this.responseText);
     }
     };
-    xhttp.open("POST", "http://localhost/selling-computer/library/admin/updateProduct.php", false);
+    xhttp.open("POST", "library/admin/updateProduct.php", false);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(str1);
     var id = document.getElementById('edit_id').style.border='none';
@@ -768,7 +768,7 @@
     document.getElementById('display_s').innerHTML=this.responseText;
     }
     };
-    xhttp.open("GET", "http://localhost/selling-computer/library/admin/getDataSearch.php"+str, false);
+    xhttp.open("GET", "library/admin/getDataSearch.php"+str, false);
     xhttp.send();
     }
     // xóa sp theo id
@@ -791,7 +791,7 @@
     }
     }
     };
-    xhttp.open("GET","http://localhost/selling-computer/library/admin/deleteProduct.php?id="+id, false);
+    xhttp.open("GET","library/admin/deleteProduct.php?id="+id, false);
     xhttp.send();
     }
     get_data_search();
@@ -876,7 +876,7 @@
     document.getElementById('edit_size').value=s[21];
     }
     };
-    xhttp.open("GET","http://localhost/selling-computer/library/admin/getProductById.php?id="+id+'&type='+type, true);
+    xhttp.open("GET","library/admin/getProductById.php?id="+id+'&type='+type, true);
     xhttp.send();
     }
     // quay lại trang quản lý sp
@@ -962,8 +962,8 @@
     alert("Wrong image format!");
     return;
     }
-    
-    funcPOST("http://localhost/selling-computer/library/admin/addLaptop.php", get_value_add_laptop);
+
+    funcPOST("library/admin/addLaptop.php", get_value_add_laptop);
     }
     function check_add_laptop(){
     var productID=document.getElementById('lt-id').value;
@@ -1084,7 +1084,7 @@
     alert("Wrong image format!");
     return;
     }
-    funcPOST("http://localhost/selling-computer/library/admin/addPC.php", get_value_add_pc);
+    funcPOST("library/admin/addPC.php", get_value_add_pc);
     }
     function check_add_pc(){
     var productID=document.getElementById('pc-id').value;
@@ -1194,7 +1194,7 @@
     alert("Wrong image format!");
     return;
     }
-    funcPOST("http://localhost/selling-computer/library/admin/addMouse.php", get_value_add_mouse);
+    funcPOST("library/admin/addMouse.php", get_value_add_mouse);
     }
     function check_add_mouse(){
     var productID=document.getElementById('m-id').value;
@@ -1257,7 +1257,7 @@
                 let photo = document.getElementById(id_element).files[0];
                 let formData = new FormData();
                 formData.append("file", photo);
-                fetch('http://localhost/selling-computer/library/admin/uploadImg.php', {method: "POST", body: formData});
+                fetch('library/admin/uploadImg.php', {method: "POST", body: formData});
             }
     </script>
 </body>
