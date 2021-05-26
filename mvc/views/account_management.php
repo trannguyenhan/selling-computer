@@ -1,7 +1,16 @@
 <?php
 require_once ROOT . DS . 'services' . DS . 'GuestServices.php';
+require_once ROOT . DS . 'services' . DS . 'GuestServices.php';
+require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php';
+require_once ROOT . DS . 'services' . DS . 'products' . DS . 'PCServices.php';
+require_once ROOT . DS . 'services' . DS . 'products' . DS . 'ComputerMouseProductsServices.php';
+require_once ROOT . DS . 'services' . DS . 'TypeProductsServices.php';
+require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Type.php';
+
 $service= new GuestServices();
 $guests=$service->getAll();
+$listTmpBill = $service->getAllListProductsBill();
+
 $user = "";
 $phone= "";
 $name = "";
@@ -17,6 +26,7 @@ if(array_key_exists("phone", $_POST)){
 }
 
 $users= array();
+$listBill = array();
 foreach($guests as $g){
   $guser= strtolower($g-> getUsername());
   $gname= strtolower($g->getName());
@@ -25,6 +35,14 @@ foreach($guests as $g){
         ( $phone=="" || strpos($gphone, $phone) !== false)){
           array_push($users, $g);
   }
+}
+
+foreach ($listTmpBill as $tmpBill) {
+    $username = $tmpBill->getUsername();
+    $user = $service->get($username);
+    if(in_array($user, $users)){
+        array_push($listBill, $tmpBill);
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -114,16 +132,6 @@ foreach($guests as $g){
             <?php } ?>
         </table>
         <?php
-            require_once ROOT . DS . 'services' . DS . 'GuestServices.php';
-            $service = new GuestServices();
-
-            $listBill = $service->getAllListProductsBill();
-            require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php';
-            require_once ROOT . DS . 'services' . DS . 'products' . DS . 'PCServices.php';
-            require_once ROOT . DS . 'services' . DS . 'products' . DS . 'ComputerMouseProductsServices.php';
-            require_once ROOT . DS . 'services' . DS . 'TypeProductsServices.php';
-            require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Type.php';
-
             $sum_success = 0;
             $cnt = 0;
             foreach ($listBill as $bill) {
