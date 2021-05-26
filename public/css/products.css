@@ -198,6 +198,12 @@ sup {
   margin-left: 20px;
   margin-top: 200px;
 }
+ .openbtn {
+    display:none ;
+  }
+  .sidenav  .closebtn i{
+    display: none;
+  }
 @media only screen and (min-width: 960px) {
 /* styles for browsers larger than 960px; */
   .btn {
@@ -218,17 +224,32 @@ sup {
   }
   .sidenav {
     transition: width 0.4s ease-in-out;
-    position: fixed;
-    top: 80px;
+    top: 0px;
     margin: auto;
     width: 50%;
     border-radius: 0px;
-/*     display: none; */
     transform: 1s ease;
     z-index: 4;
+    display: none;
+  }
+  .openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  display: inline-block;
+  padding: 10px 30px;
+  border: none;
+  position: relative;
+}
+.openbtn:hover {
+  background-color: #444;
+}
+ .sidenav  .closebtn i{
+    display: inline;
   }
   .all-product {
-    margin-top: 20px;
+    margin-top: 44px;
     flex-basis: 100%;
   }
   .all-product .col-4 {

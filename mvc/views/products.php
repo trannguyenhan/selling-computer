@@ -19,7 +19,13 @@
 		<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
 		<div class="product-container">
 			<div class="left-bar">
+				<div class="hidden">
+					<button class="openbtn" onclick="openNav()">☰ Filter</button> 
+				</div>
 				<div class="sidenav">
+					<div>
+						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></a>
+					</div>
 					<button class="dropdown-btn">Thương hiệu<i class = "fa fa-plus"></i></button>
 					<div class="dropdown-container">
 						<a href="search&label=all&supplier=dell">DELL<!--<span>(30000)</span>--></a>
@@ -181,7 +187,17 @@
 			</div>
 		</div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	var temp = document.getElem
-</script>
+</script> -->
 <script type="text/javascript" src = "public/javascript/product.js"></script>
+<script>
+function openNav() {
+  document.getElementsByClassName("sidenav")[0].style.display = "inline";
+}
+
+function closeNav() {
+  document.getElementsByClassName("sidenav")[0].style.display = "none";
+
+}
+</script>
