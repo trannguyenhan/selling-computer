@@ -57,7 +57,15 @@ session_start();
 	<!-- print all information -->
 	<div class='info'>
 		<div class="img">
-			<img src=<?php echo "../../" . $product->getImage() ?> ></img>
+			<?php
+					$path_img;
+					if(strpos($product->getImage(), "http://") !== false || strpos($product->getImage(), "https://") !== false){
+							$path_img = $product->getImage();
+					} else {
+							$path_img = "../../" . $product->getImage();
+					}
+			?>
+			<img src=<?php echo $path_img ?> ></img>
 		</div>
 		<div class='desc' >
 			<div class='name'><h3><?php echo $product->getModel() ?></h3></div><br /><br />
