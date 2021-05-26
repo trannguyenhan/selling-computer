@@ -120,7 +120,7 @@ if(array_key_exists("weigh", $_GET)){
 							 array_push($listTmpProducts, $listProducts[$i]);
 					 }
 			 }
-	 } else if($wei == 3){
+	 } else if($wei == 4){
 		 for($i=0; $i<count($listProducts); $i++){
 				 if($listProducts[$i]->getWeigh() >= 3){
 						 array_push($listTmpProducts, $listProducts[$i]);

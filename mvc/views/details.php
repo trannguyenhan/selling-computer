@@ -57,7 +57,7 @@ session_start();
 	<!-- print all information -->
 	<div class='info'>
 		<div class="img">
-			<img src=<?php echo $product->getImage() ?> ></img>
+			<img src=<?php echo "../../" . $product->getImage() ?> ></img>
 		</div>
 		<div class='desc' >
 			<div class='name'><h3><?php echo $product->getModel() ?></h3></div><br /><br />
