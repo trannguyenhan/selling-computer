@@ -6,7 +6,7 @@ require_once ROOT . DS . 'services' . DS . 'TypeProductsServices.php';
 require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Type.php';
 $service;
 $page;
-print_r($_GET);
+
 	// assign value for GET['label']
 if(array_key_exists("label", $_GET)){
 		$label = $_GET['label'];
