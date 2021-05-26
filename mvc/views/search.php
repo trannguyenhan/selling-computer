@@ -6,7 +6,7 @@ require_once ROOT . DS . 'services' . DS . 'TypeProductsServices.php';
 require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Type.php';
 $service;
 $page;
-
+print_r($_GET);
 	// assign value for GET['label']
 if(array_key_exists("label", $_GET)){
 		$label = $_GET['label'];
@@ -153,6 +153,7 @@ $listTmpProducts = array();
 $cnt = 0;
 // filter product with search_request
 if(array_key_exists("search_request", $_POST)){
+		echo $_POST["search_request"];
 		if($_POST['search_request'] != ""){
 				$search_keys = $_POST['search_request'];
 				for($i=0; $i<count($listProducts); $i++){
@@ -160,8 +161,10 @@ if(array_key_exists("search_request", $_POST)){
 								array_push($listTmpProducts, $listProducts[$i]);
 						}
 				}
+				$cnt++;
+		} else {
+			$cnt = 0;
 		}
-		$cnt++;
 }
 if($cnt != 0) $listProducts = $listTmpProducts;
 
