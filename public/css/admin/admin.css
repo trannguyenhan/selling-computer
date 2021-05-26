@@ -54,3 +54,25 @@
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     }
   }
+
+  /* detail */
+  .detail {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #d8d0d0;
+  }
+  .detail .col-1  {
+    border-right: 1px solid #ebe7e7;
+    flex-basis: 20%;
+  }
+  .detail .col-2 {
+    flex-basis: 60%;
+  /*   border: 1px solid; */
+  }
+  .detail .col-2  p{
+    line-height: 1.0;
+  }
+  .detail .col-1 img {
+    width: 100%;
+    height: 80%;
+  }

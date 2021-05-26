@@ -31,6 +31,6 @@ if(!isset($_SESSION['admin_username'])){
         <a href="product-management"><div class="right">
             <p>Product Management</p>
         </div>
-    </a>
+      </a>
 </body>
 </html>
