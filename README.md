@@ -1,5 +1,5 @@
 # selling-computer
-E-commerce website sells and reviews computers with PHP
+E-commerce website sells and reviews computers with pure PHP (not using framework)
 
 ---
 Install :
